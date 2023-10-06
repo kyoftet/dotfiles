@@ -15,6 +15,11 @@ script/initial.sh
 * Xcode
 * LINE
 
+* 起動
+  * karabiner
+  * hammerspoon
+  * clipy
+
 * 設定
   * 設定 > セキュリティとプライバシー > フルディスクアクセス の Alacritty にチェック
   * 設定 > 通知と集中モード > 通知が必要ない項目の通知をOFF
