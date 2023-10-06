@@ -5,6 +5,7 @@
 ```
 xcode-select --install
 git clone https://github.com/kyoF/dotfiles.git
+cd dotfiles
 cp .env.sample .env
 -- edit .env file --
 script/initial.sh
