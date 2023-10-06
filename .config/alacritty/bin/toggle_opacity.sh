@@ -6,7 +6,7 @@
 
 ## Fetch opacity from alacritty.yml
 opacity=$(awk '$1 == "opacity:" {print $2; exit}' \
-	~/configfiles/alacritty/alacritty.yml)
+	~/.config/alacritty/alacritty.yml)
 
 ## Assign toggle opacity value
 case $opacity in 1)
@@ -19,4 +19,4 @@ esac
 
 ## Replace opacity value in alacritty.yml
 sed -i "" "s/opacity: $opacity/opacity: $toggle_opacity/g" \
-	~/configfiles/alacritty/alacritty.yml
+	~/.config/alacritty/alacritty.yml
