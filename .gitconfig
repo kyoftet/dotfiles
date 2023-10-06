@@ -1,0 +1,25 @@
+[core]
+	editor = vim -c \"set fenc=utf-8\"
+	quotepath = false
+
+[color]
+	ui = true
+	diff = auto
+	status = auto
+	branch = auto
+
+[init]
+	defaultBranch = main
+
+[push]
+	default = current
+
+[fetch]
+	prune = true
+
+[merge]
+	conflictStyle = diff3
+
+[include]
+	path = .gitconfig.local
+
