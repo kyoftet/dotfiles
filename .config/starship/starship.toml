@@ -77,16 +77,21 @@ style = '#00aaaa'
 
 [python]
 symbol = ''
-format = '[[ $symbol($version)](fg:#00aaaa bg:#002b55)]($style)'
 style = 'fg:#00aaaa bg:#002b55'
+format = '[[ $symbol ($version)](fg:#00aaaa bg:#002b55)]($style)'
 
 [nodejs]
 symbol = ""
 style = 'fg:#00aaaa bg:#002b55'
-format = '[[ $symbol($version)](fg:#00aaaa bg:#002b55)]($style)'
+format = '[[ $symbol ($version)](fg:#00aaaa bg:#002b55)]($style)'
 
 [golang]
 symbol = ""
+style = 'fg:#00aaaa bg:#002b55'
+format = '[[ $symbol ($version)](fg:#00aaaa bg:#002b55)]($style)'
+
+[lua]
+symbol = ""
 style = 'fg:#00aaaa bg:#002b55'
 format = '[[ $symbol ($version)](fg:#00aaaa bg:#002b55)]($style)'
 

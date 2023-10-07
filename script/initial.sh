@@ -13,6 +13,9 @@ brew install zsh-completions
 brew install zsh-autosuggestions
 brew install zsh-syntax-highlighting
 
+brew tap homebrew/cask-fonts
+brew install --cask font-hack-nerd-font
+
 brew install --cask alacritty
 brew install --cask karabiner-elements
 brew install --cask arc
@@ -25,14 +28,16 @@ brew install --cask docker
 brew install --cask appcleaner
 echo ------- Finish: application install --------
 
+cd ~/.dotfiles
 script/symbolic.sh
 echo "[user]
 	name = $GITHUB_USER_NAME
 	email = $GITHUB_USER_MAIL
 " >> ~/.gitconfig.local
-git remote set-url origin git@github.com:"$GITHUB_USER_NAME"/dotfiles.git
+git remote set-url origin git@github.com:$GITHUB_USER_NAME/dotfiles.git
 ssh-keygen -t ed25519 -C "$GITHUB_USER_MAIL"
 cat ~/.ssh/id_ed25519.pub
+sleep 45
 echo -------- Finish: git setting --------
 
 cd ~/Downloads
