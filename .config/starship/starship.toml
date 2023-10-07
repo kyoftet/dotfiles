@@ -3,23 +3,23 @@ format = """
 $os\
 [ ](fg:#a3aed2 bg:#002b55)\
 $directory\
-[ ](fg:#002b55 bg:#004080)\
+[ ](fg:#002b55 bg:#004080)\
 $git_branch\
-[ ](fg:#004080 bg:#0055aa)\
+[ ](fg:#004080 bg:#0055aa)\
 $git_status\
-[ ](fg:#0055aa bg:#006ad5)\
+[ ](fg:#0055aa bg:#006ad5)\
 $git_metrics\
-[](fg:#006ad5)\
+[](fg:#006ad5)\
 $fill\
-[](fg:#006ad5)\
-[ ](fg:#0055aa bg:#006ad5)\
-[ ](fg:#004080 bg:#0055aa)\
+[](fg:#006ad5)\
+[ ](fg:#0055aa bg:#006ad5)\
+[ ](fg:#004080 bg:#0055aa)\
 $nodejs\
 $golang\
 $python\
-[ ](fg:#002b55 bg:#004080)\
+[ ](fg:#002b55 bg:#004080)\
 $cmd_duration\
-[ ](fg:#a3aed2 bg:#002b55)\
+[ ](fg:#a3aed2 bg:#002b55)\
 $time\
 [▓▒░](fg:#a3aed2)\
 \n$character\
