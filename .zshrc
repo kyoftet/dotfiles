@@ -1,3 +1,7 @@
+alias ls='ls -FG'
+alias ll='ls -alFG'
+alias c='clear'
+
 # git
 autoload -Uz vcs_info
 setopt prompt_subst
@@ -8,10 +12,6 @@ zstyle ':vcs_info:*' formats "%F{cyan}%c%u[%b]%f"
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () { vcs_info }
 
-alias ls='ls -FG'
-alias ll='ls -alFG'
-alias c='clear'
-
 # git alias
 alias ga='git add'
 alias gc='git commit'
@@ -20,19 +20,21 @@ alias gs='git status'
 alias gb='git branch'
 alias gco='git checkout'
 alias gl='git log'
+alias gd='git diff'
 
 # docker compose
 alias dc='docker compose'
+alias d-c='docker compose'
 
 # alacritty
-alias ae='alacritty msg config window.opacity=0.8'
-alias ao='alacritty msg config window.opacity=1.0'
 export PATH=$PATH:~/.config/alacritty/bin
 
-# vim
+# neovim
 alias vi='nvim'
 
 # starship
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
+
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
