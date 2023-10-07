@@ -11,21 +11,12 @@ cp .env.sample .env
 script/initial.sh
 ```
 
-# Manually Install
-* Xcode
-* LINE
-
-* 起動
-  * karabiner
-  * hammerspoon
-  * clipy
-
-* 設定
-  * 設定 > セキュリティとプライバシー > フルディスクアクセス の Alacritty にチェック
-  * 設定 > 通知と集中モード > 通知が必要ない項目の通知をOFF
+# Manually Setting
+* 設定 > セキュリティとプライバシー > フルディスクアクセス の Alacritty にチェック
+* 設定 > 通知と集中モード > 通知が必要ない項目の通知をOFF
+* 設定 > バッテリー > 電源アダプタ > ディスプレイをオフにする を 15分後 に設定
  
-* 備考
-  * ローカル特有の設定ができるファイル
-    * .zshrc.local
-    * .gitconfig.local
+* ローカル特有の設定ができるファイル
+  * .zshrc.local
+  * .gitconfig.local
 

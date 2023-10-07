@@ -2,7 +2,9 @@
 
 # display
 # スリープさせない
-sudo systemsetup -setcomputersleep Off > /dev/null
+sudo pmset -a disablesleep 1
+# パワーナップをオフにする
+sudo pmset -a powenap 0
 # スクロールバーを常時表示する
 defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 # ディスプレイをオフにしない
