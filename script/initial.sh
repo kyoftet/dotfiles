@@ -9,6 +9,10 @@ brew install neovim
 brew install zellij
 brew install hammerspoon
 
+brew install zsh-completions
+brew install zsh-autosuggestions
+brew install zsh-syntax-highlighting
+
 brew install --cask alacritty
 brew install --cask karabiner-elements
 brew install --cask arc
