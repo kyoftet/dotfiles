@@ -12,8 +12,8 @@ alias rm -rf='rr'
 alias s='source'
 
 # homebrew
-alias hb='homebrew'
-alias hbi='homebrew install'
+alias b='brew'
+alias bi='brew install'
 
 # git
 autoload -Uz vcs_info
