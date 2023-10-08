@@ -8,8 +8,10 @@ alias ....='cd ../../..'
 alias md='mkdir'
 alias t='touch'
 alias rd='rmdir'
-alias rm -rf='rr'
-alias s='source'
+alias rr='rm -rf'
+alias vshell='vi ~/.zshrc'
+alias sshell='source ~/.zshrc'
+alias cddot='cd ~/dotfiles'
 
 # homebrew
 alias b='brew'
