@@ -29,6 +29,7 @@ precmd () { vcs_info }
 alias ga='git add'
 alias gc='git commit -m'
 alias gp='git push'
+alias gP='git pull'
 alias gs='git status'
 alias gb='git branch'
 alias gC='git checkout'
