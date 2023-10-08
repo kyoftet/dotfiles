@@ -1,0 +1,30 @@
+{
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.colorTheme": "Tokyo Night Storm",
+  "workbench.reduceMotion": "on",
+  "workbench.editor.untitled.hint": "hidden",
+  "security.workspace.trust.untrustedFiles": "open",
+  "window.zoomLevel": -1,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabSize": 2,
+  "editor.fontSize": 12,
+  "editor.insertSpaces": true,
+  "editor.renderControlCharacters": true,
+  "editor.cursorBlinking": "smooth",
+  "editor.minimap.enabled": false,
+  "editor.formatOnPaste": true,
+  "editor.wordWrap": "on",
+  "explorer.compactFolders": false,
+  "terminal.integrated.defaultLocation": "editor",
+  "[python]": {
+    "editor.tabSize": 4
+  },
+  "[go]": {
+    "editor.tabSize": 4
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.suggest.autoImports": true,
+  "css.validate": false,
+  "scss.validate": false
+}

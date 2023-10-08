@@ -1,0 +1,38 @@
+[
+  {
+    "command": "vscode-neovim.compositeEscape1",
+    "key": "j",
+    "when": "neovim.mode == insert && editorTextFocus",
+    "args": "k"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "cursorRight",
+    "when": "neovim.mode == insert && editorTextFocus"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "cursorLeft",
+    "when": "neovim.mode == insert && editorTextFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "cursorDown",
+    "when": "neovim.mode == insert && editorTextFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "cursorUp",
+    "when": "neovim.mode == insert && editorTextFocus"
+  },
+  {
+	  "key": "space d",
+	  "command": "editor.action.goToDeclaration",
+	  "when": "neovim.mode == normal && editorTextFocus"
+  },
+  {
+    "key": "space b",
+    "command": "workbench.action.navigateBack",
+    "when": "neovim.mode == normal && editorTextFocus"
+  }
+]

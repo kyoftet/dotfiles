@@ -52,6 +52,10 @@ cd ~/dotfiles
 script/macos.sh
 echo -------- Finish: mac setting --------
 
+cd ~/dotfiles
+script/vscode.sh
+echo -------- Finish: vscode setting --------
+
 echo -------- Finish: All --------
 echo -------- execute sudo reboot --------
 
