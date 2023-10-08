@@ -13,10 +13,11 @@ $git_metrics\
 $fill\
 [](fg:#006ad5)\
 [ ](fg:#0055aa bg:#006ad5)\
-[ ](fg:#004080 bg:#0055aa)\
 $nodejs\
 $golang\
 $python\
+[ ](fg:#004080 bg:#0055aa)\
+$nix_shell\
 [ ](fg:#002b55 bg:#004080)\
 $cmd_duration\
 [ ](fg:#a3aed2 bg:#002b55)\
@@ -77,36 +78,41 @@ style = '#00aaaa'
 
 [python]
 symbol = ''
-style = 'fg:#00aaaa bg:#002b55'
-format = '[[ $symbol ($version)](fg:#00aaaa bg:#002b55)]($style)'
+style = 'fg:#00aaaa bg:#004080'
+format = '[[ $symbol ($version)](fg:#00aaaa bg:#0055aa)]($style)'
 
 [nodejs]
 symbol = ""
-style = 'fg:#00aaaa bg:#002b55'
-format = '[[ $symbol ($version)](fg:#00aaaa bg:#002b55)]($style)'
+style = 'fg:#00aaaa bg:#004080'
+format = '[[ $symbol ($version)](fg:#00aaaa bg:#0055aa)]($style)'
 
 [golang]
 symbol = ""
-style = 'fg:#00aaaa bg:#002b55'
-format = '[[ $symbol ($version)](fg:#00aaaa bg:#002b55)]($style)'
+style = 'fg:#00aaaa bg:#004080'
+format = '[[ $symbol ($version)](fg:#00aaaa bg:#0055aa)]($style)'
 
 [lua]
 symbol = ""
-style = 'fg:#00aaaa bg:#002b55'
-format = '[[ $symbol ($version)](fg:#00aaaa bg:#002b55)]($style)'
+style = 'fg:#00aaaa bg:#004080'
+format = '[[ $symbol ($version)](fg:#00aaaa bg:#0055aa)]($style)'
 
-[time]
-disabled = false
-time_format = "%R"
-style = "bg:#00aaaa"
-format = '[[   $time](fg:#394260 bg:#a3aed2)]($style)'
-
-[character]
-success_symbol = '[❯❯❯](bold #00ffff)'
-error_symbol = '[❯❯❯](bold red)'
+[nix_shell]
+symbol = "❄️"
+style = '#00aaaa bg:#004080'
+format = '[[ $symbol devbox](fg:#00aaaa bg:#004080)]($style)'
 
 [cmd_duration]
 min_time = 1
 style = 'fg:#00aaaa bg:#002b55'
 format = "[  $duration]($style)"
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:#00aaaa"
+format = '[[   $time ](fg:#394260 bg:#a3aed2)]($style)'
+
+[character]
+success_symbol = '[❯❯❯](bold #00ffff)'
+error_symbol = '[❯❯❯](bold red)'
 
