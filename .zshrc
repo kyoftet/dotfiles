@@ -1,6 +1,19 @@
+# core
 alias ls='ls -FG'
 alias ll='ls -alFG'
 alias c='clear'
+alias ..='cd ../'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias md='mkdir'
+alias t='touch'
+alias rd='rmdir'
+alias rm -rf='rr'
+alias s='source'
+
+# homebrew
+alias hb='homebrew'
+alias hbi='homebrew install'
 
 # git
 autoload -Uz vcs_info
@@ -14,11 +27,11 @@ precmd () { vcs_info }
 
 # git alias
 alias ga='git add'
-alias gc='git commit'
+alias gc='git commit -m'
 alias gp='git push'
 alias gs='git status'
 alias gb='git branch'
-alias gco='git checkout'
+alias gC='git checkout'
 alias gl='git log'
 alias gd='git diff'
 
@@ -36,5 +49,10 @@ alias vi='nvim'
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 
+# devbox
+alias dv='devbox'
+alias dvs='devbox shell'
+
+# import local .zshrc
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
