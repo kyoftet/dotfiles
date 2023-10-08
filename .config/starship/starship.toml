@@ -102,8 +102,8 @@ style = "bg:#00aaaa"
 format = '[[   $time](fg:#394260 bg:#a3aed2)]($style)'
 
 [character]
-success_symbol = '[❯❯](bold #00ffff)'
-error_symbol = '[❯❯](bold red)'
+success_symbol = '[❯❯❯](bold #00ffff)'
+error_symbol = '[❯❯❯](bold red)'
 
 [cmd_duration]
 min_time = 1
