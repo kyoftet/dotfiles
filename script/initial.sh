@@ -43,7 +43,7 @@ echo -------- Finish: git setting --------
 cd ~/Downloads
 git clone git@github.com:asmagill/hs._asm.spaces.git
 cd hs._asm.spaces
-make install
+make install-universal
 cd ../
 rm -rf hs._asm.spaces
 echo -------- Finish: hammerspoon setting --------
