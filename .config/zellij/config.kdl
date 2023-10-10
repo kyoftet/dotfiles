@@ -11,16 +11,16 @@ keybinds clear-defaults=true {
         bind "Ctrl l" { SwitchToMode "Normal"; }
     }
     resize {
-        bind "h" "Left" { Resize "Increase Left"; }
-        bind "j" "Down" { Resize "Increase Down"; }
-        bind "k" "Up" { Resize "Increase Up"; }
-        bind "l" "Right" { Resize "Increase Right"; }
+        bind "h" { Resize "Increase Left"; }
+        bind "j" { Resize "Increase Down"; }
+        bind "k" { Resize "Increase Up"; }
+        bind "l" { Resize "Increase Right"; }
     }
     pane {
-        bind "h" "Left" { MoveFocus "Left"; }
-        bind "l" "Right" { MoveFocus "Right"; }
-        bind "j" "Down" { MoveFocus "Down"; }
-        bind "k" "Up" { MoveFocus "Up"; }
+        bind "h" { MoveFocus "Left"; }
+        bind "l" { MoveFocus "Right"; }
+        bind "j" { MoveFocus "Down"; }
+        bind "k" { MoveFocus "Up"; }
         bind "d" { NewPane "Down"; SwitchToMode "Locked"; }
         bind "r" { NewPane "Right"; SwitchToMode "Locked"; }
         bind "x" { CloseFocus; SwitchToMode "Locked"; }
@@ -28,17 +28,17 @@ keybinds clear-defaults=true {
     }
     tab {
         bind "r" { SwitchToMode "RenameTab"; TabNameInput 0; }
-        bind "h" "Left" "Up" "k" { GoToPreviousTab; }
-        bind "l" "Right" "Down" "j" { GoToNextTab; }
+        bind "h" { GoToPreviousTab; }
+        bind "l" { GoToNextTab; }
         bind "n" { NewTab; SwitchToMode "Locked"; }
         bind "x" { CloseTab; SwitchToMode "Locked"; }
     }
     move {
-        bind "m" "Tab" { MovePane; }
+        bind "m" { MovePane; }
     }
     search {
-        bind "j" "Down" { ScrollDown; }
-        bind "k" "Up" { ScrollUp; }
+        bind "j" { ScrollDown; }
+        bind "k" { ScrollUp; }
         bind "d" { HalfPageScrollDown; }
         bind "u" { HalfPageScrollUp; }
         bind "n" { Search "down"; }
@@ -49,15 +49,20 @@ keybinds clear-defaults=true {
     }
     shared_except "locked" {
         bind "Ctrl l" { SwitchToMode "Locked"; }
-        bind "Ctrl p" { NewPane; }
+        bind "Enter" "Esc" { SwitchToMode "Locked"; }
+    }
+    shared_among "locked" {
+        bind "Ctrl r" { NewPane "Right"; }
+        bind "Ctrl d" { NewPane "Down"; }
+        bind "Alt p" { FocusNextPane; }
         bind "Ctrl t" { NewTab; }
-        bind "Alt p" { MovePane; }
-        bind "Alt t" { GoToNextTab; }
+        bind "Alt m" { GoToNextTab; }
+        bind "Alt n" { GoToPreviousTab; }
         bind "Alt h" { Resize "Increase Left"; }
         bind "Alt j" { Resize "Increase Down"; }
         bind "Alt k" { Resize "Increase Up"; }
         bind "Alt l" { Resize "Increase Right"; }
-        bind "Enter" "Esc" { SwitchToMode "Locked"; }
+
     }
 }
 plugins {
