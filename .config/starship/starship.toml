@@ -47,8 +47,6 @@ format = '[ $path ]($style)[$read_only]($read_only_style)'
 
 [git_branch]
 symbol = ' '
-truncation_length = 4
-truncation_symbol = ''
 style = 'fg:#00aaaa bg:#004080'
 format = '[$symbol $branch(:$remote_branch) ]($style)'
 
