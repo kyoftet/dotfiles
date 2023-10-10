@@ -55,8 +55,8 @@ eval "$(starship init zsh)"
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 
 # devbox
-alias dv='devbox'
-alias dvs='devbox shell'
+alias db='devbox'
+alias dbs='devbox shell'
 
 # import local .zshrc
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
