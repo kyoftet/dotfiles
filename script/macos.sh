@@ -4,7 +4,7 @@
 # スリープさせない
 sudo pmset -a disablesleep 1
 # パワーナップをオフにする
-sudo pmset -a powenap 0
+sudo pmset -a powernap 0
 # スクロールバーを常時表示する
 defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 # ディスプレイをオフにしない
@@ -41,8 +41,6 @@ defaults write NSGlobalDomain com.apple.springing.delay -float 0
 defaults write NSGlobalDomain com.apple.springing.enabled -bool true
 # コンソールアプリケーションの画面サイズ変更を高速にする
 defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
-# GoogleのパブリックDNSを使用
-networksetup -setdnsservers Wi-Fi 2001:4860:4860::8844 2001:4860:4860::8888 8.8.4.4 8.8.8.8
 
 # animation
 # ウィンドウを開閉するときのアニメーションを無効
