@@ -48,21 +48,20 @@ keybinds clear-defaults=true {
         bind "o" { SearchToggleOption "WholeWord"; }
     }
     shared_except "locked" {
-        bind "Ctrl l" { SwitchToMode "Locked"; }
-        bind "Enter" "Esc" { SwitchToMode "Locked"; }
+        bind "Ctrl l" "Enter" "Esc" { SwitchToMode "Locked"; }
     }
     shared_among "locked" {
-        bind "Ctrl r" { NewPane "Right"; }
-        bind "Ctrl d" { NewPane "Down"; }
+        bind "Alt r" { NewPane "Right"; }
+        bind "Alt d" { NewPane "Down"; }
         bind "Alt p" { FocusNextPane; }
-        bind "Ctrl t" { NewTab; }
+        bind "Alt f" { ToggleFloatingPanes; }
+        bind "Alt t" { NewTab; }
         bind "Alt m" { GoToNextTab; }
         bind "Alt n" { GoToPreviousTab; }
         bind "Alt h" { Resize "Increase Left"; }
         bind "Alt j" { Resize "Increase Down"; }
         bind "Alt k" { Resize "Increase Up"; }
         bind "Alt l" { Resize "Increase Right"; }
-
     }
 }
 plugins {
@@ -83,7 +82,7 @@ plugins {
 // Options:
 //   - true
 //   - false (Default)
-simplified_ui true
+// simplified_ui true
 
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
