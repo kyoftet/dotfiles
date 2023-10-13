@@ -37,6 +37,7 @@ echo "[user]
 git remote set-url origin git@github.com:$GITHUB_USER_NAME/dotfiles.git
 ssh-keygen -t ed25519 -C "$GITHUB_USER_MAIL"
 cat ~/.ssh/id_ed25519.pub
+echo Github に ssh key を登録してください
 sleep 45
 echo -------- Finish: git setting --------
 
