@@ -13,6 +13,7 @@ alias e='exit'
 alias vshell='vi ~/.zshrc'
 alias sshell='source ~/.zshrc'
 alias cddot='cd ~/dotfiles'
+alias lg='lazygit'
 
 # homebrew
 alias b='brew'

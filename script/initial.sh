@@ -8,6 +8,7 @@ brew install starship
 brew install neovim
 brew install zellij
 brew install hammerspoon
+brew install lazygit
 
 brew install zsh-completions
 brew install zsh-autosuggestions
