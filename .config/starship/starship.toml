@@ -12,6 +12,7 @@ $git_metrics\
 [](fg:#006ad5)\
 $fill\
 [](fg:#006ad5)\
+$docker_context\
 [ ](fg:#0055aa bg:#006ad5)\
 $nodejs\
 $golang\
@@ -46,7 +47,7 @@ read_only_style = 'fg:#f7768e bg:#002b55'
 format = '[ $path ]($style)[$read_only]($read_only_style)'
 
 [git_branch]
-symbol = ' '
+symbol = ' '
 style = 'fg:#00aaaa bg:#004080'
 format = '[$symbol $branch(:$remote_branch) ]($style)'
 
@@ -73,6 +74,11 @@ disabled = false
 [fill]
 symbol = '─'
 style = '#00aaaa'
+
+[docker_context]
+symbol = ''
+style = 'fg:# bg:#'
+format = '[[ $symbol docker](fg:#00aaaa bg:#006ad5)]($style)'
 
 [python]
 symbol = ''
