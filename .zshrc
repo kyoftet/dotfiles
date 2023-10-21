@@ -43,7 +43,8 @@ alias gf='git fetch'
 
 # docker compose
 alias dc='docker compose'
-alias d-c='docker compose'
+alias d-c='docker-compose'
+alias dcdel='docker-compose down --rmi all --volumes --remove-orphans'
 
 # alacritty
 export PATH=$PATH:~/.config/alacritty/bin
