@@ -14,6 +14,8 @@ alias vshell='vi ~/.zshrc'
 alias sshell='source ~/.zshrc'
 alias cddot='cd ~/dotfiles'
 alias lg='lazygit'
+alias checkport='lsof -i -P | grep'
+alias kl='kill -9'
 
 # homebrew
 alias b='brew'
@@ -43,7 +45,7 @@ alias gf='git fetch'
 
 # docker compose
 alias dc='docker compose'
-alias d-c='docker-compose'
+alias dcp='docker compose --profile'
 alias dcdel='docker-compose down --rmi all --volumes --remove-orphans'
 
 # alacritty
