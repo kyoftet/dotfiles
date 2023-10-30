@@ -19,14 +19,13 @@ brew install --cask font-hack-nerd-font
 
 brew install --cask alacritty
 brew install --cask karabiner-elements
-brew install --cask arc
 brew install --cask clipy
-brew install --cask google-chrome
 brew install --cask microsoft-edge
 brew install --cask visual-studio-code
 brew install --cask slack
 brew install --cask docker
 brew install --cask appcleaner
+brew install --cask vivaldi
 echo ------- Finish: application install --------
 
 cd ~/.dotfiles
