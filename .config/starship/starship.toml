@@ -17,6 +17,8 @@ $docker_context\
 $nodejs\
 $golang\
 $python\
+$rust\
+$lua\
 [ ](fg:#004080 bg:#0055aa)\
 $nix_shell\
 [ ](fg:#002b55 bg:#004080)\
@@ -79,6 +81,11 @@ style = '#00aaaa'
 symbol = ''
 style = 'fg:# bg:#'
 format = '[[ $symbol docker](fg:#00aaaa bg:#006ad5)]($style)'
+
+[rust]
+symbol = ''
+style = 'fg:#00aaaa bg:#004080'
+format = '[[ $symbol ($version)](fg:#00aaaa bg:#0055aa)]($style)'
 
 [python]
 symbol = ''
