@@ -12,6 +12,6 @@ vim.keymap.set('n', '<leader>j', '<C-w>j', {silent=true})
 vim.keymap.set('n', '<leader>k', '<C-w>k', {silent=true})
 vim.keymap.set('n', '<leader>l', '<C-w>l', {silent=true})
 
-vim.keymap.set('n', '<S-j>', '5j', {silent=true})
-vim.keymap.set('n', '<S-k>', '5k', {silent=true})
+vim.keymap.set('n', '<C-j>', '5j', {silent=true})
+vim.keymap.set('n', '<C-k>', '5k', {silent=true})
 

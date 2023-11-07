@@ -63,7 +63,7 @@ require('lazy').setup({
       require('mini.completion').setup({})
       require("mason-lspconfig").setup_handlers({
         function(server_name)
-          lspconfig[server_name].setup(opts)
+          lspconfig[server_name].setup({})
         end,
         ["vtsls"] = function()
           lspconfig["vtsls"].setup({})
@@ -72,8 +72,8 @@ require('lazy').setup({
 
       vim.api.nvim_create_autocmd("LspAttach", {
         callback = function(_)
-          vim.keymap.set('n', 'K',  '<cmd>lua vim.lsp.buf.hover()<CR>')
-          vim.keymap.set('n', 'gf', '<cmd>lua vim.lsp.buf.formatting()<CR>')
+          vim.keymap.set('n', 'gk', '<cmd>lua vim.lsp.buf.hover()<CR>')
+          vim.keymap.set('n', 'gf', '<cmd>lua vim.lsp.buf.format()<CR>')
           vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>')
           vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
           vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>')
@@ -97,8 +97,8 @@ require('lazy').setup({
     'nvim-telescope/telescope.nvim', tag = '0.1.3',
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
-      vim.keymap.set('n', '<leader><leader>p', ':Telescope find_files<cr>')
-      vim.keymap.set('n', '<leader><leader>f', ':Telescope live_grep<cr>')
+      vim.keymap.set('n', '<leader>p', ':Telescope find_files<cr>')
+      vim.keymap.set('n', '<leader>f', ':Telescope live_grep<cr>')
     end
   }
 })
