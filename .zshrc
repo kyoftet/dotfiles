@@ -18,8 +18,8 @@ alias checkport='lsof -i -P | grep'
 alias kl='kill -9'
 
 # homebrew
-alias b='brew'
-alias bi='brew install'
+alias hb='brew'
+alias hbi='brew install'
 
 # git
 fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
@@ -50,7 +50,7 @@ alias gf='git fetch'
 # docker compose
 alias dc='docker compose'
 alias dcp='docker compose --profile'
-alias dcdel='docker-compose down --rmi all --volumes --remove-orphans'
+alias dcdel='docker compose down --rmi all --volumes --remove-orphans'
 
 # alacritty
 export PATH=$PATH:~/.config/alacritty/bin
@@ -68,6 +68,7 @@ alias vstarship='nvim ~/.config/starship/starship.toml'
 
 # zellij
 alias vzellij='nvim ~/.config/zellij/config.kdl'
+alias zellij='bash <(curl -L zellij.dev/launch)'
 
 # devbox
 alias db='devbox'
