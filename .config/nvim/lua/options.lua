@@ -17,3 +17,4 @@ vim.opt.writebackup = false
 vim.opt.undofile = false
 vim.opt.helplang = 'ja'
 vim.opt.matchtime = 1
+vim.opt.clipboard = 'unnamedplus'
