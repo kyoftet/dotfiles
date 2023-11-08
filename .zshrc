@@ -38,8 +38,8 @@ SPROMPT="correct: $RED%R$DEFAULT -> $GREEN%r$DEFAULT ? [Yes/No/Abort/Edit] => "
 # alias
 alias ga='git add'
 alias gc='git commit -m'
-alias gp='git push'
-alias gP='git pull'
+alias gP='git push'
+alias gp='git pull'
 alias gs='git status'
 alias gb='git branch'
 alias gC='git checkout'
