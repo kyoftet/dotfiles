@@ -29,7 +29,7 @@ brew install --cask vivaldi
 echo ------- Finish: application install --------
 
 cd ~/.dotfiles
-script/symbolic.sh
+script/mac/symbolic.sh
 echo "[user]
 	name = $GITHUB_USER_NAME
 	email = $GITHUB_USER_MAIL
@@ -50,7 +50,7 @@ rm -rf hs._asm.spaces
 echo -------- Finish: hammerspoon setting --------
 
 cd ~/dotfiles
-script/macos.sh
+script/mac/macos.sh
 echo -------- Finish: mac setting --------
 
 cd ~/dotfiles
