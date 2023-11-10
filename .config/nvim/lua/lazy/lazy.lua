@@ -32,6 +32,11 @@ require('lazy').setup({
     'nvim-tree/nvim-tree.lua',
     config = function()
       vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>', { silent = true })
+      vim.api.nvim_create_autocmd({ "VimEnter" }, {
+        callback = function(_)
+          require("nvim-tree.api").tree.open()
+        end
+      })
     end
   },
   -- statusline
