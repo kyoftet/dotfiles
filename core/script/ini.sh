@@ -1,8 +1,23 @@
 #!/bin/bash
 cd
-source ./.env
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+sudo apt-get install build-essential
+brew install gcc
+
+while true; do
+  read -p "Your Github Name: " input_name
+  read -p "Your Github Email Address: " input_mail_address
+  read -p "Correct? [y/n]: " validation
+  case $validation in
+    [yY]|[yY][eE][sS]) echo "continue"; break ;;
+    [nN]|[nN][oO]) echo "please input again";;
+    *) echo "please input again";;
+  esac
+done
+export GITHUB_USER_MAIL=$input_name
+export GITHUB_USER_MAIL=$input_mail_address
 
 # git
 echo "[user]
@@ -41,7 +56,7 @@ select choice in "${options[@]}"; do
       wsl/script/symbolic.sh
       ;;
     "linux")
-      echo "finish!!!"
+      linux/script/symbolic.sh
       ;;
     *)
       echo "only mac or wsl or linux"
