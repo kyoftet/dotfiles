@@ -1,9 +1,11 @@
-# import local .zshrc
-[ -f ~/.zshrc.local ] && source ~/.zshrc.local
+# import linux .zshrc
+[ -f ~/.zshrc.linux ] && source ~/.zshrc.linux
 # import mac .zshrc
 [ -f ~/.zshrc.mac ] && source ~/.zshrc.mac
 # import wsl .zshrc
 [ -f ~/.zshrc.wsl ] && source ~/.zshrc.wsl
+# import local .zshrc
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
 # core
 alias ls='ls -FG'
@@ -25,6 +27,7 @@ alias checkport='lsof -i -P | grep'
 alias kl='kill -9'
 
 # homebrew
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 alias hb='brew'
 alias hbi='brew install'
 
