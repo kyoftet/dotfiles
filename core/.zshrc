@@ -1,3 +1,10 @@
+# import local .zshrc
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
+# import mac .zshrc
+[ -f ~/.zshrc.mac ] && source ~/.zshrc.mac
+# import wsl .zshrc
+[ -f ~/.zshrc.wsl ] && source ~/.zshrc.wsl
+
 # core
 alias ls='ls -FG'
 alias ll='ls -alFG'
@@ -52,11 +59,6 @@ alias dc='docker compose'
 alias dcp='docker compose --profile'
 alias dcdel='docker compose down --rmi all --volumes --remove-orphans'
 
-# alacritty
-export PATH=$PATH:~/.config/alacritty/bin
-alias valacritty='nvim ~/.config/alacritty/alacritty.yml'
-alias to='~/.config/alacritty/bin/toggle_opacity.sh'
-
 # neovim
 alias vi='nvim'
 alias vneovim='nvim ~/.config/nvim'
@@ -73,7 +75,4 @@ alias zellij='bash <(curl -L zellij.dev/launch)'
 # devbox
 alias db='devbox'
 alias dbs='devbox shell'
-
-# import local .zshrc
-[ -f ~/.zshrc.local ] && source ~/.zshrc.local
 

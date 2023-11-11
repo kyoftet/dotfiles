@@ -1,0 +1,4 @@
+alias to='~/dotfiles/wsl/toggle_opacity.sh'
+
+alias zellij='bash <(curl -L zellij.dev/launch)'
+
