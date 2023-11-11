@@ -16,8 +16,6 @@ while true; do
       break ;;
     [nN]|[nN][oO])
       echo "please input again";;
-    *)
-      echo "please input again";;
   esac
 done
 export GITHUB_USER_MAIL=$input_name
