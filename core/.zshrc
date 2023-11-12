@@ -27,7 +27,6 @@ alias checkport='lsof -i -P | grep'
 alias kl='kill -9'
 
 # homebrew
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 alias hb='brew'
 alias hbi='brew install'
 
