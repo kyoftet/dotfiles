@@ -7,63 +7,46 @@ sudo apt-get install build-essential
 brew install gcc
 
 while true; do
-  read -p "Your Github Name: " input_name
-  read -p "Your Github Email Address: " input_mail_address
+  read -p "your github user name: " input_name
+  read -p "your github email address: " input_mail_address
+
   read -p "Correct? [y/n]: " validation
+
   case $validation in
     [yY]|[yY][eE][sS])
-      echo "continue";
+      echo "Continue...";
       break ;;
     [nN]|[nN][oO])
-      echo "please input again";;
+      echo "please input again!";;
+    *) 
+      echo "faild."
+      echo "please input again!"
   esac
 done
-export GITHUB_USER_MAIL=$input_name
+
+export GITHUB_USER_NAME=$input_name
 export GITHUB_USER_MAIL=$input_mail_address
 
 # git
 echo "[user]
 	name = $GITHUB_USER_NAME
 	email = $GITHUB_USER_MAIL
-" >> ~/.gitconfig.localbrew inistll git
+" >> ~/.gitconfig.local
 brew install git
 brew install gh
 gh auth login
-git clone git@github.com:$GITHUB_USER_NAME/dotfiles.git
+git clone -b feat-focus-on-config git@github.com:kyof/dotfiles.git
 
 curl -fsSL https://get.jetpack.io/devbox | bash
 
-brew install git
 brew install starship
 brew install neovim
 brew install zellij
-brew install hammerspoon
 brew install lazygit
 
 brew install zsh-completions
 brew install zsh-autosuggestions
 brew install zsh-syntax-highlighting
 
-cd ~/.dotfiles
-core/script/symbolic.sh
-
-PS3="Please select your OS: "
-options=("mac", "wsl", "linux")
-select choice in "${options[@]}"; do
-  case $choice in
-    "MacOS")
-      mac/script/ini.sh
-      ;;
-    "WSL")
-      wsl/script/symbolic.sh
-      ;;
-    "linux")
-      linux/script/symbolic.sh
-      ;;
-    *)
-      echo "only mac or wsl or linux"
-      cd
-      ;;
-  esac
-done
-
+cd ~/dotfiles
+script/utils/symbolic.sh "linux"
