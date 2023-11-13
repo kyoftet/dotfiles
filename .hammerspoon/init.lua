@@ -1,4 +1,3 @@
-
 local application = require("hs.application")
 local spaces = require("hs.spaces")
 

@@ -1,0 +1,5 @@
+# alacritty
+export PATH=$PATH:~/.config/alacritty/bin
+alias valacritty='nvim ~/.config/alacritty/alacritty.yml'
+alias to='~/.config/alacritty/bin/toggle_opacity.sh'
+

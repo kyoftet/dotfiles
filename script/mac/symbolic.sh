@@ -2,11 +2,9 @@
 
 for f in .??*; do
   [[ $f == ".git" ]] && continue
-  [[ $f == ".env" ]] && continue
-  [[ $f == ".env.sample" ]] && continue
   [[ $f == ".gitignore" ]] && continue
-  ln -snfv ${PWD}/"$f" ~/
+  [[ $f == ".zshrc.linux" ]] && continue
 done
 
-source ~/.zshrc 
+source ~/.zshrc
 
