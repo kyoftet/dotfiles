@@ -1,12 +1,8 @@
 #!/bin/zsh
-cd
 
 # homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 install_cli_app=(
-  gcc
   git
-  gh
   starship
   neovim
   zellij
@@ -67,8 +63,6 @@ echo "[user]
   name = $GITHUB_USER_NAME
   email = $GITHUB_USER_MAIL
 " >> ~/.gitconfig.local
-gh auth login
-git clone -b feat-focus-on-config git@github.com:kyof/dotfiles.git
 echo ======== finish setup git ========
 
 # hammerspoon
