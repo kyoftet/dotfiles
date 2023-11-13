@@ -44,9 +44,6 @@ while true; do
       break ;;
     [nN]|[nN][oO])
       echo "please input again!";;
-    *) 
-      echo "faild."
-      echo "please input again!"
   esac
   sleep 1;
 done
