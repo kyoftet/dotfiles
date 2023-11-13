@@ -26,12 +26,14 @@ echo ======== finish brew install ========
 
 # zsh
 sudo chsh -s "$(echo $SHELL)"
+sleep 10
 
 # devbox
 curl -fsSL https://get.jetpack.io/devbox | bash
 echo ======== finish install devbox ========
 
 # git
+read -p "aaa"
 while true; do
   read -p "your github user name: " input_name
   read -p "your github email address: " input_mail_address
@@ -45,7 +47,6 @@ while true; do
     [nN]|[nN][oO])
       echo "please input again!";;
   esac
-  sleep 1;
 done
 export GITHUB_USER_NAME=$input_name
 export GITHUB_USER_MAIL=$input_mail_address
