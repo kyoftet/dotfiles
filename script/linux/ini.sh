@@ -25,7 +25,7 @@ done
 echo ======== finish brew install ========
 
 # zsh
-chsh -s "$(echo $SHELL)"
+sudo chsh -s "$(echo $SHELL)"
 
 # devbox
 curl -fsSL https://get.jetpack.io/devbox | bash
