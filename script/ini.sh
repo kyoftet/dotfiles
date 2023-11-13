@@ -4,9 +4,9 @@ cd
 # homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 if [ "$(uname)" != "Darwin" ]; then
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-sudo apt-get install build-essential
-brew install gcc
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  sudo apt-get install build-essential
+  brew install gcc
 fi
 
 brew install gh
