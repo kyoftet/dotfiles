@@ -48,6 +48,7 @@ while true; do
       echo "faild."
       echo "please input again!"
   esac
+  sleep 1;
 done
 export GITHUB_USER_NAME=$input_name
 export GITHUB_USER_MAIL=$input_mail_address
