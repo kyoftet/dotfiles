@@ -33,7 +33,7 @@ curl -fsSL https://get.jetpack.io/devbox | bash
 echo ======== finish install devbox ========
 
 # git
-read -p "aaa"
+read -p "aaa" aaa
 while true; do
   read -p "your github user name: " input_name
   read -p "your github email address: " input_mail_address
