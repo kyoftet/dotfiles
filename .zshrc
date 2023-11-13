@@ -2,8 +2,6 @@
 [ -f ~/.zshrc.linux ] && source ~/.zshrc.linux
 # import mac .zshrc
 [ -f ~/.zshrc.mac ] && source ~/.zshrc.mac
-# import wsl .zshrc
-[ -f ~/.zshrc.wsl ] && source ~/.zshrc.wsl
 # import local .zshrc
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 

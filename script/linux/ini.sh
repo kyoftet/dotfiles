@@ -6,6 +6,7 @@ cd
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 sudo apt-get install build-essential
 install_app=(
+  zsh
   gcc
   git
   gh
@@ -22,6 +23,9 @@ do
   brew install $app
 done
 echo ======== finish brew install ========
+
+# zsh
+chsh -s "$(echo $SHELL)"
 
 # devbox
 curl -fsSL https://get.jetpack.io/devbox | bash
@@ -52,7 +56,7 @@ echo "[user]
   email = $GITHUB_USER_MAIL
 " >> ~/.gitconfig.local
 gh auth login
-git clone -b feat-focus-on-config git@github.com:kyof/dotfiles.git
+git clone git@github.com:kyof/dotfiles.git
 echo ======== finish setup git ========
 
 # symbolic link 
