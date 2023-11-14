@@ -61,8 +61,8 @@ echo ======== finish setup git ========
 
 # symbolic link 
 cd ~/dotfiles
-script/utils/symbolic.sh
-echo ======== finish setup git ========
+script/linux/symbolic.sh
+echo ======== finish create symbolic link ========
 
 echo ============================
 echo ======== finish all ========
