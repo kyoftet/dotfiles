@@ -1,28 +1,28 @@
-# How To Use (MacOS)
+# How To Use
 ```
+-------- MacOSの場合、下記を実行してください --------
 設定 > セキュリティとプライバシー > フルディスクアクセス に ターミナル に追加
 ```
 ```
-xcode-select --install
-git clone https://github.com/kyoF/dotfiles.git
-cd dotfiles
-cp .env.sample .env
--- edit .env file --
-script/mac/initial.sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/kyoF/dotfiles/main/script/ini.sh)"
 ```
 
-## Manually Setting
+# Manually Setting
+## MacOS
 * 設定 > セキュリティとプライバシー > フルディスクアクセス の Alacritty にチェック
 * 設定 > 通知と集中モード > 通知が必要ない項目の通知をOFF
 * 設定 > バッテリー > 電源アダプタ > ディスプレイをオフにする を 15分後 に設定
+## Windows
+* 色々
  
-* ローカル特有の設定ができるファイル
+# Remarks
+* ローカルの設定ができるファイル
   * .zshrc.local
   * .gitconfig.local
 
-
-# How To Use on Windows(WSL)
-```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/kyoF/dotfiles/main/script/linux/ini.sh)"
-```
+# ToDo
+* scriptディレクトリの整理
+* Windows
+  * alacritty.ymlの管理
+  * toコマンドの参照先
 
