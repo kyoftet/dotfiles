@@ -21,7 +21,6 @@
   * .gitconfig.local
 
 # ToDo
-* scriptディレクトリの整理
 * Windows
   * alacritty.ymlの管理
   * toコマンドの参照先

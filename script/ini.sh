@@ -32,9 +32,9 @@ git clone https://github.com/kyoF/dotfiles.git
 # symbolic link 
 cd dotfiles
 if [ "$(uname)" == "Darwin" ]; then
-  ./script/ln_mac.sh
+  ./script/mac/mac.sh
 else
-  ./script/ln_linux.sh
+  ./script/linux/ln.sh
 fi
 echo =============================================
 echo ======== finish create symbolic link ========
@@ -120,7 +120,7 @@ echo ==================================
 
 if [ "$(uname)" == "Darwin" ]; then
   # hammerspoon
-  cd $HOME/Downloads
+  cE/Downloads
   git clone git@github.com:asmagill/hs._asm.spaces.git
   cd hs._asm.spaces
   make install-universal
