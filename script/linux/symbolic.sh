@@ -5,6 +5,7 @@ for f in .??*; do
   [[ $f == ".gitignore" ]] && continue
   [[ $f == ".zshrc.mac" ]] && continue
   [[ $f == ".hammerspoon" ]] && continue
+  ln -snfv ${PWD}/"$f" ~/
 done
 
 source ~/.zshrc
