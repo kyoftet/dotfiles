@@ -1,7 +1,12 @@
-#!/bin/zsh
+#!/bin/bash
+cd
+
+# homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 # homebrew
 install_cli_app=(
+  zsh
   git
   starship
   neovim
@@ -40,30 +45,31 @@ curl -fsSL https://get.jetpack.io/devbox | bash
 echo ======== finish install devbox ========
 
 # git
-while true; do
-  read -p "your github user name: " input_name
-  read -p "your github email address: " input_mail_address
-
-  read -p "Correct? [y/n]: " validation
-
-  case $validation in
-    [yY]|[yY][eE][sS])
-      echo "Continue...";
-      break ;;
-    [nN]|[nN][oO])
-      echo "please input again!";;
-    *) 
-      echo "faild."
-      echo "please input again!"
-  esac
-done
-export GITHUB_USER_NAME=$input_name
-export GITHUB_USER_MAIL=$input_mail_address
 echo "[user]
-  name = $GITHUB_USER_NAME
-  email = $GITHUB_USER_MAIL
+  name = $1
+  email = $2
+" >> ~/.gitconfig
+echo "[user]
+  name = $1
+  email = $2
 " >> ~/.gitconfig.local
+git clone git@github.com:kyoF/dotfiles.git
 echo ======== finish setup git ========
+
+# vscode
+cd ~/dotfiles
+./vscode/vscode.sh
+echo ======== finish setup vscode ========
+
+# symbolic link 
+cd ~/dotfiles
+./script/mac/symbolic.sh
+echo ======== finish setup dotfiles ========
+
+# macos
+cd ~/dotfiles
+script/mac/macos.sh
+echo ======== Finish setup macos ========
 
 # hammerspoon
 cd ~/Downloads
@@ -73,21 +79,6 @@ make install-universal
 cd ../
 rm -rf hs._asm.spaces
 echo ======== Finish setup hammerspoon ========
-
-# vscode
-cd ~/dotfiles
-script/vscode.sh
-echo ======== finish setup vscode ========
-
-# symbolic link 
-cd ~/dotfiles
-script/utils/symbolic.sh
-echo ======== finish setup dotfiles ========
-
-# macos
-cd ~/dotfiles
-script/mac/macos.sh
-echo ======== Finish setup macos ========
 
 echo ============================
 echo ======== finish all ========
