@@ -1,10 +1,7 @@
-#!/bin/bash
-cd
+#!/bin/zsh
 
 # homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-
-# homebrew
 install_cli_app=(
   zsh
   git
@@ -15,7 +12,6 @@ install_cli_app=(
   zsh-completions
   zsh-autosuggestions
   zsh-syntax-highlighting
-  brew install hammerspoon
 )
 for app in ${install_cli_app[@]};
 do
@@ -33,44 +29,47 @@ install_gui_app=(
   docker
   appcleaner
   vivaldi
+  hammerspoon
 )
 for app in ${install_gui_app[@]};
 do
   brew install --cask $app
 done
+echo =====================================
 echo ======== finish brew install ========
+echo =====================================
 
 # devbox
 curl -fsSL https://get.jetpack.io/devbox | bash
+echo =======================================
 echo ======== finish install devbox ========
+echo =======================================
 
 # git
+while true; do
+  read -p "your github user name: " name
+  read -p "your github email address: " mail
+
+  read -p "Correct? [y/n]: " validation
+
+  case $validation in
+    [yY]|[yY][eE][sS])
+      echo "Continue...";
+      break ;;
+    [nN]|[nN][oO])
+      echo "please input again!";;
+    *) 
+      echo "faild."
+      echo "please input again!"
+  esac
+done
 echo "[user]
-  name = $1
-  email = $2
-" >> ~/.gitconfig
-echo "[user]
-  name = $1
-  email = $2
+  name = $name
+  email = $mail
 " >> ~/.gitconfig.local
-ssh-keygen -t ed25519 -C "kyof-dotfiles"
-git clone git@github.com:kyoF/dotfiles.git
+echo ==================================
 echo ======== finish setup git ========
-
-# vscode
-cd ~/dotfiles
-./vscode/vscode.sh
-echo ======== finish setup vscode ========
-
-# symbolic link 
-cd ~/dotfiles
-./script/mac/symbolic.sh
-echo ======== finish setup dotfiles ========
-
-# macos
-cd ~/dotfiles
-script/mac/macos.sh
-echo ======== Finish setup macos ========
+echo ==================================
 
 # hammerspoon
 cd ~/Downloads
@@ -79,7 +78,28 @@ cd hs._asm.spaces
 make install-universal
 cd ../
 rm -rf hs._asm.spaces
+echo ==========================================
 echo ======== Finish setup hammerspoon ========
+echo ==========================================
+
+cd ~/dotfiles
+# vscode
+./vscode/vscode.sh
+echo =====================================
+echo ======== finish setup vscode ========
+echo =====================================
+
+# symbolic link 
+./script/mac/symbolic.sh
+echo =======================================
+echo ======== finish setup dotfiles ========
+echo =======================================
+
+# macos
+./script/mac/macos.sh
+echo ====================================
+echo ======== Finish setup macos ========
+echo ====================================
 
 echo ============================
 echo ======== finish all ========

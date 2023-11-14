@@ -21,5 +21,8 @@ script/mac/initial.sh
   * .gitconfig.local
 
 
-# How To Use (Windows)
+# How To Use on Windows(WSL)
+```
+bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/kyoF/dotfiles/main/script/linux/ini.sh)"
+```
 

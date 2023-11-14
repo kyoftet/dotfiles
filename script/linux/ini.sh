@@ -1,11 +1,9 @@
 #!/bin/bash
-cd
 
 # homebrew
-/bin/bash "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 sudo apt-get install build-essential
-
 install_app=(
   gcc
   zsh
@@ -22,19 +20,23 @@ for app in ${install_app[@]};
 do
   brew install $app
 done
-echo ======== finish brew install ========
+echo ===================================
+echo ======== finish setup brew ========
+echo ===================================
 
 # zsh
-sudo chsh -s "$(which zsh)"
+sudo chsh -s "$(which zsh)" $USER
 
 # devbox
 curl -fsSL https://get.jetpack.io/devbox | bash
+echo =======================================
 echo ======== finish install devbox ========
+echo =======================================
 
 # git
 while true; do
-  read -p "your github user name: " input_name
-  read -p "your github email address: " input_mail_address
+  read -p "your github user name: " name
+  read -p "your github email address: " mail
 
   read -p "Correct? [y/n]: " validation
 
@@ -49,19 +51,22 @@ while true; do
       echo "please input again!"
   esac
 done
-export GITHUB_USER_NAME=$input_name
-export GITHUB_USER_MAIL=$input_mail_address
 echo "[user]
-  name = $GITHUB_USER_NAME
-  email = $GITHUB_USER_MAIL
-" >> ~/.gitconfig.local
+  name = $name
+  email = $mail
+" > ~/.gitconfig.local
+cd
 git clone https://github.com/kyoF/dotfiles.git
+echo ==================================
 echo ======== finish setup git ========
+echo ==================================
 
 # symbolic link 
 cd ~/dotfiles
-script/linux/symbolic.sh
+./script/linux/symbolic.sh
+echo =============================================
 echo ======== finish create symbolic link ========
+echo =============================================
 
 echo ============================
 echo ======== finish all ========
