@@ -55,7 +55,7 @@ echo "[user]
   name = $name
   email = $mail
 " > ~/.gitconfig.local
-cd
+cd $HOME
 git clone https://github.com/kyoF/dotfiles.git
 echo ==================================
 echo ======== finish setup git ========
