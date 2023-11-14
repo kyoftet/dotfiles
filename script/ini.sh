@@ -33,9 +33,9 @@ git remote set-url origin git@github.com:kyoF/dotfiles.git
 # symbolic link 
 cd dotfiles
 if [ "$(uname)" == "Darwin" ]; then
-  ./script/ln_linux.sh
-else
   ./script/ln_mac.sh
+else
+  ./script/ln_linux.sh
 fi
 echo =============================================
 echo ======== finish create symbolic link ========
