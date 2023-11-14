@@ -2,7 +2,7 @@
 cd
 
 # homebrew
-bin/bash "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+/bin/bash "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 sudo apt-get install build-essential
 
@@ -25,8 +25,7 @@ done
 echo ======== finish brew install ========
 
 # zsh
-sudo chsh -s "$(echo $SHELL)"
-sleep 10
+sudo chsh -s "$(which zsh)"
 
 # devbox
 curl -fsSL https://get.jetpack.io/devbox | bash
