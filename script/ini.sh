@@ -1,5 +1,12 @@
 #!/bin/bash
 
+function is_mac {
+  if [ "$(uname)" == "Darwin" ]; then
+    return 0
+  fi
+  return 1
+}
+
 # zsh
 is_mac
 if ! [ $? -eq 0 ]; then
@@ -160,11 +167,3 @@ echo ======== reboot shell on 5 second ========
 echo ==========================================
 sleep 5
 exit
-
-function is_mac {
-  if [ "$(uname)" == "Darwin" ]; then
-    return 0
-  fi
-  return 1
-}
-
