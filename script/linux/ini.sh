@@ -34,9 +34,6 @@ echo ===================================
 echo ======== finish setup brew ========
 echo ===================================
 
-# zsh
-chsh -s "$(which zsh)"
-
 # devbox
 curl -fsSL https://get.jetpack.io/devbox | bash
 echo =======================================
