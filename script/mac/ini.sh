@@ -53,6 +53,7 @@ echo "[user]
   name = $1
   email = $2
 " >> ~/.gitconfig.local
+ssh-keygen -t ed25519 -C "kyof-dotfiles"
 git clone git@github.com:kyoF/dotfiles.git
 echo ======== finish setup git ========
 
