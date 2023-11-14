@@ -17,12 +17,13 @@
 * 色々
 ### WSL
 ```.zshrc.local
-# ^Mは`Ctrl+v`->`Ctrl+m`で入力する
+# `^M(改行)`は`Ctrl+v`->`Ctrl+m`で入力する
 export WINDOWS_USERNAME=$(powershell.exe '$env:USERNAME' | sed -e 's/
 //g')
-export WINDOWS_ALACRITTY_PATH=/mnt/c/Users/$WINDOWS_USERNAME/AppData/Roaming/alacritty
+export WINDOWS_HOME=/mnt/c/Users/$WINDOWS_USERNAME
+export WINDOWS_ALACRITTY_PATH=$WINDOWS_HOME/AppData/Roaming/alacritty
 
-alias to='~/.config/alacritty/bin_win/toggle_opacity.sh'
+alias to='~/.config/alacritty/windows/toggle_opacity.sh'
 ```
 ```terminal
 source $HOME/.zshrc
