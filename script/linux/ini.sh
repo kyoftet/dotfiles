@@ -57,7 +57,7 @@ echo "[user]
 " > ~/.gitconfig.local
 cd $HOME
 gh auth login
-git clone https://github.com/kyoF/dotfiles.git
+git clone git@github.com/kyoF/dotfiles.git
 echo ==================================
 echo ======== finish setup git ========
 echo ==================================
