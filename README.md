@@ -22,13 +22,15 @@ export WINDOWS_ALACRITTY_PATH=/mnt/c/Users/$WINDOWS_USERNAME/AppData/Roaming/ala
 
 alias to='~/.config/alacritty/bin_win/toggle_opacity.sh'
 ```
+```terminal
+source $HOME/.zshrc
+mkdir -p $WINDOWS_ALACRITTY_PATH
+mv $HOME/dotfiles/.config/alacritty/windows/alacritty.yml $WINDOWS_ALACRITTY_PATH/alacritty.yml
+ln -snfv $WINDOWS_ALACRITTY_PATH/alacritty.yml $HOME/dotfiles/.config/alacritty/windows/alacritty.yml
+```
  
 # Remarks
 * ローカルの設定ができるファイル
   * .zshrc.local
   * .gitconfig.local
-
-# ToDo
-* Windows
-  * alacritty.ymlの管理
 
