@@ -1,10 +1,11 @@
 # How To Use
 ```
--------- MacOSの場合、下記を実行してください --------
-設定 > セキュリティとプライバシー > フルディスクアクセス に ターミナル に追加
-```
-```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/kyoF/dotfiles/main/script/ini.sh)"
+```
+
+※ MacOSは、下記を実行してください
+```
+設定 > セキュリティとプライバシー > フルディスクアクセス に ターミナル に追加
 ```
 
 # Manually Setting
@@ -17,7 +18,8 @@
 ### WSL
 ```.zshrc.local
 # ^Mは`Ctrl+v`->`Ctrl+m`で入力する
-export WINDOWS_USERNAME=$(powershell.exe '$env:USERNAME' | sed -e 's///g')
+export WINDOWS_USERNAME=$(powershell.exe '$env:USERNAME' | sed -e 's/
+//g')
 export WINDOWS_ALACRITTY_PATH=/mnt/c/Users/$WINDOWS_USERNAME/AppData/Roaming/alacritty
 
 alias to='~/.config/alacritty/bin_win/toggle_opacity.sh'
