@@ -56,6 +56,7 @@ echo "[user]
   email = $mail
 " > ~/.gitconfig.local
 cd $HOME
+gh auth login
 git clone https://github.com/kyoF/dotfiles.git
 echo ==================================
 echo ======== finish setup git ========
@@ -63,6 +64,7 @@ echo ==================================
 
 # symbolic link 
 cd dotfiles
+pwd
 ./script/linux/symbolic.sh
 echo =============================================
 echo ======== finish create symbolic link ========
