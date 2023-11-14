@@ -1,15 +1,7 @@
 #!/bin/bash
 
-function is_mac {
-  if [ "$(uname)" == "Darwin" ]; then
-    return 0
-  fi
-  return 1
-}
-
 # zsh
-is_mac
-if ! [ $? -eq 0 ]; then
+if [ "$(uname)" != "Darwin" ]; then
   if command -v yum &> /dev/null; then
     echo "I didn't think you were a red hot type..."
     echo "Sorry..."
@@ -28,8 +20,7 @@ echo ======== finish setup zsh ========
 echo ==================================
 
 # xcode
-is_mac
-if [ $? -eq 0 ]; then
+if [ "$(uname)" == "Darwin" ]; then
   xcode-select --install
   echo =============================================
   echo ======== finish install xcode-select ========
@@ -42,8 +33,7 @@ git remote set-url origin git@github.com:kyoF/dotfiles.git
 
 # symbolic link 
 cd dotfiles
-is_mac
-if [ $? -eq 0 ]; then
+if [ "$(uname)" == "Darwin" ]; then
   ./script/ln_linux.sh
 else
   ./script/ln_mac.sh
@@ -68,8 +58,7 @@ for app in ${install_cli_app[@]};
 do
   brew install $app
 done
-is_mac
-if [ $? -eq 0 ]; then
+if [ "$(uname)" == "Darwin" ]; then
   brew tap homebrew/cask-fonts
   install_gui_app=(
     font-hack-nerd-font
@@ -130,8 +119,7 @@ echo ==================================
 echo ======== finish setup git ========
 echo ==================================
 
-is_mac
-if [ $? -eq 0 ]; then
+if [ "$(uname)" == "Darwin" ]; then
   # hammerspoon
   cd $HOME/Downloads
   git clone git@github.com:asmagill/hs._asm.spaces.git
