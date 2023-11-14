@@ -25,7 +25,7 @@ echo ======== finish setup brew ========
 echo ===================================
 
 # zsh
-sudo chsh -s "$(which zsh)" $USER
+sudo chsh $USER -s "$(which zsh)" $USER
 
 # devbox
 curl -fsSL https://get.jetpack.io/devbox | bash
