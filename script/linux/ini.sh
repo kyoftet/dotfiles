@@ -25,7 +25,7 @@ echo ======== finish setup brew ========
 echo ===================================
 
 # zsh
-sudo chsh $USER -s "$(which zsh)" $USER
+sudo chsh $USER -s "$(which zsh)"
 
 # devbox
 curl -fsSL https://get.jetpack.io/devbox | bash
@@ -62,7 +62,7 @@ echo ======== finish setup git ========
 echo ==================================
 
 # symbolic link 
-cd ~/dotfiles
+cd dotfiles
 ./script/linux/symbolic.sh
 echo =============================================
 echo ======== finish create symbolic link ========
