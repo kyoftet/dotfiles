@@ -2,5 +2,3 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 alias zellij='bash <(curl -L zellij.dev/launch)'
 
-alias to='~/.config/alacritty/bin_win/toggle_opacity.sh'
-

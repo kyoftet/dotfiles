@@ -14,6 +14,14 @@
 * 設定 > バッテリー > 電源アダプタ > ディスプレイをオフにする を 15分後 に設定
 ## Windows
 * 色々
+### WSL
+```.zshrc.local
+# ^Mは`Ctrl+v`->`Ctrl+m`で入力する
+export WINDOWS_USERNAME=$(powershell.exe '$env:USERNAME' | sed -e 's///g')
+export WINDOWS_ALACRITTY_PATH=/mnt/c/Users/$WINDOWS_USERNAME/AppData/Roaming/alacritty
+
+alias to='~/.config/alacritty/bin_win/toggle_opacity.sh'
+```
  
 # Remarks
 * ローカルの設定ができるファイル
@@ -23,5 +31,4 @@
 # ToDo
 * Windows
   * alacritty.ymlの管理
-  * toコマンドの参照先
 
