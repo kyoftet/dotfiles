@@ -16,6 +16,7 @@ install_app=(
   zsh-completions
   zsh-autosuggestions
   zsh-syntax-highlighting
+  gh
 )
 for app in ${install_app[@]};
 do
@@ -36,11 +37,8 @@ echo ======== finish install devbox ========
 echo "[user]
   name = $1
   email = $2
-" >> ~/.gitconfig
-echo "[user]
-  name = $1
-  email = $2
 " >> ~/.gitconfig.local
+gh auth login
 git clone git@github.com:kyoF/dotfiles.git
 echo ======== finish setup git ========
 
