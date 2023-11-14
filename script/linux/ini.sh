@@ -2,7 +2,7 @@
 cd
 
 # homebrew
-curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh
+bin/bash "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 sudo apt-get install build-essential
 
@@ -10,8 +10,8 @@ install_app=(
   gcc
   zsh
   git
-  starship
   neovim
+  starship
   zellij
   lazygit
   zsh-completions
@@ -56,6 +56,7 @@ echo "[user]
   name = $GITHUB_USER_NAME
   email = $GITHUB_USER_MAIL
 " >> ~/.gitconfig.local
+git clone https://github.com/kyoF/dotfiles.git
 echo ======== finish setup git ========
 
 # symbolic link 
