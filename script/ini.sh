@@ -31,6 +31,7 @@ fi
 
 # dotfiles
 git clone https://github.com/kyoF/dotfiles.git
+git remote set-url origin git@github.com:kyoF/dotfiles.git
 
 # symbolic link 
 cd dotfiles
