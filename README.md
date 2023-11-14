@@ -3,7 +3,7 @@
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/kyoF/dotfiles/main/script/ini.sh)"
 ```
 
-※ Macは、下記を実行してから curl コマンドを実行してください
+※ Mac は、下記を実行してから上記のコマンドを実行してください
 ```
 設定 > セキュリティとプライバシー > フルディスクアクセス に ターミナル を追加
 ```
