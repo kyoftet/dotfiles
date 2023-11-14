@@ -23,6 +23,6 @@ script/mac/initial.sh
 
 # How To Use on Windows(WSL)
 ```
-bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/kyoF/dotfiles/main/script/linux/ini.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/kyoF/dotfiles/main/script/linux/ini.sh)"
 ```
 
