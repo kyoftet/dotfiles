@@ -28,7 +28,6 @@ fi
 
 # dotfiles
 git clone https://github.com/kyoF/dotfiles.git
-git remote set-url origin git@github.com:kyoF/dotfiles.git
 
 # symbolic link 
 cd dotfiles
@@ -92,6 +91,7 @@ echo ======== finish install devbox ========
 echo =======================================
 
 # git
+git remote set-url origin git@github.com:kyoF/dotfiles.git
 while true; do
   read -p "your github user name: " name
   read -p "your github email address: " mail
