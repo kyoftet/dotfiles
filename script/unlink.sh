@@ -1,11 +1,10 @@
-#!/bin/zsh
+#!/bin/bash
+
+cd $HOME/dotfiles
 
 for f in .??*; do
   [[ $f == ".git" ]] && continue
   [[ $f == ".gitignore" ]] && continue
-  [[ $f == ".zshrc.linux" ]] && continue
-  ln -snfv ${PWD}/"$f" ~/
+  unlink $HOME/"$f"
 done
-
-source ~/.zshrc
 
