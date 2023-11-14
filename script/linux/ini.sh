@@ -1,12 +1,22 @@
 #!/bin/bash
 
+chsh -s "$(which zsh)"
+
+git clone https://github.com/kyoF/dotfiles.git
+
+# symbolic link 
+cd dotfiles
+./script/linux/symbolic.sh
+echo =============================================
+echo ======== finish create symbolic link ========
+echo =============================================
+
 # homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 sudo apt-get install build-essential
 install_app=(
   gcc
-  zsh
   git
   neovim
   starship
@@ -25,7 +35,7 @@ echo ======== finish setup brew ========
 echo ===================================
 
 # zsh
-sudo chsh $USER -s "$(which zsh)"
+chsh -s "$(which zsh)"
 
 # devbox
 curl -fsSL https://get.jetpack.io/devbox | bash
@@ -57,18 +67,9 @@ echo "[user]
 " > ~/.gitconfig.local
 cd $HOME
 gh auth login
-git clone git@github.com/kyoF/dotfiles.git
 echo ==================================
 echo ======== finish setup git ========
 echo ==================================
-
-# symbolic link 
-cd dotfiles
-pwd
-./script/linux/symbolic.sh
-echo =============================================
-echo ======== finish create symbolic link ========
-echo =============================================
 
 echo ============================
 echo ======== finish all ========
