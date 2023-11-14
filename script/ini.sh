@@ -11,9 +11,7 @@ fi
 
 brew install gh
 
-gh auth login
-
-git clone git@github.com:kyof/dotfiles.git
+git clone https://github.com/kyoF/dotfiles.git
 cd dotfiles
 
 if [ "$(uname)" == "Darwin" ]; then
