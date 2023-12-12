@@ -46,7 +46,7 @@ install_cli_app=(
   git
   neovim
   starship
-  zellij
+  tmux
   lazygit
   zsh-completions
   zsh-autosuggestions
@@ -113,26 +113,13 @@ echo "[user]
   name = $name
   email = $mail
 " > ~/.gitconfig.local
-gh auth login
 echo ==================================
 echo ======== finish setup git ========
 echo ==================================
 
 if [ "$(uname)" == "Darwin" ]; then
-  # hammerspoon
-  cE/Downloads
-  git clone git@github.com:asmagill/hs._asm.spaces.git
-  cd hs._asm.spaces
-  make install-universal
-  cd ..
-  rm -rf hs._asm.spaces
-  echo ==========================================
-  echo ======== Finish setup hammerspoon ========
-  echo ==========================================
-  
-  cd $HOME/dotfiles
-  
   # macos
+  cd $HOME/dotfiles
   ./script/mac/macos.sh
   echo ====================================
   echo ======== Finish setup macos ========

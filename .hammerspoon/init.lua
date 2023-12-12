@@ -22,7 +22,3 @@ end
 double_press.timeFrame = 0.5
 double_press.action = open_alacritty
 
-hs.hotkey.bind({ "cmd" }, "u", function()
-	hs.execute("toggle_opacity.sh", true)
-end)
-
