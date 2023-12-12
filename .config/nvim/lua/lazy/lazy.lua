@@ -44,8 +44,21 @@ require('lazy').setup({
     'nvim-lualine/lualine.nvim',
     config = function()
       require("lualine").setup {
-        options = {
-          theme = "tokyonight"
+        tabline = {
+          lualine_a = {
+            {
+              'buffers',
+              mode = 4,
+              icons_enabled = true,
+              show_filename_only = true,
+              hide_filename_extensions = false
+            }
+          },
+          lualine_b = {},
+          lualine_c = {},
+          lualine_x = {},
+          lualine_y = {},
+          lualine_z = {'branch'},
         },
       }
     end
@@ -102,10 +115,12 @@ require('lazy').setup({
     'nvim-telescope/telescope.nvim', tag = '0.1.3',
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
-      vim.keymap.set('n', '<leader>p', ':Telescope find_files hidden=true<cr>')
-      vim.keymap.set('n', '<leader>f', ':Telescope live_grep<cr>')
-      vim.keymap.set('n', '<leader>gs', ':Telescope git_status<cr>')
-      vim.keymap.set('n', '<leader>gl', ':Telescope git_commits<cr>')
+      vim.keymap.set('n', '<leader>tf', ':Telescope find_files hidden=true<cr>')
+      vim.keymap.set('n', '<leader>tg', ':Telescope live_grep<cr>')
+      vim.keymap.set('n', '<leader>tgs', ':Telescope git_status<cr>')
+      vim.keymap.set('n', '<leader>tgl', ':Telescope git_commits<cr>')
+      vim.keymap.set('n', '<leader>tk', ':Telescope keymaps<cr>')
+      vim.keymap.set('n', '<leader>tb', ':Telescope buffers<cr>')
     end
   },
   -- git
@@ -154,6 +169,35 @@ require('lazy').setup({
         },
       }
     end
-  }
+  },
+  -- terminal
+  {
+    'akinsho/toggleterm.nvim',
+    tag = "*",
+    config = function ()
+      require('toggleterm').setup {
+        vim.keymap.set('n', '<leader>tt', ':ToggleTerm<cr>')
+      }
+    end
+  },
+  -- command line
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+    },
+    config = function()
+      require("noice").setup({
+        lsp = {
+          override = {
+            ["vim.lsp.util.convert_input_to_markdown_lines"] = false,
+            ["vim.lsp.util.stylize_markdown"] = false,
+            ["cmp.entry.get_documentation"] = false,
+          },
+        },
+      })
+    end
+  },
 })
 

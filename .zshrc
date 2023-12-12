@@ -5,6 +5,10 @@
 # import local .zshrc
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
+if [ $SHLVL = 1 ]; then
+  tmux
+fi
+
 # core
 alias ls='ls -FG'
 alias ll='ls -alFG'
@@ -65,14 +69,13 @@ alias vneovim='nvim ~/.config/nvim'
 
 # starship
 eval "$(starship init zsh)"
-export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
-alias vstarship='nvim ~/.config/starship/starship.toml'
-
-# zellij
-alias vzellij='nvim ~/.config/zellij/config.kdl'
-alias zellij='bash <(curl -L zellij.dev/launch)'
+alias vstarship='nvim ~/.config/starship.toml'
 
 # devbox
 alias db='devbox'
 alias dbs='devbox shell'
+
+# tmux
+alias vtmux='nvim ~/.tmux.conf'
+alias stmux='tmux source ~/.tmux.conf'
 
