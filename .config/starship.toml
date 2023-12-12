@@ -108,9 +108,9 @@ style = 'fg:#00aaaa bg:#004080'
 format = '[[ $symbol ($version)](fg:#00aaaa bg:#0055aa)]($style)'
 
 [nix_shell]
-symbol = "❄️"
+symbol = "❄️ "
 style = '#00aaaa bg:#004080'
-format = '[[ $symbol devbox](fg:#00aaaa bg:#004080)]($style)'
+format = '[[$symbol devbox](fg:#00aaaa bg:#004080)]($style)'
 
 [cmd_duration]
 min_time = 1
