@@ -1,9 +1,5 @@
 .env
 automatic_backups/
-Spoons/
-hs/
-before
-after
 .DS_Store
-gh/
 lazygit/
+devbox/
