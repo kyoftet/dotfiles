@@ -32,7 +32,7 @@ git clone https://github.com/kyoF/dotfiles.git
 # symbolic link 
 cd dotfiles
 if [ "$(uname)" == "Darwin" ]; then
-  ./script/mac/mac.sh
+  ./script/mac/ln.sh
 else
   ./script/linux/ln.sh
 fi
@@ -69,7 +69,6 @@ if [ "$(uname)" == "Darwin" ]; then
     docker
     appcleaner
     vivaldi
-    hammerspoon
   )
   for app in ${install_gui_app[@]};
   do
@@ -128,7 +127,7 @@ fi
 
 echo ==========================================
 echo ========        finish all        ========
-echo ======== reboot shell on 5 second ========
+echo ========       reboot shell       ========
 echo ==========================================
 sleep 5
 exit
