@@ -1,12 +1,12 @@
-# import linux .zshrc
-[ -f ~/.zshrc.linux ] && source ~/.zshrc.linux
-# import mac .zshrc
-[ -f ~/.zshrc.mac ] && source ~/.zshrc.mac
 # import local .zshrc
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
 if [ $SHLVL = 1 ]; then
   tmux
+fi
+
+if [ "$(uname)" != "Darwin" ]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
 # core
@@ -21,16 +21,12 @@ alias t='touch'
 alias rd='rmdir'
 alias rr='rm -rf'
 alias e='exit'
-alias vshell='nvim ~/.zshrc'
+alias vshell='vim ~/.zshrc'
 alias sshell='source ~/.zshrc'
 alias cddot='cd ~/dotfiles'
 alias lg='lazygit'
 alias checkport='lsof -i -P | grep'
 alias kl='kill -9'
-
-# homebrew
-alias hb='brew'
-alias hbi='brew install'
 
 # git
 fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
@@ -63,19 +59,29 @@ alias dc='docker compose'
 alias dcp='docker compose --profile'
 alias dcdel='docker compose down --rmi all --volumes --remove-orphans'
 
-# neovim
-alias vi='nvim'
+# vim
+alias vi='vim'
 alias vneovim='nvim ~/.config/nvim'
 
 # starship
 eval "$(starship init zsh)"
-alias vstarship='nvim ~/.config/starship.toml'
+alias vstarship='vim ~/.config/starship.toml'
 
 # devbox
 alias db='devbox'
 alias dbs='devbox shell'
 
 # tmux
-alias vtmux='nvim ~/.tmux.conf'
+alias vtmux='vim ~/.tmux.conf'
 alias stmux='tmux source ~/.tmux.conf'
+
+# alacritty
+if [ "$(uname)" = "Darwin" ]; then
+  export ALACRITTY_PATH=$HOME/.config
+  alias valacritty='vim $HOME/.config/alacritty.yml'
+else
+  export WINDOWS_USERNAME=$(powershell.exe '$env:USERNAME' | sed -e 's///g')
+  export ALACRITTY_PATH=/mnt/c/Users/$WINDOWS_USERNAME/AppData/Roaming/alacritty
+fi
+alias to='~/dotfiles/script/to.sh'
 
