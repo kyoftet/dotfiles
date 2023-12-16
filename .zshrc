@@ -78,10 +78,10 @@ alias stmux='tmux source ~/.tmux.conf'
 # alacritty
 if [ "$(uname)" = "Darwin" ]; then
   export ALACRITTY_PATH=$HOME/.config
-  alias valacritty='vim $HOME/.config/alacritty.yml'
 else
   export WINDOWS_USERNAME=$(powershell.exe '$env:USERNAME' | sed -e 's///g')
   export ALACRITTY_PATH=/mnt/c/Users/$WINDOWS_USERNAME/AppData/Roaming/alacritty
 fi
+alias valacritty='vim $ALACRITTY_PATH/alacritty.yml'
 alias to='~/dotfiles/script/to.sh'
 
