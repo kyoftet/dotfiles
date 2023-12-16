@@ -50,6 +50,5 @@ schemes:
 colors: *tokyo-night
 
 key_bindings:
-  - { key: Comma,     mods: Command,      command:
-      {program: "sh", args: ["-c","open ~/.config/alacritty/alacritty.yml"]}     }
+  - { key: Comma, mods: Command, command: {program: "sh", args: ["-c","open ~/.config/alacritty.yml"]} }
 
