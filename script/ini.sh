@@ -48,6 +48,7 @@ install_cli_app=(
   starship
   tmux
   lazygit
+  devbox
   zsh-completions
   zsh-autosuggestions
   zsh-syntax-highlighting
