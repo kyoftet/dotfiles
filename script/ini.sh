@@ -9,21 +9,17 @@ if [ "$(uname)" != "Darwin" ]; then
     sudo apt-get update
     sudo apt-get install zsh
   else
-    echo "Error: Neither yum nor apt foun."
+    echo "Error: Neither yum nor apt found."
     echo "Unable to install zsh."
   fi
 fi
 chsh -s "$(which zsh)"
-echo ==================================
 echo ======== finish setup zsh ========
-echo ==================================
 
 # xcode
 if [ "$(uname)" == "Darwin" ]; then
   xcode-select --install
-  echo =============================================
   echo ======== finish install xcode-select ========
-  echo =============================================
 fi
 
 # dotfiles
@@ -31,14 +27,8 @@ git clone https://github.com/kyoF/dotfiles.git
 
 # symbolic link 
 cd dotfiles
-if [ "$(uname)" == "Darwin" ]; then
-  ./script/mac/ln.sh
-else
-  ./script/linux/ln.sh
-fi
-echo =============================================
+./script/ln.sh
 echo ======== finish create symbolic link ========
-echo =============================================
 
 # homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
@@ -80,15 +70,11 @@ else
   sudo apt-get install build-essential
   brew install gcc
 fi
-echo ===================================
 echo ======== finish setup brew ========
-echo ===================================
 
 # devbox
 curl -fsSL https://get.jetpack.io/devbox | bash
-echo =======================================
 echo ======== finish install devbox ========
-echo =======================================
 
 # git
 git remote set-url origin git@github.com:kyoF/dotfiles.git
@@ -113,23 +99,14 @@ echo "[user]
   name = $name
   email = $mail
 " > ~/.gitconfig.local
-echo ==================================
 echo ======== finish setup git ========
-echo ==================================
 
 if [ "$(uname)" == "Darwin" ]; then
   # macos
   cd $HOME/dotfiles
-  ./script/mac/macos.sh
-  echo ====================================
+  ./script/macos.sh
   echo ======== Finish setup macos ========
-  echo ====================================
 fi
 
-echo ==========================================
-echo ========        finish all        ========
-echo ========       reboot shell       ========
-echo ==========================================
-sleep 5
-exit
+echo ======== finish all ========
 
