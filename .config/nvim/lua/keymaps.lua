@@ -15,3 +15,5 @@ vim.keymap.set('n', '<leader>l', '<C-w>l', {silent=true})
 vim.keymap.set('n', '<C-j>', '5j', {silent=true})
 vim.keymap.set('n', '<C-k>', '5k', {silent=true})
 
+vim.keymap.set('n', '<C-t> m', ':tabnext', {silent=true})
+vim.keymap.set('n', '<C-t> n', ':tabprevios', {silent=true})
