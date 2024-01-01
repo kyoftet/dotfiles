@@ -74,11 +74,10 @@ require('lazy').setup({
     dependencies = {
       { "williamboman/mason.nvim" },
       { "neovim/nvim-lspconfig" },
-      { "echasnovski/mini.completion", version = false },
+      { "hrsh7th/nvim-cmp" },
     },
     config = function()
       local lspconfig = require("lspconfig")
-      require('mini.completion').setup({})
       require("mason-lspconfig").setup_handlers({
         function(server_name)
           lspconfig[server_name].setup({})
@@ -106,8 +105,53 @@ require('lazy').setup({
       })
 
       vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-      vim.lsp.diagnostic.on_publish_diagnostics, { virtual_text = false }
+        vim.lsp.diagnostic.on_publish_diagnostics, { virtual_text = false }
       )
+    end
+  },
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      { "hrsh7th/cmp-nvim-lsp" },
+      { "hrsh7th/cmp-buffer" },
+      { "hrsh7th/cmp-emoji" },
+      { "hrsh7th/cmp-vsnip" },
+      { "onsails/lspkind.nvim" },
+    },
+    config = function ()
+      local cmp = require("cmp")
+	    vim.opt.completeopt = { "menu", "menuone", "noselect" }
+	    cmp.setup({
+	    	snippet = {
+	    		expand = function(args)
+	    			require("luasnip").lsp_expand(args.body)
+	    		end,
+	    	},
+	    	mapping = cmp.mapping.preset.insert({
+	    		["<C-b>"] = cmp.mapping.scroll_docs(-4),
+	    		["<C-f>"] = cmp.mapping.scroll_docs(4),
+	    		["<C-Space>"] = cmp.mapping.complete(),
+	    		["<C-e>"] = cmp.mapping.abort(),
+	    		["<CR>"] = cmp.mapping.confirm({ select = true }),
+	    	}),
+	    	sources = cmp.config.sources({
+	    		{ name = "nvim_lsp" },
+	    		{ name = "nvim_lua" },
+	    		{ name = "luasnip" },
+	    	}, {
+	    		{ name = "buffer" },
+	    		{ name = "path" },
+	    	}),
+	    })
+
+	    cmp.setup.cmdline(":", {
+	    	mapping = cmp.mapping.preset.cmdline(),
+	    	sources = cmp.config.sources({
+	    		{ name = "path" },
+	    	}, {
+	    		{ name = "cmdline" },
+	    	}),
+	    })
     end
   },
   -- search file
