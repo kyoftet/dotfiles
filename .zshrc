@@ -74,6 +74,16 @@ alias dbs='devbox shell'
 # tmux
 alias vtmux='vim ~/.tmux.conf'
 alias stmux='tmux source ~/.tmux.conf'
+function tmuxPopup() {
+  width='80%'
+  height='80%'
+  session=$(tmux display-message -p -F "#{session_name}")
+  if [[ $session == *'popup'* ]]; then
+    tmux detach-client
+  else
+    tmux popup -d "#{pane_current_path}" -xC -yC -w $width -h $height -E "tmux attach -t popup || tmux new -s popup"
+  fi
+}
 
 # alacritty
 if [ "$(uname)" = "Darwin" ]; then
@@ -84,4 +94,23 @@ else
 fi
 alias valacritty='vim $ALACRITTY_PATH/alacritty.yml'
 alias to='~/dotfiles/script/to.sh'
+function toggleOpacity() {
+	[[ ! -f $ALACRITTY_PATH/alacritty.yml ]] && \
+		echo "alacritty.yml does not exist" && return
+
+	opacity=$(awk '$1 == "opacity:" {print $2; exit}' \
+		$ALACRITTY_PATH/alacritty.yml)
+
+	case $opacity in
+		1)
+			toggle_opacity=0.55
+			;;
+		*)
+			toggle_opacity=1
+			;;
+	esac
+
+	sed -i "" "s/opacity: $opacity/opacity: $toggle_opacity/g" \
+		$ALACRITTY_PATH/alacritty.yml
+}
 
