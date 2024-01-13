@@ -23,7 +23,7 @@ alias rr='rm -rf'
 alias e='exit'
 alias vshell='vim ~/.zshrc'
 alias sshell='source ~/.zshrc'
-alias cddot='cd ~/dotfiles'
+alias dot='cd ~/dotfiles'
 alias lg='lazygit'
 alias checkport='lsof -i -P | grep'
 alias kl='kill -9'
@@ -93,7 +93,6 @@ else
   export ALACRITTY_PATH=/mnt/c/Users/$WINDOWS_USERNAME/AppData/Roaming/alacritty
 fi
 alias valacritty='vim $ALACRITTY_PATH/alacritty.yml'
-alias to='~/dotfiles/script/to.sh'
 function toggleOpacity() {
 	[[ ! -f $ALACRITTY_PATH/alacritty.yml ]] && \
 		echo "alacritty.yml does not exist" && return
@@ -113,4 +112,5 @@ function toggleOpacity() {
 	sed -i "" "s/opacity: $opacity/opacity: $toggle_opacity/g" \
 		$ALACRITTY_PATH/alacritty.yml
 }
+alias to='toggleOpacity'
 
