@@ -1,3 +1,6 @@
+shell:
+  program: /Windows/System32/wsl.exe ~
+
 window:
   opacity: 1
   option_as_alt: OnlyLeft
@@ -13,9 +16,6 @@ font:
   italic:
     family: Hack Nerd Font
     style: Regular Italic
-
-selection:
-  save_to_clipboard: true
 
 schemes:
   # Tokyo Night theme, based on both:
@@ -50,8 +50,6 @@ schemes:
 colors: *tokyo-night
 
 key_bindings:
-  - { key: Comma,
-      mods: Command,
-      command: { program: "sh", args: ["-c","open ~/.config/alacritty/alacritty.yml"] }
-    }
+  - { key: C, mods: Alt, action: Copy }
+  - { key: V, mods: Alt, action: Paste }
 

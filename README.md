@@ -17,7 +17,7 @@
 * 設定 > 通知と集中モード > 通知が必要ない項目の通知をOFF
 * 設定 > バッテリー > 電源アダプタ > ディスプレイをオフにする を 15分後 に設定
 ## Windows
-* 色々
+* Alacrittyのインストール
 ### WSL
 ```terminal
 source $HOME/.zshrc
