@@ -42,6 +42,7 @@ install_cli_app=(
   zsh-completions
   zsh-autosuggestions
   zsh-syntax-highlighting
+  ripgrep
 )
 for app in ${install_cli_app[@]};
 do
