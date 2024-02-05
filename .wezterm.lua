@@ -112,6 +112,7 @@ config.window_background_gradient = {
     interpolation = 'Linear',
     blend = 'Rgb',
 }
+config.tab_bar_at_bottom = true
 config.window_background_opacity = 1
 config.font_size = 11
 config.keys = {
