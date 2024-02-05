@@ -5,10 +5,6 @@ if [ $SHLVL = 1 ]; then
   tmux
 fi
 
-if [ "$(uname)" != "Darwin" ]; then
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-fi
-
 # core
 alias ls='ls -FG'
 alias ll='ls -alFG'
@@ -61,18 +57,16 @@ alias dcdel='docker compose down --rmi all --volumes --remove-orphans'
 
 # vim
 alias vi='vim'
-alias vneovim='nvim ~/.config/nvim'
 
 # starship
+export STARSHIP_CONFIG=~/.starship/starship.toml
 eval "$(starship init zsh)"
-alias vstarship='vim ~/.config/starship.toml'
 
 # devbox
 alias db='devbox'
 alias dbs='devbox shell'
 
 # tmux
-alias vtmux='vim ~/.tmux.conf'
 alias stmux='tmux source ~/.tmux.conf'
 function tmuxPopup() {
   width='80%'
@@ -84,33 +78,3 @@ function tmuxPopup() {
     tmux popup -d "#{pane_current_path}" -xC -yC -w $width -h $height -E "tmux attach -t popup || tmux new -s popup"
   fi
 }
-
-# alacritty
-if [ "$(uname)" = "Darwin" ]; then
-  export ALACRITTY_PATH=$HOME/.config
-else
-  export WINDOWS_USERNAME=$(powershell.exe '$env:USERNAME' | sed -e 's///g')
-  export ALACRITTY_PATH=/mnt/c/Users/$WINDOWS_USERNAME/AppData/Roaming/alacritty
-fi
-alias valacritty='vim $ALACRITTY_PATH/alacritty.yml'
-function toggleOpacity() {
-	[[ ! -f $ALACRITTY_PATH/alacritty.yml ]] && \
-		echo "alacritty.yml does not exist" && return
-
-	opacity=$(awk '$1 == "opacity:" {print $2; exit}' \
-		$ALACRITTY_PATH/alacritty.yml)
-
-	case $opacity in
-		1)
-			toggle_opacity=0.55
-			;;
-		*)
-			toggle_opacity=1
-			;;
-	esac
-
-	sed -i "" "s/opacity: $opacity/opacity: $toggle_opacity/g" \
-		$ALACRITTY_PATH/alacritty.yml
-}
-alias to='toggleOpacity'
-
