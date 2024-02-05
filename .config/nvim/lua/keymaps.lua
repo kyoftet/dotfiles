@@ -5,7 +5,6 @@ vim.keymap.set('n', 'x', '"_x', {silent=true})
 vim.keymap.set('n', 'Y', 'y$', {silent=true})
 vim.keymap.set('n', '<Esc><Esc>', ':<C-u>set nohlsearch<Return>', {silent=true})
 vim.keymap.set('i', 'jk', '<ESC>', {silent=true})
-vim.keymap.set('i', ',', ',<Space>', {silent=true})
 
 vim.keymap.set('n', '<leader>h', '<C-w>h', {silent=true})
 vim.keymap.set('n', '<leader>j', '<C-w>j', {silent=true})
