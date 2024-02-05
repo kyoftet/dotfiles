@@ -122,6 +122,11 @@ config.keys = {
         action = wezterm.action.EmitEvent 'toggle_opacity',
     },
     {
+        key = 'c',
+        mods = 'CTRL|SUPER',
+        action = wezterm.action.ActivateCopyMode,
+    },
+    {
         key = 'v',
         mods = 'CTRL|SUPER',
         action = wezterm.action.PasteFrom 'Clipboard',
