@@ -104,10 +104,10 @@ config.color_scheme = 'Tokyo Night'
 config.window_background_gradient = {
     orientation = 'Horizontal',
     colors = {
-        '#0f0c24',
-        '#000045',
-        '#0f0c55',
-        '#002b55',
+        '#0f0c20',
+        '#0f0c25',
+        '#000030',
+        '#0f0c25',
     },
     interpolation = 'Linear',
     blend = 'Rgb',
@@ -123,12 +123,12 @@ config.keys = {
     },
     {
         key = 'c',
-        mods = 'CTRL|SUPER',
+        mods = 'CTRL|SHIFT',
         action = wezterm.action.ActivateCopyMode,
     },
     {
         key = 'v',
-        mods = 'CTRL|SUPER',
+        mods = 'CTRL|SHIFT',
         action = wezterm.action.PasteFrom 'Clipboard',
     },
 }
