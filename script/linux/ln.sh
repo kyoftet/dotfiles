@@ -7,9 +7,9 @@ for f in .??*; do
   [[ $f == ".gitignore" ]] && continue
   if [[ $f == ".config" ]]; then
     ln -snfv ${PWD}/"$f"/nvim ~/.config/
-  else
-    ln -snfv ${PWD}/"$f" ~/
+    continue
   fi
+  ln -snfv ${PWD}/"$f" ~/
 done
 
 source ~/.zshrc
