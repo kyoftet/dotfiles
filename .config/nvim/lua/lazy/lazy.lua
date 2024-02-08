@@ -35,7 +35,6 @@ require('lazy').setup({
             "nvim-lua/plenary.nvim",
             "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
             "MunifTanjim/nui.nvim",
-            -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
         },
         config = function()
             require('neo-tree').setup({
@@ -74,24 +73,46 @@ require('lazy').setup({
     {
         'nvim-lualine/lualine.nvim',
         config = function()
-            require("lualine").setup {
-                tabline = {
-                    lualine_a = {
-                        {
-                            'buffers',
-                            mode = 4,
-                            icons_enabled = true,
-                            show_filename_only = true,
-                            hide_filename_extensions = false
-                        }
-                    },
-                    lualine_b = {},
-                    lualine_c = {},
-                    lualine_x = {},
-                    lualine_y = {},
-                    lualine_z = { 'branch' },
+            require('lualine').setup {}
+        end
+    },
+    {
+        'akinsho/bufferline.nvim',
+        version = "*",
+        dependencies = 'nvim-tree/nvim-web-devicons',
+        config = function()
+            require('bufferline').setup({
+                highlights = {
+                    fill = { bg = { attrivute = 'fg', highlights = "Pmenu" }, bold = true },
+                    buffer_selected = { bold = true },
+                    diagnostic_selected = { bold = true },
+                    info_selected = { bold = true },
+                    info_diagnostic_selected = { bold = true },
+                    warning_selected = { bold = true },
+                    warning_diagnostic_selected = { bold = true },
+                    error_selected = { bold = true },
+                    error_diagnostic_selected = { bold = true },
                 },
-            }
+                options = {
+                    buffer_close_icon = 'x',
+                    offsets = { { filetype = "Neotree" } },
+                    diagnostics = 'nvim_lsp',
+                    diagnostics_indicator = function(_, level, _, context)
+                        if context.buffer:current() then
+                            return ''
+                        end
+                        if level:match('error') then
+                            return ' ' .. vim.g.diagnostic_icons.Error
+                        elseif level:match('warning') then
+                            return ' ' .. vim.g.diagnostic_icons.Warning
+                        end
+                        return ''
+                    end,
+                }
+            })
+            vim.keymap.set('n', '<leader>bc', '<CMD>BufferLinePickClose<CR>')
+            vim.keymap.set('n', '<S-l>', '<CMD>BufferLineCycleNext<CR>')
+            vim.keymap.set('n', '<S-h>', '<CMD>BufferLineCyclePrev<CR>')
         end
     },
     -- lsp --
