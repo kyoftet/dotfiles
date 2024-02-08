@@ -6,6 +6,9 @@ if wezterm.config_builder then
     config = wezterm.config_builder()
 end
 
+--------------------
+-- toggle opacity --
+--------------------
 wezterm.on('toggle_opacity', function(window, _)
     local overrides = window:get_config_overrides() or {}
     if overrides.window_background_opacity == 1 then
@@ -16,91 +19,12 @@ wezterm.on('toggle_opacity', function(window, _)
     window:set_config_overrides(overrides)
 end)
 
----------
--- tab --
----------
-local function TitleName(s)
-    return string.gsub(s, '(.*[/\\])(.*)', '%2')
-end
+------------
+-- window --
+------------
 wezterm.on('format-window-title', function(tab)
-    return TitleName(tab.active_pane.foreground_process_name)
+    return string.gsub(tab.active_pane.foreground_process_name, '(.*[/\\])(.*)', '%2')
 end)
-wezterm.on('format-tab-title', function(tab, _, _, _, hover, _)
-    local SYMBOL_COLOR = { '#ffb2cc', '#a4a4a4' }
-    local FONT_COLOR = { '#dddddd', '#888888' }
-    local index = tab.is_active and 1 or 2
-    local bg = hover and '#434343' or '#2d2d2d'
-    local zoomed = tab.active_pane.is_zoomed and '🔎 ' or ' '
-    return {
-        { Foreground = { Color = SYMBOL_COLOR[index] } },
-        { Background = { Color = bg } },
-        { Text = '' .. zoomed },
-        { Foreground = { Color = FONT_COLOR[index] } },
-        { Background = { Color = bg } },
-        { Text = tab.active_pane.title },
-    }
-end)
-
------------------------
--- status line const --
------------------------
-local SPACE_1 = ' '
-local SPACE_3 = '   '
-local DEFAULT_FG = { Color = '#9a9eab' }
-local DEFAULT_BG = { Color = '#333333' }
--- local HEADER_HOST = { Foreground = { Color = '#75b1a9' }, Text = '' }
--- local HEADER_CWD = { Foreground = { Color = '#92aac7' }, Text = '' }
-local HEADER_DATE = { Foreground = { Color = '#ffccac' }, Text = '󱪺' }
-local HEADER_TIME = { Foreground = { Color = '#bcbabe' }, Text = '' }
-local HEADER_BATTERY = { Foreground = { Color = '#dfe166' }, Text = '' }
-
-local function AddElement(elems, header, str)
-    table.insert(elems, { Foreground = header.Foreground })
-    table.insert(elems, { Background = DEFAULT_BG })
-    table.insert(elems, { Text = header.Text .. SPACE_1 })
-    table.insert(elems, { Foreground = DEFAULT_FG })
-    table.insert(elems, { Background = DEFAULT_BG })
-    table.insert(elems, { Text = str .. SPACE_3 })
-end
--- local function GetHostAndCwd(elems, pane)
---     local uri = pane:get_current_working_dir()
---     if not uri then
---         return
---     end
---     local cwd_uri = uri:sub(8)
---     local slash = cwd_uri:find '/'
---     if not slash then
---         return
---     end
---     local host = cwd_uri:sub(1, slash - 1)
---     local dot = host:find '[.]'
---     AddElement(elems, HEADER_HOST, dot and host:sub(1, dot - 1) or host)
---     AddElement(elems, HEADER_CWD, cwd_uri:sub(slash))
--- end
-local function GetDate(elems)
-    AddElement(elems, HEADER_DATE, wezterm.strftime '%a %b %-d')
-end
-local function GetTime(elems)
-    AddElement(elems, HEADER_TIME, wezterm.strftime '%H:%M')
-end
-local function GetBattery(elems, _)
-    for _, b in ipairs(wezterm.battery_info()) do
-        AddElement(elems, HEADER_BATTERY, string.format('%.0f%%', b.state_of_charge * 100))
-    end
-end
-local function RightUpdate(window, _)
-    local elems = {}
-    -- GetHostAndCwd(elems, pane)
-    GetDate(elems)
-    GetBattery(elems, window)
-    GetTime(elems)
-    window:set_right_status(wezterm.format(elems))
-end
-wezterm.on('update-status', function(window, pane)
-    RightUpdate(window, pane)
-end)
-
-config.color_scheme = 'Tokyo Night'
 config.window_background_gradient = {
     orientation = 'Horizontal',
     colors = {
@@ -112,9 +36,100 @@ config.window_background_gradient = {
     interpolation = 'Linear',
     blend = 'Rgb',
 }
+
+---------
+-- tab --
+---------
+wezterm.on('format-tab-title', function(tab, _, _, _, _, _)
+    local SYMBOL_COLOR = { '#00ffff', '#a4a4a4' }
+    local FONT_COLOR = { '#dddddd', '#888888' }
+    local index = tab.is_active and 1 or 2
+    return {
+        { Foreground = { Color = SYMBOL_COLOR[index] } },
+        { Text = ' ' },
+        { Foreground = { Color = FONT_COLOR[index] } },
+        { Text = tab.active_pane.title },
+    }
+end)
+
+-----------------
+-- status line --
+-----------------
+wezterm.on('update-right-status', function(window, pane)
+    local uri = pane:get_current_working_dir()
+    local hostname = ''
+    if uri then
+        hostname = uri.host or wezterm.hostname()
+
+        local dot = hostname:find '[.]'
+        if dot then
+            hostname = hostname:sub(1, dot - 1)
+        end
+        if hostname == '' then
+            hostname = wezterm.hostname()
+        end
+    end
+
+    local date = wezterm.strftime '%a %b %-d %H:%M'
+
+    local battey = {}
+    for _, b in ipairs(wezterm.battery_info()) do
+        table.insert(battey, string.format('%.0f%% ', b.state_of_charge * 100))
+    end
+
+    window:set_right_status(wezterm.format {
+        { Background = { Color = 'rgba(0,0,0,0)' } },
+        { Foreground = { Color = '#2a2a2a' } },
+        { Text = '  ' },
+        { Background = { Color = '#2a2a2a' } },
+        { Foreground = { Color = '#00ffff' } },
+        { Text = '󰟒  ' },
+        { Background = { Color = '#2a2a2a' } },
+        { Foreground = { Color = '#aaaaaa' } },
+        { Text = uri.file_path },
+        { Background = { Color = '#2a2a2a' } },
+        { Foreground = { Color = '#1f1f1f' } },
+        { Text = '  ' },
+        { Background = { Color = '#1f1f1f' } },
+        { Foreground = { Color = '#00ffff' } },
+        { Text = '  ' },
+        { Background = { Color = '#1f1f1f' } },
+        { Foreground = { Color = '#aaaaaa' } },
+        { Text = hostname },
+        { Background = { Color = '#1f1f1f' } },
+        { Foreground = { Color = '#151515' } },
+        { Text = '  ' },
+        { Background = { Color = '#151515' } },
+        { Foreground = { Color = '#00ffff' } },
+        { Text = '  ' },
+        { Background = { Color = '#151515' } },
+        { Foreground = { Color = '#aaaaaa' } },
+        { Text = date },
+        { Background = { Color = '#151515' } },
+        { Foreground = { Color = '#0a0a0a' } },
+        { Text = '  ' },
+        { Background = { Color = '#0a0a0a' } },
+        { Foreground = { Color = '#00ff00' } },
+        { Text = '  ' },
+        { Background = { Color = '#0a0a0a' } },
+        { Foreground = { Color = '#aaaaaa' } },
+        { Text = table.concat(battey) },
+    })
+end)
+
 config.tab_bar_at_bottom = true
-config.window_background_opacity = 1
 config.font_size = 11
+config.window_background_opacity = 1
+config.colors = {
+    tab_bar = {
+        new_tab = { bg_color = "#121212", fg_color = "#FCE8C3", intensity = "Bold" },
+    }
+}
+config.window_frame = {
+    inactive_titlebar_bg = 'rgba(0,0,0,0)',
+    active_titlebar_bg = 'rgba(0,0,0,0)',
+}
+
 config.keys = {
     {
         key = 'b',
