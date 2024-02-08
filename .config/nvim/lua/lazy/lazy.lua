@@ -83,8 +83,8 @@ require('lazy').setup({
         config = function()
             require('bufferline').setup({
                 highlights = {
-                    fill = { bg = { attrivute = 'fg', highlights = "Pmenu" }, bold = true },
-                    buffer_selected = { bold = true },
+                    buffer_selected = { fg = '#00cccc', bold = true },
+                    buffer_visible = { fg = '#4169e1', bold = true },
                     diagnostic_selected = { bold = true },
                     info_selected = { bold = true },
                     info_diagnostic_selected = { bold = true },
@@ -273,7 +273,7 @@ require('lazy').setup({
         tag = "*",
         config = function()
             require('toggleterm').setup {
-                vim.keymap.set('n', '<leader>tt', ':ToggleTerm direction=float<cr>'),
+                vim.keymap.set('n', '<leader>tt', ':ToggleTerm size=50 direction=float<cr>'),
             }
         end
     },
