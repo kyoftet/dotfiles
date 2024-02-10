@@ -76,6 +76,7 @@ require('lazy').setup({
             require('lualine').setup {}
         end
     },
+    -- bufferline
     {
         'akinsho/bufferline.nvim',
         version = "*",
@@ -95,19 +96,11 @@ require('lazy').setup({
                 },
                 options = {
                     buffer_close_icon = 'x',
-                    offsets = { { filetype = "Neotree" } },
                     diagnostics = 'nvim_lsp',
-                    diagnostics_indicator = function(_, level, _, context)
-                        if context.buffer:current() then
-                            return ''
-                        end
-                        if level:match('error') then
-                            return ' ' .. vim.g.diagnostic_icons.Error
-                        elseif level:match('warning') then
-                            return ' ' .. vim.g.diagnostic_icons.Warning
-                        end
-                        return ''
-                    end,
+                    diagnostics_indicator = function(count, level, diagnostics_dict, context)
+                        local icon = level:match("error") and " " or " "
+                        return " " .. icon .. count
+                    end
                 }
             })
             vim.keymap.set('n', '<leader>bc', '<CMD>BufferLinePickClose<CR>')
