@@ -121,6 +121,7 @@ config.tab_bar_at_bottom = true
 config.font_size = 11
 config.window_background_opacity = 1
 config.colors = {
+    foreground = '#BDF9FD',
     tab_bar = {
         new_tab = { bg_color = "#121212", fg_color = "#FCE8C3", intensity = "Bold" },
     }
