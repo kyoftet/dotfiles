@@ -54,6 +54,7 @@ alias gf='git fetch'
 alias dc='docker compose'
 alias dcp='docker compose --profile'
 alias dcdel='docker compose down --rmi all --volumes --remove-orphans'
+alias dcup='docker compose up -d --build'
 
 # vim
 alias vi='vim'
