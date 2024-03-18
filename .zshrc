@@ -1,10 +1,6 @@
 # import local .zshrc
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
-if [ $SHLVL = 1 ]; then
-  tmux
-fi
-
 # core
 alias ls='ls -FG'
 alias ll='ls -alFG'
@@ -60,7 +56,7 @@ alias dcup='docker compose up -d --build'
 alias vi='vim'
 
 # starship
-export STARSHIP_CONFIG=~/.starship/starship.toml
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
 eval "$(starship init zsh)"
 
 # devbox
@@ -68,7 +64,7 @@ alias db='devbox'
 alias dbs='devbox shell'
 
 # tmux
-alias stmux='tmux source ~/.tmux.conf'
+alias stmux='tmux source ~/.config/tmux/tmux.conf'
 function tmuxPopup() {
   width='80%'
   height='80%'
