@@ -111,7 +111,6 @@ wezterm.on('update-right-status', function(window, pane)
     })
 end)
 
-config.tab_bar_at_bottom = true
 config.font_size = 11
 config.window_background_opacity = 1
 config.colors = {
@@ -120,10 +119,10 @@ config.colors = {
         new_tab = { bg_color = "#121212", fg_color = "#FCE8C3", intensity = "Bold" },
     }
 }
--- config.window_frame = {
---     inactive_titlebar_bg = 'rgba(0,0,0,0)',
---     active_titlebar_bg = 'rgba(0,0,0,0)',
--- }
+config.window_frame = {
+    inactive_titlebar_bg = 'rgba(0,0,0,0)',
+    active_titlebar_bg = 'rgba(0,0,0,0)',
+}
 
 config.keys = {
     {
