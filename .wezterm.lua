@@ -19,12 +19,6 @@ wezterm.on('toggle_opacity', function(window, _)
     window:set_config_overrides(overrides)
 end)
 
-------------
--- window --
-------------
-wezterm.on('format-window-title', function(tab)
-    return string.gsub(tab.active_pane.foreground_process_name, '(.*[/\\])(.*)', '%2')
-end)
 config.window_background_gradient = {
     orientation = 'Horizontal',
     colors = {
@@ -126,10 +120,10 @@ config.colors = {
         new_tab = { bg_color = "#121212", fg_color = "#FCE8C3", intensity = "Bold" },
     }
 }
-config.window_frame = {
-    inactive_titlebar_bg = 'rgba(0,0,0,0)',
-    active_titlebar_bg = 'rgba(0,0,0,0)',
-}
+-- config.window_frame = {
+--     inactive_titlebar_bg = 'rgba(0,0,0,0)',
+--     active_titlebar_bg = 'rgba(0,0,0,0)',
+-- }
 
 config.keys = {
     {
