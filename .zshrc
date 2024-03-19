@@ -16,6 +16,7 @@ alias e='exit'
 alias vshell='vim ~/.zshrc'
 alias sshell='source ~/.zshrc'
 alias dot='cd ~/dotfiles'
+alias ndot='nvim ~/dotfiles'
 alias lg='lazygit'
 alias checkport='lsof -i -P | grep'
 alias kl='kill -9'
@@ -58,10 +59,6 @@ alias vi='vim'
 # starship
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 eval "$(starship init zsh)"
-
-# devbox
-alias db='devbox'
-alias dbs='devbox shell'
 
 # tmux
 alias stmux='tmux source ~/.config/tmux/tmux.conf'
