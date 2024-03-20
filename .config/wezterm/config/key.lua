@@ -49,7 +49,6 @@ function key_conf.setup(config)
         { key = "-", mods = "ALT",          action = wezterm.action.DecreaseFontSize },
         { key = "u", mods = "ALT",          action = wezterm.action { SplitVertical = { domain = "CurrentPaneDomain" } } },
         { key = "y", mods = "ALT",          action = wezterm.action { SplitHorizontal = { domain = "CurrentPaneDomain" } } },
-        { key = "t", mods = "ALT",          action = wezterm.action { SpawnTab = "CurrentPaneDomain" } },
         { key = "h", mods = "ALT",          action = wezterm.action { ActivatePaneDirection = "Left" } },
         { key = "j", mods = "ALT",          action = wezterm.action { ActivatePaneDirection = "Down" } },
         { key = "k", mods = "ALT",          action = wezterm.action { ActivatePaneDirection = "Up" } },
