@@ -151,68 +151,6 @@ function tab_conf.setup(config)
             { Foreground = { Color = colors.base } },
         })
     end)
-
-    wezterm.on('update-right-status', function(window, pane)
-        local uri = pane:get_current_working_dir()
-        local hostname = ''
-        if uri then
-            hostname = uri.host or wezterm.hostname()
-
-            local dot = hostname:find '[.]'
-            if dot then
-                hostname = hostname:sub(1, dot - 1)
-            end
-            if hostname == '' then
-                hostname = wezterm.hostname()
-            end
-        end
-
-        local date = wezterm.strftime '%a %b %-d %H:%M'
-
-        local battey = {}
-        for _, b in ipairs(wezterm.battery_info()) do
-            table.insert(battey, string.format('%.0f%% ', b.state_of_charge * 100))
-        end
-
-        window:set_right_status(wezterm.format {
-            { Background = { Color = 'rgba(0,0,0,0)' } },
-            { Foreground = { Color = '#2a2a2a' } },
-            { Text = ' ' },
-            { Background = { Color = '#2a2a2a' } },
-            { Foreground = { Color = '#00ffff' } },
-            { Text = '󰟒  ' },
-            { Background = { Color = '#2a2a2a' } },
-            { Foreground = { Color = '#aaaaaa' } },
-            { Text = uri.file_path },
-            { Background = { Color = '#2a2a2a' } },
-            { Foreground = { Color = '#1f1f1f' } },
-            { Text = '  ' },
-            { Background = { Color = '#1f1f1f' } },
-            { Foreground = { Color = '#00ffff' } },
-            { Text = '  ' },
-            { Background = { Color = '#1f1f1f' } },
-            { Foreground = { Color = '#aaaaaa' } },
-            { Text = hostname },
-            { Background = { Color = '#1f1f1f' } },
-            { Foreground = { Color = '#151515' } },
-            { Text = '  ' },
-            { Background = { Color = '#151515' } },
-            { Foreground = { Color = '#00ffff' } },
-            { Text = '  ' },
-            { Background = { Color = '#151515' } },
-            { Foreground = { Color = '#aaaaaa' } },
-            { Text = date },
-            { Background = { Color = '#151515' } },
-            { Foreground = { Color = '#0a0a0a' } },
-            { Text = '  ' },
-            { Background = { Color = '#0a0a0a' } },
-            { Foreground = { Color = '#00ff00' } },
-            { Text = '  ' },
-            { Background = { Color = '#0a0a0a' } },
-            { Foreground = { Color = '#aaaaaa' } },
-            { Text = table.concat(battey) },
-        })
-    end)
 end
 
 return tab_conf
