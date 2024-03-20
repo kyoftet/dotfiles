@@ -1,22 +1,24 @@
 #!/bin/zsh
- 
-## alacritty.yml does not exist, raise an alert
-[[ ! -f ~/.config/alacritty/alacritty.yml ]] && \
-	notify-send "alacritty.yml does not exist" && exit 0
 
-## Fetch opacity from alacritty.yml
-opacity=$(awk '$1 == "opacity:" {print $2; exit}' \
-	~/.config/alacritty/alacritty.yml)
+toml_file="$HOME/.config/alacritty/alacritty.toml"
 
-## Assign toggle opacity value
-case $opacity in 1)
-		toggle_opacity=0.55
-		;;
-	*)
-		toggle_opacity=1
-		;;
-esac
+get_opacity() {
+    opacity=$(grep 'opacity =' "$toml_file" | awk '{print $3}')
+    echo "$opacity"
+}
 
-## Replace opacity value in alacritty.yml
-sed -i "" "s/opacity: $opacity/opacity: $toggle_opacity/g" \
-	~/.config/alacritty/alacritty.yml
+toggle_opacity() {
+    current_opacity=$(get_opacity)
+    case "$current_opacity" in
+        1)
+            new_opacity="0.55"
+            ;;
+        *)
+            new_opacity="1"
+            ;;
+    esac
+
+    sed -i "" "s/opacity = .*/opacity = $new_opacity/" "$toml_file"
+}
+
+toggle_opacity
