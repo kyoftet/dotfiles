@@ -2,29 +2,33 @@ local ui_conf = {}
 
 function ui_conf.setup(config)
     config.window_background_opacity = 1.0
+    config.command_palette_bg_color = "#00001d"
+    config.command_palette_fg_color = "#008888"
+    config.command_palette_rows = 24
     config.enable_scroll_bar = false
-    config.window_decorations = "RESIZE"
+    config.font_size = 11.5
     config.inactive_pane_hsb = {
-        saturation = 1.0,
-        brightness = 0.90,
+        hue = 1.0,
+        saturation = 1.5,
+        brightness = 0.3,
     }
-    config.window_padding = {
-        left = 11,
-        right = 11,
-        top = 11,
-        bottom = 11,
-    }
+    config.integrated_title_button_alignment = "Right"
     config.window_background_gradient = {
-        orientation = 'Horizontal',
         colors = {
-            '#0f0c20',
-            '#0f0c25',
-            '#000030',
-            '#0f0c25',
+            "#000a33",
+            "#000037",
+            "#000a3b",
+            "#00003f",
+            "#000043",
+            "#00003f",
+            "#000a33",
+            "#000037",
+            "#000a3b",
         },
-        interpolation = 'Linear',
-        blend = 'Rgb',
+        orientation = { Linear = { angle = -45.0 } },
     }
+    config.window_background_opacity = 1.0
+    config.window_decorations = "RESIZE"
     config.window_frame = {
         inactive_titlebar_bg = 'rgba(0,0,0,0)',
         active_titlebar_bg = 'rgba(0,0,0,0)',
@@ -37,7 +41,12 @@ function ui_conf.setup(config)
         border_bottom_color = '#008080',
         border_top_color = '#008080',
     }
-    config.window_background_opacity = 1.0
+    config.window_padding = {
+        left = 11,
+        right = 11,
+        top = 11,
+        bottom = 11,
+    }
 end
 
 return ui_conf

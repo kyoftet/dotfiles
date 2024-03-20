@@ -36,7 +36,6 @@ function key_conf.setup(config)
         { key = "w", mods = "LEADER",       action = wezterm.action { CloseCurrentTab = { confirm = true } } },
         { key = "f", mods = "LEADER",       action = wezterm.action.ToggleFullScreen },
         { key = "L", mods = "LEADER|SHIFT", action = wezterm.action.ShowLauncher },
-        { key = "r", mods = "LEADER",       action = wezterm.action.ReloadConfiguration },
         { key = "q", mods = "LEADER",       action = wezterm.action.QuitApplication },
         { key = "S", mods = "LEADER|SHIFT", action = wezterm.action.QuickSelect },
         { key = "c", mods = "LEADER|CTRL",  action = wezterm.action.ActivateCopyMode },
@@ -44,7 +43,7 @@ function key_conf.setup(config)
         { key = "p", mods = "LEADER",       action = wezterm.action.ActivateCommandPalette },
         { key = "o", mods = "LEADER",       action = wezterm.action.EmitEvent 'toggle_opacity' },
         -- without leader key
-        { key = "+", mods = "ALT",          action = wezterm.action.IncreaseFontSize },
+        { key = "=", mods = "ALT",          action = wezterm.action.IncreaseFontSize },
         { key = "-", mods = "ALT",          action = wezterm.action.DecreaseFontSize },
         { key = "u", mods = "ALT",          action = wezterm.action { SplitVertical = { domain = "CurrentPaneDomain" } } },
         { key = "y", mods = "ALT",          action = wezterm.action { SplitHorizontal = { domain = "CurrentPaneDomain" } } },
