@@ -1,29 +1,29 @@
 format = """
 [░▒▓](#a3aed2)\
 $os\
-[ ](fg:#a3aed2 bg:#002b55)\
+[ ](fg:#a3aed2 bg:#021631)\
 $directory\
-[ ](fg:#002b55 bg:#004080)\
+[ ](fg:#021631 bg:#03214a)\
 $git_branch\
-[ ](fg:#004080 bg:#0055aa)\
+[ ](fg:#03214a bg:#042c62)\
 $git_status\
-[ ](fg:#0055aa bg:#006ad5)\
+[ ](fg:#042c62 bg:#05377b)\
 $git_metrics\
-[](fg:#006ad5)\
+[](fg:#05377b)\
 $fill\
-[](fg:#006ad5)\
+[](fg:#05377b)\
 $docker_context\
-[ ](fg:#0055aa bg:#006ad5)\
+[ ](fg:#042c62 bg:#05377b)\
 $nodejs\
 $golang\
 $python\
 $rust\
 $lua\
-[ ](fg:#004080 bg:#0055aa)\
+[ ](fg:#03214a bg:#042c62)\
 $cmd_duration\
-[ ](fg:#002b55 bg:#004080)\
+[ ](fg:#021631 bg:#03214a)\
 $battery\
-[ ](fg:#a3aed2 bg:#002b55)\
+[ ](fg:#a3aed2 bg:#021631)\
 $time\
 [▓▒░](fg:#a3aed2)\
 \n$character\
@@ -43,18 +43,18 @@ truncation_length = 6
 truncation_symbol = '  '
 truncate_to_repo = false
 home_symbol = '  ~'
-style = 'fg:#00aaaa bg:#002b55'
+style = 'fg:#00aaaa bg:#021631'
 read_only = '󰌾  '
-read_only_style = 'fg:#f7768e bg:#002b55'
+read_only_style = 'fg:#f7768e bg:#021631'
 format = '[ $path ]($style)[$read_only]($read_only_style)'
 
 [git_branch]
 symbol = ' '
-style = 'fg:#00aaaa bg:#004080'
+style = 'fg:#00aaaa bg:#03214a'
 format = '[$symbol $branch(:$remote_branch) ]($style)'
 
 [git_status]
-style = 'fg:#00aaaa bg:#0055aa'
+style = 'fg:#00aaaa bg:#042c62'
 conflicted = '='
 ahead = '⇡${count}'
 behind = '⇣${count}'
@@ -68,65 +68,66 @@ deleted = '✘'
 format = '([\[$all_status$ahead_behind\] ]($style))'
 
 [git_metrics]
-added_style = 'fg:#00aaaa bg:#006ad5'
-deleted_style = 'fg:#00aaaa bg:#006ad5'
+added_style = 'fg:#00aaaa bg:#05377b'
+deleted_style = 'fg:#00aaaa bg:#05377b'
 format = '[+$added/-$deleted ]($deleted_style)'
 disabled = false
 
 [fill]
 symbol = '─'
-style = '#00aaaa'
+style = '#0059b3'
 
 [docker_context]
 symbol = ''
-style = 'fg:# bg:#'
-format = '[[ $symbol docker](fg:#00aaaa bg:#006ad5)]($style)'
+style = 'fg:#00aaaa bg:#05377b'
+format = '[ $symbol docker]($style)'
 
 [rust]
 symbol = ''
-style = 'fg:#00aaaa bg:#004080'
-format = '[[ $symbol ($version)](fg:#00aaaa bg:#0055aa)]($style)'
+style = 'fg:#00aaaa bg:#042c62'
+format = '[ $symbol ($version)]($style)'
 
 [python]
 symbol = ''
-style = 'fg:#00aaaa bg:#004080'
-format = '[[ $symbol ($version)](fg:#00aaaa bg:#0055aa)]($style)'
+style = 'fg:#00aaaa bg:#042c62'
+format = '[ $symbol ($version)]($style)'
 
 [nodejs]
 symbol = ""
-style = 'fg:#00aaaa bg:#004080'
-format = '[[ $symbol ($version)](fg:#00aaaa bg:#0055aa)]($style)'
+style = 'fg:#00aaaa bg:#042c62'
+format = '[ $symbol ($version)]($style)'
 
 [golang]
 symbol = ""
-style = 'fg:#00aaaa bg:#004080'
-format = '[[ $symbol ($version)](fg:#00aaaa bg:#0055aa)]($style)'
+style = 'fg:#00aaaa bg:#042c62'
+format = '[ $symbol ($version)]($style)'
 
 [lua]
 symbol = ""
-style = 'fg:#00aaaa bg:#004080'
-format = '[[ $symbol ($version)](fg:#00aaaa bg:#0055aa)]($style)'
+style = 'fg:#00aaaa bg:#042c62'
+format = '[ $symbol ($version)]($style)'
 
 [cmd_duration]
 min_time = 1
-style = 'fg:#00aaaa bg:#004080'
-format = "[  $duration]($style)"
+style = 'fg:#00aaaa bg:#03214a'
+format = "[󱦟 $duration]($style)"
+
+[[battery.display]]
+threshold = 100
+style = "fg:#00aaaa bg:#021631"
+
+[battery]
+full_symbol = "󱊣 "
+charging_symbol = "󰂄 "
+discharging_symbol = "󱧥 "
+format = '[$symbol$percentage]($style)'
 
 [time]
 disabled = false
-time_format = "%R"
-style = "bg:#00aaaa"
-format = '[[   $time ](fg:#394260 bg:#a3aed2)]($style)'
+time_format = "%F %T"
+style = "fg:#394260 bg:#a3aed2"
+format = '[ $time ]($style)'
 
 [character]
 success_symbol = '[❯❯❯](bold #00ffff)'
 error_symbol = '[❯❯❯](bold red)'
-
-[[battery.display]]
-threshold = 100
-style = "fg:#00aaaa bg:#002b55"
-
-[battery]
-full_symbol = "󱊣"
-charging_symbol = "󰂄"
-discharging_symbol = "󱊡"
