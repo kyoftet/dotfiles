@@ -15,15 +15,12 @@ function ui_conf.setup(config)
     config.integrated_title_button_alignment = "Right"
     config.window_background_gradient = {
         colors = {
-            "#000a33",
-            "#000037",
-            "#000a3b",
-            "#00003f",
-            "#000043",
-            "#00003f",
-            "#000a33",
-            "#000037",
-            "#000a3b",
+            "#000001",
+            "#000012",
+            "#000123",
+            "#000123",
+            "#000012",
+            "#000001",
         },
         orientation = { Linear = { angle = -45.0 } },
     }
@@ -36,10 +33,10 @@ function ui_conf.setup(config)
         border_right_width = '0.5cell',
         border_bottom_height = '0.25cell',
         border_top_height = '0.25cell',
-        border_left_color = '#008080',
-        border_right_color = '#008080',
-        border_bottom_color = '#008080',
-        border_top_color = '#008080',
+        border_left_color = '#03214a',
+        border_right_color = '#03214a',
+        border_bottom_color = '#03214a',
+        border_top_color = '#03214a',
     }
     config.window_padding = {
         left = 11,

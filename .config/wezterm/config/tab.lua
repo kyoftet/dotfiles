@@ -49,7 +49,7 @@ local function get_process(tab)
             { Text = "" },
         },
         ["wget"] = {
-            { Foreground = { Color = "gray" } },
+            { Foreground = { Color = "yellow" } },
             { Text = "󰄠" },
         },
         ["curl"] = {
@@ -111,16 +111,14 @@ function tab_conf.setup(config)
     config.tab_max_width = 50
 
     wezterm.on("format-tab-title", function(tab)
+        local bg_color = { "#03214a", "#010b19" }
+        local fg_color = { "white", "gray" }
+        local is_active = tab.is_active and 1 or 2
         return wezterm.format({
-            { Text = "  " },
-            { Attribute = { Intensity = "Half" } },
-            { Text = string.format("%s", tab.tab_index + 1) },
-            "ResetAttributes",
-            { Text = " " },
-            { Text = get_process(tab) },
-            { Text = " " },
-            { Text = get_current_working_dir(tab) },
-            { Foreground = { Color = "white" } },
+            { Background = { Color = bg_color[is_active] } },
+            { Text = " " .. get_process(tab) },
+            { Foreground = { Color = fg_color[is_active] } },
+            { Text = " " .. get_current_working_dir(tab) },
         })
     end)
 end
