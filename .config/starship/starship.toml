@@ -20,9 +20,9 @@ $python\
 $rust\
 $lua\
 [ ](fg:#004080 bg:#0055aa)\
-$nix_shell\
-[ ](fg:#002b55 bg:#004080)\
 $cmd_duration\
+[ ](fg:#002b55 bg:#004080)\
+$battery\
 [ ](fg:#a3aed2 bg:#002b55)\
 $time\
 [▓▒░](fg:#a3aed2)\
@@ -107,14 +107,9 @@ symbol = ""
 style = 'fg:#00aaaa bg:#004080'
 format = '[[ $symbol ($version)](fg:#00aaaa bg:#0055aa)]($style)'
 
-[nix_shell]
-symbol = "❄️ "
-style = '#00aaaa bg:#004080'
-format = '[[$symbol devbox](fg:#00aaaa bg:#004080)]($style)'
-
 [cmd_duration]
 min_time = 1
-style = 'fg:#00aaaa bg:#002b55'
+style = 'fg:#00aaaa bg:#004080'
 format = "[  $duration]($style)"
 
 [time]
@@ -127,3 +122,11 @@ format = '[[   $time ](fg:#394260 bg:#a3aed2)]($style)'
 success_symbol = '[❯❯❯](bold #00ffff)'
 error_symbol = '[❯❯❯](bold red)'
 
+[[battery.display]]
+threshold = 100
+style = "fg:#00aaaa bg:#002b55"
+
+[battery]
+full_symbol = "󱊣"
+charging_symbol = "󰂄"
+discharging_symbol = "󱊡"
