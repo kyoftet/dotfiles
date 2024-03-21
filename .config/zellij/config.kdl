@@ -37,6 +37,7 @@ keybinds clear-defaults=true {
         bind "d" { CloseFocus; SwitchToMode "Locked"; }
         bind "w" { CloseTab; SwitchToMode "Locked"; }
         bind "s" { SwitchToMode "Search"; }
+        bind "p" { ToggleFloatingPanes; SwitchToMode "Locked"; }
         bind "q" { Quit; }
     }
     renametab {
