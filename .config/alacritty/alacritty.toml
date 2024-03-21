@@ -1,5 +1,5 @@
 [shell]
-args = ["-c", "-l", "tmux"]
+args = ["-c", "-l", "zellij"]
 program = "/bin/zsh"
 
 [window]
