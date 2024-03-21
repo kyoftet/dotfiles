@@ -29,7 +29,7 @@ family = "Jetbrainsmono Nerd Font"
 style = "Regular"
 
 [colors.primary]
-background = '#1a1b26'
+background = '#010b19'
 foreground = '#a9b1d6'
 [colors.normal]
 black   = '#32344a'
