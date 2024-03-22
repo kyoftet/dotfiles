@@ -1,4 +1,4 @@
-require('options')
-require('keymaps')
-require('autocmds')
-require('lazy.lazy')
+require('core/keymaps')
+require('core/autocmds')
+require('core/options')
+require('core/lazynvim')
