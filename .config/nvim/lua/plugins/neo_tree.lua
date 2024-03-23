@@ -14,17 +14,9 @@ return {
                     visible = true,
                     hide_dotfiles = false,
                     hide_gitignored = false,
-                    hide_by_name = {
-                        'node_modules',
-                    },
-                    never_show = {
-                        '.git',
-                        '.DS_Store',
-                    }
                 }
             },
             window = {
-                position = "float",
                 popup = {
                     size = { height = "55%", width = "55%" },
                     position = "50%",
@@ -35,7 +27,9 @@ return {
                     ["v"] = "open_vsplit",
                 }
             },
-            vim.keymap.set('n', '<leader>e', ':Neotree<cr>'),
+            vim.keymap.set('n', '<leader>e', '<cmd>Neotree float<cr>'),
+            vim.keymap.set('n', '<leader>b', '<cmd>Neotree float buffers<cr>'),
+            vim.keymap.set('n', '<leader>neo', '<cmd>Neotree left<cr>'),
         })
     end
 }
