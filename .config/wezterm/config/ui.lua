@@ -1,7 +1,6 @@
 local ui_conf = {}
 
 function ui_conf.setup(config)
-    config.window_background_opacity = 1.0
     config.command_palette_bg_color = "#00001d"
     config.command_palette_fg_color = "#008888"
     config.command_palette_rows = 24
