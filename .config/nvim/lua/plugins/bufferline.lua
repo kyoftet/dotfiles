@@ -24,19 +24,19 @@ return {
             options = {
                 indicator = { style = 'underline' },
                 buffer_close_icon = 'x',
-                diagnostics = 'coc',
+                diagnostics = 'nvim-lsp',
                 diagnostics_indicator = function(count, level)
                     local icon = level:match("error") and " " or " "
                     return " " .. icon .. count
                 end,
             }
         })
-        vim.keymap.set('n', '<leader>bp', '<CMD>BufferLinePick<CR>')
-        vim.keymap.set('n', '<leader>bc', '<CMD>BufferLinePickClose<CR>')
-        vim.keymap.set('n', '<leader>bl', '<CMD>BufferLineCloseLeft<CR>')
-        vim.keymap.set('n', '<leader>br', '<CMD>BufferLineCloseRight<CR>')
-        vim.keymap.set('n', '<leader>bo', '<CMD>BufferLineCloseOthers<CR>')
-        vim.keymap.set('n', 'bm', '<CMD>BufferLineCycleNext<CR>')
-        vim.keymap.set('n', 'bn', '<CMD>BufferLineCyclePrev<CR>')
+        vim.keymap.set('n', 'bp', '<CMD>BufferLinePick<CR>')
+        vim.keymap.set('n', 'bc', '<CMD>BufferLinePickClose<CR>')
+        vim.keymap.set('n', 'bl', '<CMD>BufferLineCloseLeft<CR>')
+        vim.keymap.set('n', 'br', '<CMD>BufferLineCloseRight<CR>')
+        vim.keymap.set('n', 'bo', '<CMD>BufferLineCloseOthers<CR>')
+        vim.keymap.set('n', '<C-m>', '<CMD>BufferLineCycleNext<CR>')
+        vim.keymap.set('n', '<C-n>', '<CMD>BufferLineCyclePrev<CR>')
     end
 }
