@@ -7,10 +7,10 @@ return {
             blue3   = '#03214a',
             blue4   = '#042c62',
             blue5   = '#05377b',
-            normal  = '#cee3f1',
-            insert  = '#00ff00',
-            visual  = '#ff00ff',
-            replace = '#ff0000',
+            normal  = '#00aaaa',
+            insert  = '#6de946',
+            visual  = '#dc95fd',
+            replace = '#e4757b',
         }
 
         local bubbles_theme = {
@@ -38,19 +38,19 @@ return {
             },
             sections = {
                 lualine_a = { { 'mode', separator = { left = '░▒▓' }, right_padding = 2 } },
-                lualine_b = { 'branch', 'diff', 'diagnostics' },
-                lualine_c = { 'filename' },
+                lualine_b = { { 'filename', path = 4 } },
+                lualine_c = { 'branch', 'diff', 'diagnostics' },
                 lualine_x = {},
                 lualine_y = { 'fileformat', 'filetype', 'progress' },
                 lualine_z = { { 'location', separator = { right = '▓▒░' }, left_padding = 2 } },
             },
             inactive_sections = {
-                lualine_a = { 'filename' },
+                lualine_a = { { 'filename', path = 4 } },
                 lualine_b = {},
                 lualine_c = {},
                 lualine_x = {},
                 lualine_y = {},
-                lualine_z = { 'location' },
+                lualine_z = { 'fileformat', 'filetype' },
             },
             tabline = {},
             extensions = {},
