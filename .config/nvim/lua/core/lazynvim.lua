@@ -17,7 +17,10 @@ vim.opt.rtp:prepend(lazypath)
 local lazyOpts = {
     defaults = {
         lazy = false,
-    }
+    },
+    change_detection = {
+        enabled = false,
+    },
 }
 
 -- Any lua file in ~/.config/nvim/lua/plugins/*.lua will be automatically merged in the main plugin spec
