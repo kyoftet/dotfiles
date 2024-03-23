@@ -10,7 +10,7 @@ return {
 
         require('toggleterm').setup {
             vim.keymap.set('n', 'tp', ':ToggleTerm direction=float<cr>'),
-            vim.keymap.set('t', 'te', '<C-\\><C-n>:ToggleTerm<cr>'),
+            vim.keymap.set('t', '<C-e>', '<C-\\><C-n>:ToggleTerm<cr>'),
             vim.api.nvim_set_keymap("n", "tlg", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true }),
         }
     end
