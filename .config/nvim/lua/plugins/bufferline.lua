@@ -36,7 +36,7 @@ return {
         vim.keymap.set('n', '<leader>bl', '<CMD>BufferLineCloseLeft<CR>')
         vim.keymap.set('n', '<leader>br', '<CMD>BufferLineCloseRight<CR>')
         vim.keymap.set('n', '<leader>bo', '<CMD>BufferLineCloseOthers<CR>')
-        vim.keymap.set('n', '<leader>bm', '<CMD>BufferLineCycleNext<CR>')
-        vim.keymap.set('n', '<leader>bn', '<CMD>BufferLineCyclePrev<CR>')
+        vim.keymap.set('n', 'bm', '<CMD>BufferLineCycleNext<CR>')
+        vim.keymap.set('n', 'bn', '<CMD>BufferLineCyclePrev<CR>')
     end
 }
