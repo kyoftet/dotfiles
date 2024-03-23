@@ -7,6 +7,7 @@ return {
         { "hrsh7th/cmp-vsnip" },
         { "onsails/lspkind.nvim" },
     },
+    commit = "b356f2c",
     config = function()
         local cmp = require("cmp")
         vim.opt.completeopt = { "menu", "menuone", "noselect" }
