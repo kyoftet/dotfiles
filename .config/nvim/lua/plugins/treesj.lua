@@ -1,8 +1,13 @@
 return {
     'Wansmer/treesj',
-    keys = { '<space>m', '<space>j', '<space>s' },
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    event = { "BufReadPre", "BufNewFile" },
     config = function()
-        require('treesj').setup({ --[[ your config ]] })
+        require('treesj').setup({})
+        vim.keymap.set(
+            'n',
+            '<leader>treejs',
+            require('treesj').toggle
+        )
     end,
 }
