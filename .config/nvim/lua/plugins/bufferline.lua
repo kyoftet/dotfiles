@@ -31,11 +31,11 @@ return {
                 end,
             }
         })
-        vim.keymap.set('n', 'bp', '<CMD>BufferLinePick<CR>')
-        vim.keymap.set('n', 'bc', '<CMD>BufferLinePickClose<CR>')
-        vim.keymap.set('n', 'bl', '<CMD>BufferLineCloseLeft<CR>')
-        vim.keymap.set('n', 'br', '<CMD>BufferLineCloseRight<CR>')
-        vim.keymap.set('n', 'bo', '<CMD>BufferLineCloseOthers<CR>')
+        vim.keymap.set('n', '<C-b>p', '<CMD>BufferLinePick<CR>')
+        vim.keymap.set('n', '<C-b>c', '<CMD>BufferLinePickClose<CR>')
+        vim.keymap.set('n', '<C-b>l', '<CMD>BufferLineCloseLeft<CR>')
+        vim.keymap.set('n', '<C-b>r', '<CMD>BufferLineCloseRight<CR>')
+        vim.keymap.set('n', '<C-b>o', '<CMD>BufferLineCloseOthers<CR>')
         vim.keymap.set('n', '<C-m>', '<CMD>BufferLineCycleNext<CR>')
         vim.keymap.set('n', '<C-n>', '<CMD>BufferLineCyclePrev<CR>')
     end
