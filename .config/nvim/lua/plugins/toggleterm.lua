@@ -9,9 +9,9 @@ return {
         end
 
         require('toggleterm').setup {
-            vim.keymap.set('n', 'tp', ':ToggleTerm direction=float<cr>'),
-            vim.keymap.set('t', '<C-g>', '<C-\\><C-n>:ToggleTerm<cr>'),
-            vim.api.nvim_set_keymap("n", "tlg", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true }),
+            vim.keymap.set('n', '<C-t>p', ':ToggleTerm direction=float<cr>'),
+            vim.keymap.set('t', '<C-t>t', '<C-\\><C-n>:ToggleTerm<cr>'),
+            vim.api.nvim_set_keymap("n", "<C-t>g", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true }),
         }
     end
 }
