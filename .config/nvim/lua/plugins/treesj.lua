@@ -3,11 +3,9 @@ return {
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
     event = { "BufReadPre", "BufNewFile" },
     config = function()
-        require('treesj').setup({})
-        vim.keymap.set(
-            'n',
-            '<leader>treejs',
-            require('treesj').toggle
-        )
+        require('treesj').setup({
+            use_default_keymaps = false,
+        })
+        vim.keymap.set('n', '<leader>tj', require('treesj').toggle)
     end,
 }
