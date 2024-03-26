@@ -6,7 +6,6 @@ return {
         local actions = require("telescope.actions")
         require("telescope").setup({
             defaults = {
-                initial_mode = 'normal',
                 mappings = {
                     i = {
                         ["<C-h>"] = actions.select_horizontal,

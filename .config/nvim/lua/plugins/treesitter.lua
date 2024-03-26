@@ -45,6 +45,7 @@ return {
                     "sparql",
                     "toml",
                     "tsx",
+                    "txt",
                     "typescript",
                     "vim",
                     "yaml",
