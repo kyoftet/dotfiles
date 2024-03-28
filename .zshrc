@@ -13,7 +13,6 @@ alias t='touch'
 alias rd='rmdir'
 alias rr='rm -rf'
 alias e='exit'
-alias vshell='vim ~/.zshrc'
 alias sshell='source ~/.zshrc'
 alias dot='cd ~/dotfiles'
 alias ndot='nvim ~/dotfiles'
@@ -53,9 +52,6 @@ alias dcp='docker compose --profile'
 alias dcdel='docker compose down --rmi all --volumes --remove-orphans'
 alias dcup='docker compose up -d --build'
 
-# vim
-alias vi='vim'
-
 # starship
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 eval "$(starship init zsh)"
@@ -72,3 +68,6 @@ function tmuxPopup() {
     tmux popup -d "#{pane_current_path}" -xC -yC -w $width -h $height -E "tmux attach -t popup || tmux new -s popup"
   fi
 }
+
+# alacritty
+alias to='./.config/alacritty/bin/toggle_opacity.sh'
