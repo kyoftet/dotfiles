@@ -2,8 +2,8 @@
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
 # core
-alias ls='ls -FG'
-alias ll='ls -alFG'
+alias ls='lsd'
+alias ll='lsd -al'
 alias c='clear'
 alias ..='cd ../'
 alias ...='cd ../..'
@@ -19,6 +19,13 @@ alias ndot='nvim ~/dotfiles'
 alias lg='lazygit'
 alias checkport='lsof -i -P | grep'
 alias kl='kill -9'
+
+# rust
+alias cat='bat'
+alias curl='xh'
+alias gcat='glitchcat'
+alias fd='find'
+alias sabori='genact'
 
 # git
 fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
