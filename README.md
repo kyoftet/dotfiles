@@ -24,4 +24,4 @@ System Preferences > Security & Privacy > Full Disk Access and add Terminal
 * rust install shell script
 * git
 * shell
-* chezmoi
+* chezmoi or dotter
