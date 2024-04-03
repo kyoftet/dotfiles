@@ -13,6 +13,11 @@ for f in .??*; do
     ln -snfv ${PWD}/"$f"/wezterm ~/.config/
     ln -snfv ${PWD}/"$f"/zellij ~/.config/
     ln -snfv ${PWD}/"$f"/karabiner ~/.config/
+    ln -snfv ${PWD}/"$f"/git ~/.config/
+    ln -snfv ${PWD}/"$f"/mise ~/.config/
+    ln -snfv ${PWD}/"$f"/sheldon ~/.config/
+    ln -snfv ${PWD}/"$f"/vim ~/.config/
+    ln -snfv ${PWD}/"$f"/zsh ~/.config/
     continue
   fi
   ln -snfv ${PWD}/"$f" ~/
