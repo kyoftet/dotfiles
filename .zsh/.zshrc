@@ -1,5 +1,22 @@
+# history
+export HISTFILE=${HOME}/.zsh/.zsh_history
+export HISTSIZE=1000
+export SAVEHIST=100000
+setopt hist_ignore_dups
+setopt EXTENDED_HISTORY
+
 # import local .zshrc
-[ -f ~/.zshrc.local ] && source ~/.zshrc.local
+[ -f $HOME/.zshrc.local ] && source $HOME/.zshrc.local
+
+# env
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
+
+# starship
+eval "$(starship init zsh)"
+# sheldon
+eval "$(sheldon source)"
 
 # core
 alias ls='lsd'
@@ -13,35 +30,17 @@ alias t='touch'
 alias rd='rmdir'
 alias rr='rm -rf'
 alias e='exit'
-alias sshell='source ~/.zshrc'
-alias dot='cd ~/dotfiles'
-alias ndot='nvim ~/dotfiles'
-alias lg='lazygit'
+alias sshell="source $HOME/.zshenv"
+alias dot="cd $HOME/dotfiles"
 alias checkport='lsof -i -P | grep'
 alias kl='kill -9'
-
-# rust
 alias cat='bat'
 alias curl='xh'
 alias gcat='glitchcat'
 alias fd='find'
 alias sabori='genact'
 
-# git
-fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
-autoload -U compinit
-compinit -u
-autoload -U colors
-colors
-zstyle ':completion:*' list-colors "${LS_COLORS}"
-setopt complete_in_word
-zstyle ':completion:*:default' menu select=1
-zstyle ':completion::complete:*' use-cache true
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-setopt list_packed
-setopt correct
-SPROMPT="correct: $RED%R$DEFAULT -> $GREEN%r$DEFAULT ? [Yes/No/Abort/Edit] => "
-# alias
+# git alias
 alias ga='git add'
 alias gc='git commit -m'
 alias gP='git push'
@@ -52,19 +51,17 @@ alias gC='git checkout'
 alias gl='git log'
 alias gd='git diff'
 alias gf='git fetch'
+alias lg='lazygit'
 
-# docker compose
+# docker alias
 alias dc='docker compose'
 alias dcp='docker compose --profile'
 alias dcdel='docker compose down --rmi all --volumes --remove-orphans'
 alias dcup='docker compose up -d --build'
-
-# starship
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
-eval "$(starship init zsh)"
+alias dcpdev='docker compose --profile dev'
 
 # tmux
-alias stmux='tmux source ~/.config/tmux/tmux.conf'
+alias stmux="tmux source $HOME/.config/tmux/tmux.conf"
 function tmuxPopup() {
   width='80%'
   height='80%'
@@ -77,4 +74,4 @@ function tmuxPopup() {
 }
 
 # alacritty
-alias to='./.config/alacritty/bin/toggle_opacity.sh'
+alias to="$HOME/.config/alacritty/bin/toggle_opacity.sh"
