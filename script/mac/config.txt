@@ -1,0 +1,14 @@
+.config/alacritty=$HOME/.config
+.config/git=$HOME/.config
+.config/karabiner=$HOME/.config
+.config/mise=$HOME/.config
+.config/nvim=$HOME/.config
+.config/sheldon=$HOME/.config
+.config/starship=$HOME/.config
+.config/tmux=$HOME/.config
+.config/wezterm=$HOME/.config
+.config/zellij=$HOME/.config
+.hammerspoon=$HOME
+.vim=$HOME
+.zsh=$HOME
+.zshnev=$HOME
