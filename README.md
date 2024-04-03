@@ -15,13 +15,3 @@ System Preferences > Security & Privacy > Full Disk Access and add Terminal
 # Remarks
 * Files for local settings
     * .zshrc.local
-    * .gitconfig.local
-
-# to be added
-* mise
-* brewfile
-* sheldon
-* rust install shell script
-* git
-* shell
-* chezmoi or dotter
