@@ -1,5 +1,5 @@
-.env
+# karabiner
 automatic_backups/
-.DS_Store
-lazygit/
-devbox/
+
+# zsh
+**/*.zcompdump*
