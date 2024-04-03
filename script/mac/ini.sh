@@ -2,52 +2,18 @@
 
 # xcode
 xcode-select --install
-echo ======== finish install xcode-select ========
 
 # dotfiles
 git clone https://github.com/kyoF/dotfiles.git
 
 # symbolic link 
-cd dotfiles
+cd $HOME/dotfiles
 ./script/mac/ln.sh
-echo ======== finish create symbolic link ========
 
 # homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-install_cli_app=(
-  git
-  neovim
-  starship
-  tmux
-  lazygit
-  zsh-completions
-  zsh-autosuggestions
-  zsh-syntax-highlighting
-  ripgrep
-)
-for app in ${install_cli_app[@]};
-do
-  brew install $app
-done
-install_gui_app=(
-  wezterm
-  clipy
-  microsoft-edge
-  google-chrome
-  visual-studio-code
-  slack
-  docker
-  appcleaner
-)
-for app in ${install_gui_app[@]};
-do
-  brew install --cask $app
-done
-echo ======== finish setup brew ========
-
-# devbox
-# curl -fsSL https://get.jetpack.io/devbox | bash
-# echo ======== finish install devbox ========
+brew tap Homebrew/bundle
+brew bundle --file "./script/mac/Brewfile"
 
 # git
 git remote set-url origin git@github.com:kyoF/dotfiles.git
@@ -72,11 +38,10 @@ echo "[user]
   name = $name
   email = $mail
 " > ~/.gitconfig.local
-echo ======== finish setup git ========
 
 # macos
 cd $HOME/dotfiles
 ./script/mac/macos.sh
-echo ======== Finish setup macos ========
 
-echo ======== finish all ========
+# rust
+./script/rust.sh
