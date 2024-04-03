@@ -1,6 +1,7 @@
 [core]
 	editor = vim -c \"set fenc=utf-8\"
 	quotepath = false
+  autocrlf = input
 
 [color]
 	ui = true
@@ -13,13 +14,10 @@
 
 [push]
 	default = current
+  autoSetupRemote = true
 
 [fetch]
 	prune = true
 
 [merge]
 	conflictStyle = diff3
-
-[include]
-	path = .gitconfig.local
-
