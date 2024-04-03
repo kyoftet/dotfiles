@@ -52,6 +52,7 @@ alias gl='git log'
 alias gd='git diff'
 alias gf='git fetch'
 alias lg='lazygit'
+alias go='git open'
 
 # docker alias
 alias dc='docker compose'
