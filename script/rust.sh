@@ -9,3 +9,6 @@ cargo install ripgrep
 cargo install xh
 cargo install mise
 cargo install sheldon
+cargo install starship --locked
+cargo install tokei
+cargo install tock
