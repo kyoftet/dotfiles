@@ -39,6 +39,7 @@ alias curl='xh'
 alias gcat='glitchcat'
 alias fd='find'
 alias sabori='genact'
+alias tock='tock -scm -C 4'
 
 # git alias
 alias ga='git add'
