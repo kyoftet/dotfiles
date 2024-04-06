@@ -8,7 +8,7 @@ git clone https://github.com/kyoF/dotfiles.git
 
 # symbolic link 
 cd $HOME/dotfiles
-./script/mac/ln.sh
+./script/ln.sh
 
 # homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
