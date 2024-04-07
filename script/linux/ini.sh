@@ -1,10 +1,9 @@
 #!/bin/bash
 
-# xcode
-xcode-select --install
-
 # dotfiles
 git clone https://github.com/kyoF/dotfiles.git
+
+./script/linux/cli.sh
 
 # symbolic link 
 cd $HOME/dotfiles
