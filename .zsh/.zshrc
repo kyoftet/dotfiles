@@ -9,7 +9,7 @@ setopt EXTENDED_HISTORY
 [ -f $HOME/.zshrc.local ] && source $HOME/.zshrc.local
 
 # env
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
+export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
 
@@ -17,6 +17,8 @@ export PATH="$HOME/go/bin:$PATH"
 eval "$(starship init zsh)"
 # sheldon
 eval "$(sheldon source)"
+# mise
+eval "$(mise activate zsh)"
 
 # core
 alias ls='lsd'
@@ -37,7 +39,6 @@ alias kl='kill -9'
 alias cat='bat'
 alias curl='xh'
 alias gcat='glitchcat'
-alias fd='find'
 alias sabori='genact'
 alias tock='tock -scm -C 4'
 
