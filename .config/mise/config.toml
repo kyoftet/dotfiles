@@ -2,3 +2,4 @@
 go = "latest"
 terraform = "latest"
 node = "20"
+python = "3.11"
