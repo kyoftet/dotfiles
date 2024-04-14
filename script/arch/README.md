@@ -23,15 +23,13 @@ device list
 station __device__ scan
 station __device__ get-networks
 station __device__ connect __ssid__
-Ctrl-C
-ping archlinux.jp
+ping google.com
 
 timedatectl set-timezone Asia/Tokyo
 timedatectl set-ntp true
 
 vim /etc/pacman.d/mirrorlist
-add under
-Server = http://ftp.tsukuba.wide.ad.jp/Linux/archlinux/$repo/os/$arch
+ Server = http://ftp.tsukuba.wide.ad.jp/Linux/archlinux/$repo/os/$arch
 
 pacstrap /mnt base base-devel linux linux-firmware grub efibootmgr dosfstools netctl vim iw wpa_supplicant networkmanager dialog zsh dhcpcd
 
@@ -40,9 +38,8 @@ genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt /bin/zsh
 
 vim /etc/locale.gen
-add under
-en_US.UTF-8 UTF-8
-ja_JP.UTF-8 UTF-8
+ en_US.UTF-8 UTF-8
+ ja_JP.UTF-8 UTF-8
 locale-gen
 
 echo "LANG=en_US.UTF-8 UTF-8" > /etc/locale.conf
@@ -94,13 +91,13 @@ sudo vim /etc/pacman.conf
 
 sudo pacman -S deepin
 sudo pacman -S --overwrite '*' deepin-reader
-sudo pacman -S deepin-extra
-sudo pacman -S geary gedit tomboy empathy transmission-gtk
+sudo pacman -S deepin-extra deepin-kwin
+sudo pacman -S geary gedit transmission-gtk lightdm-deepin-greeter plymouth
 
 sudo pacman -S lightdm
-sudo systemctl enable lightdm -f
+sudo systemctl enable lightdm
 sudo vim /etc/lightdm/lightdm.conf #[Seat*] greeter-sessionの下に置く
  greeter-session=lightdm-deepin-greeter
 
-lightdm --test-mode --debug
+sudo lightdm --test-mode --debug
 ```
