@@ -51,5 +51,3 @@ for dotfile in "${(k)config[@]}"; do
   fi
   ln -snfv ${PWD}/$key $config[$key]
 done
-
-
