@@ -37,7 +37,7 @@ done
 echo "[user]
   name = $name
   email = $mail
-" > ~/.gitconfig.local
+" > $HOME/.gitconfig
 
 # macos
 cd $HOME/dotfiles
