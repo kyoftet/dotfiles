@@ -37,7 +37,7 @@ echo "[user]
 
 cd $HOME
 sudo pacman -S git
-sudo pacman -Sy neovim
+sudo pacman -S neovim
 sudo pacman -S tmux
 sudo pacman -S lazygit
 sudo pacman -S wezterm
@@ -54,4 +54,3 @@ rm -rf yay
 
 yay -S google-chrome
 yay -S microsoft-edge-dev-bin
-
