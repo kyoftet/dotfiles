@@ -2,10 +2,11 @@
 
 -------------------- For MacOS, please run the following --------------------
 System Preferences > Security & Privacy > Full Disk Access and add Terminal
+$ ssh-keygen -t ed25519 -C "your mail address"
 -----------------------------------------------------------------------------
 
 ```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/kyoF/dotfiles/main/script/mac/ini.sh) "" githubusername githubmailaddress"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/kyoF/dotfiles/main/script/mac/ini.sh)" "" githubusername githubmailaddress
 ```
 
 # Manually Setting
