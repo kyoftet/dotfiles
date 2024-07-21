@@ -14,12 +14,13 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
 
 # js/ts
-export PATH="$DENO_INSTALL/bin:$PATH"
 export DENO_INSTALL="$HOME/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # homebrew
+export PATH="$PATH:/op/homebrew/bin/"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 # starship
 eval "$(starship init zsh)"
