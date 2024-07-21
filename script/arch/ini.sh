@@ -1,56 +1,30 @@
-#!/bin/zsh
+#!/bin/bash
 
-# dotfiles
-git clone https://github.com/kyoF/dotfiles.git
+ssh-keygen -t ed25519 -C $2
 
-# rust
-cd $HOME/dotfiles
-./script/rust.sh
-
-# symbolic link
-cd $HOME/dotfiles
-./script/ln.sh
-
-# git
-git remote set-url origin git@github.com:kyoF/dotfiles.git
-while true; do
-  read -p "your github user name: " name
-  read -p "your github email address: " mail
-
-  read -p "Correct? [y/n]: " validation
-
-  case $validation in
-    [yY]|[yY][eE][sS])
-      echo "Continue...";
-      break ;;
-    [nN]|[nN][oO])
-      echo "please input again!";;
-    *)
-      echo "faild"
-      echo "please input again!"
-  esac
-done
 echo "[user]
-  name = $name
-  email = $mail
+  name = $1
+  email = $2
 " > $HOME/.gitconfig
 
-cd $HOME
-sudo pacman -S git
-sudo pacman -S neovim
-sudo pacman -S tmux
-sudo pacman -S lazygit
-sudo pacman -S wezterm
-sudo pacman -S alacritty
-sudo pacman -S docker
-sudo pacman -S docker-compose
+# dotfiles
+git clone git@github.com:kyoF/dotfiles.git
 
-cd $HOME
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-cd $HOME
-rm -rf yay
+# symbolic link 
+cd $HOME/dotfiles
+./script/mac/ln.sh
 
-yay -S google-chrome
-yay -S microsoft-edge-dev-bin
+# homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+brew tap Homebrew/bundle
+brew bundle --file "./script/mac/Brewfile"
+
+# line
+mas install 539883307
+
+# macos
+cd $HOME/dotfiles
+./script/mac/macos.sh
+
+# rust
+./script/rust.sh
