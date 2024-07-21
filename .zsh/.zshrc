@@ -20,7 +20,7 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # homebrew
-export PATH="$PATH:/op/homebrew/bin/"
+export PATH="$PATH:/opt/homebrew/bin/"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 # starship
 eval "$(starship init zsh)"
