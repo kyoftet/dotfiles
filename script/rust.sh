@@ -12,3 +12,6 @@ cargo install sheldon
 cargo install starship --locked
 cargo install tokei
 cargo install tock
+cargo install wezterm
+cargo install alacritty
+cargo install --locked zellij
