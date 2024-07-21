@@ -2,6 +2,7 @@ brew "git"
 brew "lazygit"
 brew "neovim"
 brew "tmux"
+brew "cmake"
 brew "mas"
 
 cask "clipy"
