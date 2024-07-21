@@ -1,5 +1,7 @@
 #!/bin/bash
 
+ssh-keygen -t ed25519 -C $2
+
 echo "[user]
   name = $1
   email = $2
