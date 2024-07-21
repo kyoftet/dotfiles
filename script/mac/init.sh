@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 echo "[user]
   name = $1
@@ -12,11 +12,12 @@ xcode-select --install
 git clone git@github.com:kyoF/dotfiles.git
 
 # symbolic link 
+mkdir -p "$HOME/.config"
 cd $HOME/dotfiles
 ./script/mac/ln.sh
 
 # homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+/bin/bash -c "$(sudo curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew tap Homebrew/bundle
 brew bundle --file "./script/mac/Brewfile"
 
