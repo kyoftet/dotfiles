@@ -10,12 +10,12 @@ for f in .??*; do
   if [[ $f == ".config" ]]; then
     for config_dir in ${PWD}/"$f"/*; do
       config_dir_name=$(basename "$config_dir")
-      ln -snfv "$config_dir" ~/.config/"$config_dir_name"
+      ln -snfv "$config_dir" $HOME/.config/"$config_dir_name"
     done
     continue
   else
-    ln -snfv ${PWD}/"$f" ~/
+    ln -snfv ${PWD}/"$f" $HOME/
   fi
 done
 
-source ~/.zshrc
+source $HOME/.zshenv
