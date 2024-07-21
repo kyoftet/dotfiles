@@ -18,6 +18,7 @@ cd $HOME/dotfiles
 
 # homebrew
 /bin/bash -c "$(sudo curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+source $HOME/.zshenv
 brew tap Homebrew/bundle
 brew bundle --file "./script/mac/Brewfile"
 
