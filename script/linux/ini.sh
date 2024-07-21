@@ -1,37 +1,35 @@
 #!/bin/bash
 
-# dotfiles
-git clone https://github.com/kyoF/dotfiles.git
+ssh-keygen -t ed25519 -C $2
 
-./script/linux/cli.sh
+echo "[user]
+  name = $1
+  email = $2
+" > $HOME/.gitconfig
+
+# dotfiles
+git clone git@github.com:kyoF/dotfiles.git
 
 # symbolic link 
 cd $HOME/dotfiles
-./script/ln.sh
-
-# git
-git remote set-url origin git@github.com:kyoF/dotfiles.git
-while true; do
-  read -p "your github user name: " name
-  read -p "your github email address: " mail
-
-  read -p "Correct? [y/n]: " validation
-
-  case $validation in
-    [yY]|[yY][eE][sS])
-      echo "Continue...";
-      break ;;
-    [nN]|[nN][oO])
-      echo "please input again!";;
-    *)
-      echo "faild"
-      echo "please input again!"
-  esac
+for f in .??*; do
+  [[ $f == ".git" ]] && continue
+  [[ $f == ".gitignore" ]] && continue
+  [[ $f == ".hammerspoon" ]] && continue
+ 
+  if [[ $f == ".config" ]]; then
+    for config_dir in ${PWD}/"$f"/*; do
+      config_dir_name=$(basename "$config_dir")
+      [[ "$confid_dir" == "alacritty" ]] && continue
+      [[ "$confid_dir" == "karabiner" ]] && continue
+      [[ "$confid_dir" == "wezterm" ]] && continue
+      ln -snfv "$config_dir" ~/.config/"$config_dir_name"
+    done
+    continue
+  else
+    ln -snfv ${PWD}/"$f" ~/
+  fi
 done
-echo "[user]
-  name = $name
-  email = $mail
-" > ~/.gitconfig.local
 
 # rust
 ./script/rust.sh
