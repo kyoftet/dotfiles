@@ -19,6 +19,8 @@ export DENO_INSTALL="$HOME/.deno"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+# homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
 # starship
 eval "$(starship init zsh)"
 # sheldon
