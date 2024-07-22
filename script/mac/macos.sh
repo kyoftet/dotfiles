@@ -124,6 +124,7 @@ defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist Displa
 defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist Bluetooth -int 18
 # 時間は秒数まで表示
 defaults write com.apple.menuextra.clock DateFormat -string "M\"\"U6708d\\U65e5(EEE)  H:mm:ss"
+defaults write ~/Library/Preferences/com.apple.finder.plist AppleICUTimeFormatStrings -dict-add 1 "hh':'mm':'ss' 'a"
 # バッテリーのパーセント表示
 # defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist BatteryShowPercentage -bool true

@@ -5,7 +5,6 @@ cd $HOME/dotfiles
 for f in .??*; do
   [[ $f == ".git" ]] && continue
   [[ $f == ".gitignore" ]] && continue
-  [[ $f == ".hammerspoon" ]] && continue
  
   if [[ $f == ".config" ]]; then
     for config_dir in ${PWD}/"$f"/*; do
@@ -18,4 +17,4 @@ for f in .??*; do
   fi
 done
 
-source ~/.zshrc
+source ~/.zshenv
