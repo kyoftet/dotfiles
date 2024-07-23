@@ -46,6 +46,7 @@ casks=(
   arc
   karabiner-elements
   zoom
+  hammerspoon
 )
 for cask in "${casks[@]}"; do
   brew install --cask "$cask"
@@ -56,13 +57,24 @@ mas install 539883307 # line
 ######## install rust ########
 ##############################
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+./script/utils/rust.sh
 
 ###################################
 ######## exec shell script ########
 ###################################
 cd $HOME/dotfiles
 ./script/mac/macos.sh
-./script/utils/rust.sh
+
+##################################
+####### setup hammerspoon ########
+##################################
+cd $HOME/Downloads
+git clone https://github.com/asmagill/hs._asm.spaces.git
+cd hs._asm.spaces
+make install
+cd $HOME/Downloads
+rm -rf hs._asm.spaces
+cd
 
 ############################
 ######## reboot mac ########
