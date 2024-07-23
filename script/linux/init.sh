@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "[user]
-  name = $1
+  name = kyof
   email = $2
 " > $HOME/.gitconfig
 
@@ -30,4 +30,4 @@ for f in .??*; do
 done
 
 # rust
-./script/rust.sh
+./script/utils/rust.sh
