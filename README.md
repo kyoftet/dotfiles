@@ -9,7 +9,7 @@ ssh-keygen -t ed25519 -C "your mail address"
 ```
 
 ```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/kyoF/dotfiles/main/script/mac/init.sh)" "" githubusername githubmailaddress
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/kyoF/dotfiles/main/script/mac/init.sh)" "" githubmailaddress
 ```
 
 # Manually Setting

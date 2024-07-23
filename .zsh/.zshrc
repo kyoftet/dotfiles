@@ -46,7 +46,6 @@ alias dot="cd $HOME/dotfiles"
 alias checkport='lsof -i -P | grep'
 alias kl='kill -9'
 alias cat='bat'
-alias curl='xh'
 alias gcat='glitchcat'
 alias sabori='genact'
 alias tock='tock -scm -C 4'

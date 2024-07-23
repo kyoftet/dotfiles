@@ -1,33 +1,70 @@
 #!/bin/zsh
 
+######################
+######## init ########
+######################
+cd $HOME
+
 echo "[user]
-  name = $1
-  email = $2
+  name = kyof
+  email = $1
 " > $HOME/.gitconfig
 
-# xcode
+mkdir -p "$HOME/.config"
+
 xcode-select --install
 
-# dotfiles
 git clone git@github.com:kyoF/dotfiles.git
-
-# symbolic link 
-mkdir -p "$HOME/.config"
 cd $HOME/dotfiles
 ./script/mac/ln.sh
 
-# homebrew
-/bin/bash -c "$(sudo curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-source $HOME/.zshenv
-brew tap Homebrew/bundle
-brew bundle --file "./script/mac/Brewfile"
+##########################
+######## homebrew ########
+##########################
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-# line
-mas install 539883307
+packages=(
+  git
+  lazygit
+  neovim
+  tmux
+  cmake
+  mas
+)
+for package in "${packages[@]}"; do
+  brew install "$package"
+done
 
-# macos
+casks=(
+  clipy
+  microsoft-edge
+  google-chrome
+  visual-studio-code
+  slack
+  docker
+  appcleaner
+  arc
+  karabiner-elements
+  zoom
+)
+for cask in "${casks[@]}"; do
+  brew install --cask "$cask"
+done
+mas install 539883307 # line
+
+##############################
+######## install rust ########
+##############################
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+###################################
+######## exec shell script ########
+###################################
 cd $HOME/dotfiles
 ./script/mac/macos.sh
-
-# rust
 ./script/rust.sh
+
+############################
+######## reboot mac ########
+############################
+sudo reboot

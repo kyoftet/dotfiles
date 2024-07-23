@@ -3,3 +3,4 @@ automatic_backups/
 
 # zsh
 **/*.zcompdump*
+**/.zsh_sessions
