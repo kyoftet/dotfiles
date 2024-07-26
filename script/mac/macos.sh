@@ -31,6 +31,8 @@ defaults write -g com.apple.scrollwheel.scaling -int 1
 # キーリピートの高速化
 defaults write NSGlobalDomain KeyRepeat -int 2
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
+defaults write -g InitialKeyRepeat -int 12 # normal minimum is 15 (225 ms)
+defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
 
 # 高速化
 # ツールチップ表示までのタイムラグをなくす
