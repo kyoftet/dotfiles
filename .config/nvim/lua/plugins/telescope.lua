@@ -17,7 +17,7 @@ return {
                 },
             },
         })
-        vim.keymap.set('n', '<C-f>f', ':Telescope find_files hidden=true<cr>')
+        vim.keymap.set('n', '<leader>f', ':Telescope find_files hidden=true<cr>')
         vim.keymap.set('n', '<C-f>l', ':Telescope live_grep<cr>')
         vim.keymap.set('n', '<C-f>h', ':Telescope help_tags<cr>')
         vim.keymap.set('n', '<C-f>gs', ':Telescope git_status<cr>')
