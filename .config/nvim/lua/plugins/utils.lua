@@ -90,5 +90,16 @@ return {
         'windwp/nvim-autopairs',
         event = "InsertEnter",
         config = true
+    },
+    {
+        'mrjones2014/smart-splits.nvim',
+        config = function()
+            require('smart-splits').setup({
+            })
+            vim.keymap.set('n', '<Leader>h', require('smart-splits').resize_left)
+            vim.keymap.set('n', '<Leader>j', require('smart-splits').resize_down)
+            vim.keymap.set('n', '<Leader>k', require('smart-splits').resize_up)
+            vim.keymap.set('n', '<Leader>l', require('smart-splits').resize_right)
+        end,
     }
 }

@@ -21,15 +21,15 @@ return {
                 separator_visible = { fg = '#456789' },
                 separator = { fg = '#456789' },
             },
-            options = {
-                indicator = { style = 'underline' },
-                buffer_close_icon = 'x',
-                diagnostics = 'nvim-lsp',
-                diagnostics_indicator = function(count, level)
-                    local icon = level:match("error") and " " or " "
-                    return " " .. icon .. count
-                end,
-            }
+            -- options = {
+            --     indicator = { style = 'underline' },
+            --     buffer_close_icon = 'x',
+            --     diagnostics = 'nvim-lsp',
+            --     diagnostics_indicator = function(count, level)
+            --         local icon = level:match("error") and " " or " "
+            --         return " " .. icon .. count
+            --     end,
+            -- }
         })
         vim.keymap.set('n', '<Leader>bp', ':BufferLinePick<CR>')
         vim.keymap.set('n', '<Leader>bc', ':BufferLinePickClose<CR>')
