@@ -79,5 +79,16 @@ return {
         opts = {
             -- options
         },
+    },
+    {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end,
+    },
+    {
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        config = true
     }
 }
