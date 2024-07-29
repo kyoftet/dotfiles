@@ -4,14 +4,15 @@ return {
         require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
         local dashboard = require('alpha.themes.dashboard')
         dashboard.section.buttons.val = {
+            dashboard.button("q", "󰅚  Quit NVIM", ":qa<CR>"),
             dashboard.button("e", "  View dir", ":Neotree float<CR>"),
             dashboard.button("f", "  Find file", ":Telescope find_files hidden=true<CR>"),
-            dashboard.button("h", "󰋖  Find help", ":Telescope help_tags<CR>"),
-            dashboard.button("k", "  Find keymap", ":Telescope keymaps<CR>"),
-            dashboard.button("g", "  Lazy Git", ":lua _lazygit_toggle()<CR>"),
-            dashboard.button("l", "  Check lsp", ":Mason<CR>"),
-            dashboard.button("t", "  Toggle terminal", ":ToggleTerm direction=float<CR>"),
-            dashboard.button("q", "󰅚  Quit NVIM", ":qa<CR>"),
+            dashboard.button("g", "  Live grep", ":Telescope live_grep<CR>"),
+            dashboard.button("<SPC>h", "󰋖  Find help", ":Telescope help_tags<CR>"),
+            dashboard.button("<SPC>k", "  Find keymap", ":Telescope keymaps<CR>"),
+            dashboard.button("<SPC>g", "  Lazy Git", ":lua _lazygit_toggle()<CR>"),
+            dashboard.button("<SPC>l", "  Check lsp", ":Mason<CR>"),
+            dashboard.button("<SPC>t", "  Toggle terminal", ":ToggleTerm direction=float<CR>"),
         }
     end
 }
