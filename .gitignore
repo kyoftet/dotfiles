@@ -4,3 +4,7 @@ automatic_backups/
 # zsh
 **/*.zcompdump*
 **/.zsh_sessions
+
+# yazi
+**/yazi/flavors
+**/yazi/plugins
