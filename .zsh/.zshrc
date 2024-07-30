@@ -45,10 +45,13 @@ alias sshell="source $HOME/.zshenv"
 alias dot="cd $HOME/dotfiles"
 alias checkport='lsof -i -P | grep'
 alias kl='kill -9'
+
+# rust
 alias cat='bat'
 alias gcat='glitchcat'
 alias sabori='genact'
 alias tock='tock -scm -C 4'
+alias yz='yazi'
 
 # git alias
 alias ga='git add'
