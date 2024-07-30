@@ -1,13 +1,10 @@
 return {
     "nvim-treesitter/nvim-treesitter",
-    event = "BufRead",
+    event = { "BufReadPost", "BufNewFile" },
+    cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
+    build = ":TSUpdate",
     config = function()
         require("nvim-treesitter.configs").setup({
-            autotag = { enable = true },
-            highlight = {
-                enable = true,
-            },
-            indent = { enable = true },
             ensure_installed = {
                 "astro",
                 "bash",
@@ -35,12 +32,17 @@ return {
                 "rust",
                 "scss",
                 "sparql",
+                "sql",
                 "toml",
                 "tsx",
                 "typescript",
                 "vim",
                 "yaml",
             },
+            sync_install = true,
+            auto_install = true,
+            highlight = { enable = true },
+            indent = { enable = true },
         })
     end,
 }
