@@ -1,6 +1,5 @@
 return {
     'akinsho/toggleterm.nvim',
-    tag = "*",
     config = function()
         local Terminal = require('toggleterm.terminal').Terminal
         local lazygit  = Terminal:new({ cmd = "lazygit", dir = 'git_dir', direction = 'float', hidden = true })
