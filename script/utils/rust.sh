@@ -9,3 +9,4 @@ cargo install tokei
 cargo install tock
 cargo install starship --locked
 cargo install zellij --locked
+cargo install --locked yazi-fm yazi-cli
