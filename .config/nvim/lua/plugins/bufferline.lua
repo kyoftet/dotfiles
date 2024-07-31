@@ -19,6 +19,7 @@ return {
                 separator_selected = { fg = '#456789' },
                 separator_visible = { fg = '#456789' },
                 separator = { fg = '#456789' },
+                fill = { bg = '', fg = '' }
             },
             options = {
                 indicator = { style = 'underline' },

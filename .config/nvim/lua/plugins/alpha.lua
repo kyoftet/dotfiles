@@ -8,11 +8,11 @@ return {
             dashboard.button("e", "  View dir", ":Neotree float<CR>"),
             dashboard.button("f", "  Find file", ":Telescope find_files hidden=true<CR>"),
             dashboard.button("g", "  Live grep", ":Telescope live_grep<CR>"),
-            dashboard.button("<SPC>h", "󰋖  Find help", ":Telescope help_tags<CR>"),
-            dashboard.button("<SPC>k", "  Find keymap", ":Telescope keymaps<CR>"),
-            dashboard.button("<SPC>g", "  Lazy Git", ":lua _lazygit_toggle()<CR>"),
-            dashboard.button("<SPC>l", "  Check lsp", ":Mason<CR>"),
-            dashboard.button("<SPC>t", "  Toggle terminal", ":ToggleTerm direction=float<CR>"),
+            dashboard.button("?", "󰋖  Find help", ":Telescope help_tags<CR>"),
+            dashboard.button("K", "  Find keymap", ":Telescope keymaps<CR>"),
+            dashboard.button("g", "  Lazy git", ":lua _lazygit_toggle()<CR>"),
+            dashboard.button("l", "  Check lsp", ":Mason<CR>"),
+            dashboard.button("t", "  Toggle terminal", ":ToggleTerm direction=float<CR>"),
         }
     end
 }
