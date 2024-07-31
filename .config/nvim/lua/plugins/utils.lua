@@ -110,65 +110,13 @@ return {
             "MunifTanjim/nui.nvim",
         },
         config = function()
-            local actions = require("nvim-navbuddy.actions")
             require("nvim-navbuddy").setup({
                 window = {
-                    size = "80%",
-                    sections = {
-                        left = { size = "20%" },
-                        mid = { size = "35%" },
-                        right = { preview = "leaf" }, -- "leaf", "always" or "never"
-                    },
-                },
-                mappings = {
-                    ["<down>"] = actions.next_sibling(),
-                    ["<up>"] = actions.previous_sibling(),
-                    ["<tab>"] = actions.next_sibling(),
-                    ["<s-tab>"] = actions.previous_sibling(),
-                    ["<left>"] = actions.parent(),
-                    ["<right>"] = actions.children(),
-                    ["<c-c>"] = actions.close(),
-                },
-                source_buffer = {
-                    follow_node = true,
-                    highlight = true,
-                    reorient = "smart", -- "smart", "top", "mid" or "none"
-                },
-                node_markers = {
-                    enabled = true,
-                    icons = { leaf = "", leaf_selected = "", branch = " " },
-                },
-                icons = {
-                    Array = "󰅪 ",
-                    Boolean = "◩ ",
-                    Class = " ",
-                    Constant = "󰏿 ",
-                    Constructor = "󰢻 ",
-                    Enum = " ",
-                    EnumMember = " ",
-                    Event = " ",
-                    Field = "󰜢 ",
-                    File = "󰧮 ",
-                    Function = "󰊕 ",
-                    Interface = " ",
-                    Key = "󰌆 ",
-                    Method = "󰊕 ",
-                    Module = " ",
-                    Namespace = " ",
-                    Null = "󰟢 ",
-                    Number = "󰎠 ",
-                    Object = "󰅩 ",
-                    Operator = "󰆕 ",
-                    Package = " ",
-                    Property = "󰜢 ",
-                    String = " ",
-                    Struct = " ",
-                    TypeParameter = " ",
-                    Variable = "󰫧 ",
+                    size = { height = "40%", width = "100%" },
+                    position = { row = "100%", col = "50%" },
                 },
                 lsp = { auto_attach = true },
             })
-            vim.api.nvim_set_hl(0, "NavbuddyNormalFloat", { link = "TelescopeNormal" })
             vim.keymap.set('n', '<leader>nb', ':Navbuddy<CR>')
         end,
     }
