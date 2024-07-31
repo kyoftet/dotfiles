@@ -4,11 +4,11 @@ return {
     config = function()
         require('bufferline').setup({
             highlights = {
-                close_button = { fg = '#00cccc' },
-                close_button_visible = { fg = '#00cccc' },
-                close_button_selected = { fg = '#00cccc' },
-                buffer_selected = { fg = '#00cccc', bold = true },
-                buffer_visible = { fg = '#4169e1' },
+                close_button = { fg = '#00cccc', bg = '' },
+                close_button_visible = { fg = '#00cccc', bg = '' },
+                close_button_selected = { fg = '#00cccc', bg = '' },
+                buffer_selected = { fg = '#00cccc', bg = '', bold = true },
+                buffer_visible = { fg = '#4169e1', bg = '' },
                 diagnostic_selected = { bold = true },
                 info_selected = { bold = true },
                 info_diagnostic_selected = { bold = true },
@@ -33,8 +33,6 @@ return {
         })
         vim.keymap.set('n', '<Leader>bp', ':BufferLinePick<CR>')
         vim.keymap.set('n', '<Leader>bc', ':BufferLinePickClose<CR>')
-        vim.keymap.set('n', '<Leader>bl', ':BufferLineCloseLeft<CR>')
-        vim.keymap.set('n', '<Leader>br', ':BufferLineCloseRight<CR>')
         vim.keymap.set('n', '<Leader>bo', ':BufferLineCloseOthers<CR>')
         vim.keymap.set('n', '<C-m>', ':BufferLineCycleNext<CR>')
         vim.keymap.set('n', '<C-n>', ':BufferLineCyclePrev<CR>')
