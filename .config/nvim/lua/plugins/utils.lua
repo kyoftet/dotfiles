@@ -102,5 +102,74 @@ return {
             vim.keymap.set('n', '<Leader>k', require('smart-splits').resize_up)
             vim.keymap.set('n', '<Leader>l', require('smart-splits').resize_right)
         end,
+    },
+    {
+        "SmiteshP/nvim-navbuddy",
+        dependencies = {
+            "SmiteshP/nvim-navic",
+            "MunifTanjim/nui.nvim",
+        },
+        config = function()
+            local actions = require("nvim-navbuddy.actions")
+            require("nvim-navbuddy").setup({
+                window = {
+                    size = "80%",
+                    sections = {
+                        left = { size = "20%" },
+                        mid = { size = "35%" },
+                        right = { preview = "leaf" }, -- "leaf", "always" or "never"
+                    },
+                },
+                mappings = {
+                    ["<down>"] = actions.next_sibling(),
+                    ["<up>"] = actions.previous_sibling(),
+                    ["<tab>"] = actions.next_sibling(),
+                    ["<s-tab>"] = actions.previous_sibling(),
+                    ["<left>"] = actions.parent(),
+                    ["<right>"] = actions.children(),
+                    ["<c-c>"] = actions.close(),
+                },
+                source_buffer = {
+                    follow_node = true,
+                    highlight = true,
+                    reorient = "smart", -- "smart", "top", "mid" or "none"
+                },
+                node_markers = {
+                    enabled = true,
+                    icons = { leaf = "", leaf_selected = "", branch = " " },
+                },
+                icons = {
+                    Array = "󰅪 ",
+                    Boolean = "◩ ",
+                    Class = " ",
+                    Constant = "󰏿 ",
+                    Constructor = "󰢻 ",
+                    Enum = " ",
+                    EnumMember = " ",
+                    Event = " ",
+                    Field = "󰜢 ",
+                    File = "󰧮 ",
+                    Function = "󰊕 ",
+                    Interface = " ",
+                    Key = "󰌆 ",
+                    Method = "󰊕 ",
+                    Module = " ",
+                    Namespace = " ",
+                    Null = "󰟢 ",
+                    Number = "󰎠 ",
+                    Object = "󰅩 ",
+                    Operator = "󰆕 ",
+                    Package = " ",
+                    Property = "󰜢 ",
+                    String = " ",
+                    Struct = " ",
+                    TypeParameter = " ",
+                    Variable = "󰫧 ",
+                },
+                lsp = { auto_attach = true },
+            })
+            vim.api.nvim_set_hl(0, "NavbuddyNormalFloat", { link = "TelescopeNormal" })
+            vim.keymap.set('n', '<leader>nb', ':Navbuddy<CR>')
+        end,
     }
 }
