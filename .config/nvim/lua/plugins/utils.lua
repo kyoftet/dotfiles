@@ -119,5 +119,20 @@ return {
             })
             vim.keymap.set('n', '<leader>nb', ':Navbuddy<CR>')
         end,
+    },
+    {
+        'petertriho/nvim-scrollbar',
+        dependencies = 'lewis6991/gitsigns.nvim',
+        config = function()
+            require('scrollbar').setup({})
+        end
+    },
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        main = "ibl",
+        opts = {},
+    },
+    {
+        'norcalli/nvim-colorizer.lua',
     }
 }
