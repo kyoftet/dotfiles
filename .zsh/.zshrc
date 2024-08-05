@@ -69,10 +69,11 @@ alias gopen='git open'
 
 # docker alias
 alias dc='docker compose'
-alias dcp='docker compose --profile'
-alias dcdel='docker compose down --rmi all --volumes --remove-orphans'
 alias dcup='docker compose up -d --build'
-alias dcpdev='docker compose --profile dev'
+alias dcp='docker compose ps'
+alias dcl='docker compose logs'
+alias dcdown='docker compose down --rmi all --volumes --remove-orphans'
+alias dcp='docker compose --profile'
 
 # tmux
 alias stmux="tmux source $HOME/.config/tmux/tmux.conf"
