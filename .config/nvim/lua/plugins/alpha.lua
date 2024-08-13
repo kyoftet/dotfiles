@@ -10,7 +10,7 @@ return {
             dashboard.button("g", "  Live grep", ":Telescope live_grep<CR>"),
             dashboard.button("h", "󰋖  Find help", ":Telescope help_tags<CR>"),
             dashboard.button("K", "  Find keymap", ":Telescope keymaps<CR>"),
-            dashboard.button("g", "  Lazy git", ":lua _lazygit_toggle()<CR>"),
+            dashboard.button("G", "  Lazy git", ":lua _lazygit_toggle()<CR>"),
             dashboard.button("l", "  Check lsp", ":Mason<CR>"),
             dashboard.button("t", "  Toggle terminal", ":ToggleTerm direction=float<CR>"),
         }
