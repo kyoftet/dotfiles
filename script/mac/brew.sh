@@ -31,6 +31,7 @@ casks=(
   hammerspoon
   scroll-reverser
   appcleaner
+  kindle
 )
 for cask in "${casks[@]}"; do
   brew install --cask "$cask"
