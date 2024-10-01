@@ -7,7 +7,6 @@ System Preferences > Security & Privacy > Full Disk Access and add Terminal
 ```
 ssh-keygen -t ed25519 -C "your mail address"
 xcode-select --install
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/kyoF/dotfiles/main/script/mac/init.sh)" "" githubmailaddress
 ```
 
 ```
