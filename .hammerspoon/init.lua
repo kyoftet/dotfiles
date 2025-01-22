@@ -4,7 +4,7 @@ local spaces = require("hs.spaces")
 local double_press = require("ctrl_double_press")
 
 local open_alacritty = function()
-    local appName = "Alacritty"
+    local appName = "com.github.wez.wezterm"
     local app = application.get(appName)
 
     if app == nil then

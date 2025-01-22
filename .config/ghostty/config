@@ -1,0 +1,38 @@
+## config ##
+theme = tokyonight_night
+window-padding-x = 20
+window-padding-y = 5
+window-padding-balance = true
+window-theme = ghostty
+
+## keybinds ##
+keybind = ctrl+l>f=toggle_fullscreen
+keybind = ctrl+l>r=reload_config
+keybind = ctrl+l>comma=open_config
+keybind = ctrl+l>shift+n=new_window
+keybind = ctrl+l>t=new_tab
+keybind = ctrl+l>m=next_tab
+keybind = ctrl+l>n=previous_tab
+keybind = ctrl+l>alt+v=new_split:right
+keybind = ctrl+l>alt+h=new_split:up
+keybind = ctrl+l>alt+shift+v=new_split:left
+keybind = ctrl+l>shift+h=new_split:down
+keybind = ctrl+l>equal=increase_font_size:2
+keybind = ctrl+l>minus=decrease_font_size:2
+keybind = ctrl+l>l=goto_split:right
+keybind = ctrl+l>k=goto_split:top
+keybind = ctrl+l>j=goto_split:bottom
+keybind = ctrl+l>h=goto_split:left
+keybind = ctrl+l>shift+l=resize_split:right,50
+keybind = ctrl+l>shift+k=resize_split:left,50
+keybind = ctrl+l>shift+j=resize_split:left,50
+keybind = ctrl+l>shift+h=resize_split:left,50
+keybind = ctrl+l>q=quit
+keybind = ctrl+l>alt+d=close_window
+
+## only mac ##
+macos-non-native-fullscreen = visible-menu
+macos-titlebar-style = transparent
+## keybind ##
+keybind = global:ctrl+comma=toggle_quick_terminal
+keybind = global:cmd+down=toggle_visibility
