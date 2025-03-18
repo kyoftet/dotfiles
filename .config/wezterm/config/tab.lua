@@ -2,124 +2,45 @@ local wezterm = require("wezterm")
 
 local tab_conf = {}
 
-local function get_process(tab)
-    local PROCESS_ICONS = {
-        ["docker"] = {
-            { Foreground = { Color = "blue" } },
-            { Text = "󰡨" },
-        },
-        ["docker-compose"] = {
-            { Foreground = { Color = "blue" } },
-            { Text = "󰡨" },
-        },
-        ["nvim"] = {
-            { Foreground = { Color = "green" } },
-            { Text = "" },
-        },
-        ["vim"] = {
-            { Foreground = { Color = "green" } },
-            { Text = "" },
-        },
-        ["node"] = {
-            { Foreground = { Color = "green" } },
-            { Text = "󰋘" },
-        },
-        ["zsh"] = {
-            { Foreground = { Color = "gray" } },
-            { Text = "" },
-        },
-        ["cargo"] = {
-            { Foreground = { Color = "maroon" } },
-            { Text = wezterm.nerdfonts.dev_rust },
-        },
-        ["go"] = {
-            { Foreground = { Color = "blue" } },
-            { Text = "" },
-        },
-        ["git"] = {
-            { Foreground = { Color = "orange" } },
-            { Text = "󰊢" },
-        },
-        ["lazygit"] = {
-            { Foreground = { Color = "orange" } },
-            { Text = "󰊢" },
-        },
-        ["lua"] = {
-            { Foreground = { Color = "blue" } },
-            { Text = "" },
-        },
-        ["wget"] = {
-            { Foreground = { Color = "yellow" } },
-            { Text = "󰄠" },
-        },
-        ["curl"] = {
-            { Foreground = { Color = "yellow" } },
-            { Text = "" },
-        },
-        ["gh"] = {
-            { Foreground = { Color = "gray" } },
-            { Text = "" },
-        },
-    }
-
-    local process_name = string.gsub(tab.active_pane.foreground_process_name, "(.*[/\\])(.*)", "%2")
-
-    if PROCESS_ICONS[process_name] then
-        return wezterm.format(PROCESS_ICONS[process_name])
-    elseif process_name == "" then
-        return wezterm.format({
-            { Foreground = { Color = "red" } },
-            { Text = "󰌾" },
-        })
-    else
-        return wezterm.format({
-            { Foreground = { Color = "blue" } },
-            { Text = string.format("[%s]", process_name) },
-        })
-    end
-end
-
-local function get_current_working_dir(tab)
-    local cwd_uri = tab.active_pane.current_working_dir
-
-    if cwd_uri then
-        local cwd = ""
-        if type(cwd_uri) == "userdata" then
-            cwd = cwd_uri.file_path
-        else
-            cwd_uri = cwd_uri:sub(8)
-            local slash = cwd_uri:find("/")
-            if slash then
-                cwd = cwd_uri:sub(slash):gsub("%%(%x%x)", function(hex)
-                    return string.char(tonumber(hex, 16))
-                end)
-            end
-        end
-
-        if cwd == os.getenv("HOME") then
-            return "~"
-        end
-
-        return string.format("%s", string.match(cwd, "[^/]+$"))
-    end
-end
-
 function tab_conf.setup(config)
+    config.show_tabs_in_tab_bar = true
     config.hide_tab_bar_if_only_one_tab = true
     config.show_new_tab_button_in_tab_bar = false
     config.tab_bar_at_bottom = true
     config.tab_max_width = 50
 
-    wezterm.on("format-tab-title", function(tab)
-        local bg_color = { "#03214a", "#010b19" }
-        local fg_color = { "white", "gray" }
-        local is_active = tab.is_active and 1 or 2
-        return wezterm.format({
-            { Background = { Color = bg_color[is_active] } },
-            { Text = " " .. get_process(tab) },
-            { Foreground = { Color = fg_color[is_active] } },
-            { Text = " " .. get_current_working_dir(tab) },
-        })
+    config.show_new_tab_button_in_tab_bar = false
+    -- config.show_close_tab_button_in_tabs = false
+
+    config.colors = {
+        tab_bar = {
+            inactive_tab_edge = "none",
+        },
+    }
+
+    local SOLID_LEFT_ARROW = wezterm.nerdfonts.ple_lower_right_triangle
+    local SOLID_RIGHT_ARROW = wezterm.nerdfonts.ple_upper_left_triangle
+    wezterm.on("format-tab-title", function(tab, _, _, _, _, max_width)
+        local background = "#5c6d74"
+        local foreground = "#FFFFFF"
+        local edge_background = "none"
+        if tab.is_active then
+            background = "#13a6a8"
+            foreground = "#FFFFFF"
+        end
+        local edge_foreground = background
+        local title = "   " .. wezterm.truncate_right(tab.active_pane.title, max_width - 1) .. "   "
+        return {
+            { Background = { Color = edge_background } },
+            { Foreground = { Color = edge_foreground } },
+            { Text = SOLID_LEFT_ARROW },
+            { Background = { Color = background } },
+            { Foreground = { Color = foreground } },
+            { Text = title },
+            { Background = { Color = edge_background } },
+            { Foreground = { Color = edge_foreground } },
+            { Text = SOLID_RIGHT_ARROW },
+        }
     end)
 end
 

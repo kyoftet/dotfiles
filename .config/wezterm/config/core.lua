@@ -3,7 +3,6 @@ local core_conf = {}
 function core_conf.setup(config)
     config.adjust_window_size_when_changing_font_size = false
     config.check_for_updates = false
-    -- config.default_domain = 'WSL:Ubuntu'
     config.initial_cols = 155
     config.initial_rows = 45
     config.hyperlink_rules = {
@@ -32,7 +31,7 @@ function core_conf.setup(config)
             format = "https://example.com/tasks/?t=$1",
         },
     }
-    config.mouse_wheel_scrolls_tabs = true
+    config.mouse_wheel_scrolls_tabs = false
     config.show_update_window = false
     config.warn_about_missing_glyphs = false
     config.window_close_confirmation = "NeverPrompt"

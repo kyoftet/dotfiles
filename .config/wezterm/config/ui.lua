@@ -14,33 +14,23 @@ function ui_conf.setup(config)
     config.integrated_title_button_alignment = "Right"
     config.window_background_gradient = {
         colors = {
-            "#000001",
-            "#000012",
-            "#000019",
-            "#000012",
-            "#000001",
+            "#000015",
         },
-        orientation = { Linear = { angle = -45.0 } },
     }
-    config.window_background_opacity = 1.0
-    config.window_decorations = "RESIZE"
+    config.window_background_opacity = 0.81
+    config.macos_window_background_blur = 15
+    config.window_decorations = "NONE"
     config.window_frame = {
-        inactive_titlebar_bg = 'rgba(0,0,0,0)',
-        active_titlebar_bg = 'rgba(0,0,0,0)',
-        border_left_width = '0.5cell',
-        border_right_width = '0.5cell',
-        border_bottom_height = '0.25cell',
-        border_top_height = '0.25cell',
-        border_left_color = '#03214a',
-        border_right_color = '#03214a',
-        border_bottom_color = '#03214a',
-        border_top_color = '#03214a',
+        inactive_titlebar_bg = 'none',
+        active_titlebar_bg = 'none',
+        border_left_width = '1cell',
+        border_right_width = '1cell',
     }
     config.window_padding = {
-        left = 11,
-        right = 11,
-        top = 11,
-        bottom = 11,
+        left = 23,
+        right = 23,
+        top = 23,
+        bottom = 23,
     }
 end
 
