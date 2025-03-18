@@ -19,12 +19,13 @@ function ui_conf.setup(config)
     }
     config.window_background_opacity = 0.81
     config.macos_window_background_blur = 15
-    config.window_decorations = "NONE"
+    config.window_decorations = "RESIZE"
     config.window_frame = {
         inactive_titlebar_bg = 'none',
         active_titlebar_bg = 'none',
         border_left_width = '1cell',
         border_right_width = '1cell',
+        border_bottom_height = '0.75cell',
     }
     config.window_padding = {
         left = 23,

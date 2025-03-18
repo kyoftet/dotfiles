@@ -18,8 +18,8 @@ function tab_conf.setup(config)
         },
     }
 
-    local SOLID_LEFT_ARROW = wezterm.nerdfonts.ple_lower_right_triangle
-    local SOLID_RIGHT_ARROW = wezterm.nerdfonts.ple_upper_left_triangle
+    local SOLID_LEFT_ARROW = wezterm.nerdfonts.ple_left_half_circle_thick
+    local SOLID_RIGHT_ARROW = wezterm.nerdfonts.ple_right_half_circle_thick
     wezterm.on("format-tab-title", function(tab, _, _, _, _, max_width)
         local background = "#5c6d74"
         local foreground = "#FFFFFF"
@@ -29,7 +29,7 @@ function tab_conf.setup(config)
             foreground = "#FFFFFF"
         end
         local edge_foreground = background
-        local title = "   " .. wezterm.truncate_right(tab.active_pane.title, max_width - 1) .. "   "
+        local title = " " .. wezterm.truncate_right(tab.active_pane.title, max_width - 1) .. " "
         return {
             { Background = { Color = edge_background } },
             { Foreground = { Color = edge_foreground } },
