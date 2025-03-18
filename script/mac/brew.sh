@@ -4,7 +4,6 @@ packages=(
   git
   lazygit
   neovim
-  tmux
   cmake
   mas
   gcc
@@ -16,7 +15,6 @@ done
 casks=(
   google-chrome
   microsoft-edge
-  arc
   slack
   zoom
   discord
@@ -24,11 +22,8 @@ casks=(
   visual-studio-code
   postman
   wezterm
-  alacritty
-  cool-retro-term
   clipy
   karabiner-elements
-  hammerspoon
   scroll-reverser
   appcleaner
   kindle

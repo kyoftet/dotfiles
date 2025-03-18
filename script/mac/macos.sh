@@ -175,4 +175,3 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
 # UTF-8 のみを使用する
 defaults write com.apple.terminal StringEncodings -array 4
-
