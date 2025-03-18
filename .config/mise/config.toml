@@ -1,7 +1,6 @@
 [tools]
 go = "latest"
 terraform = "latest"
-node = "20"
-python = "3.11"
+node = "22"
+python = "latest"
 bun = "latest"
-neovim = "0.9.5"

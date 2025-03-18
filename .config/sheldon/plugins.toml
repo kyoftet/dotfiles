@@ -37,14 +37,8 @@ github = "zsh-users/zsh-history-substring-search"
 [plugins.docker-zsh-completion]
 github = "felixr/docker-zsh-completion"
 
-[plugins.autopair]
-github = "hlissner/zsh-autopair"
-
 [plugins.oh-my-zsh]
 github = "ohmyzsh/ohmyzsh"
-
-[plugins.git-open]
-github = "paulirish/git-open"
 
 [plugins.fast-syntax-highlighting]
 github = "zdharma/fast-syntax-highlighting"
