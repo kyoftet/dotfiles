@@ -3,6 +3,21 @@ return {
     config = function()
         require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
         local dashboard = require('alpha.themes.dashboard')
+        dashboard.section.header.val = [[
+   ⢀⡴⣇⠀⠀⠀⠀⠀⠀⠀⠀⢘⣦⠀⠀⠀⠀
+⠀⢀⡴⣯⢿⣽⣣⡀⠀⠀⠀⠀⠀⠀⢘⣾⣻⣆⠀⠀
+⣠⡀⢿⣻⢿⡼⣧⢧⡀⠀⠀⠀⠀⠀⢘⣧⢿⡼⣧⡀
+⣿⣷⣄⠻⣯⢿⡽⣯⢷⣆⠀⠀⠀⠀⢨⣟⣯⣟⣷⣻
+⣿⣾⣻⣤⠹⣯⢿⡽⣻⢾⣥⠀⠀⠀⢰⣻⣞⣧⣟⡷
+⣿⣳⡿⣯⣷⠉⢯⡿⣽⣻⣞⣧⠀⠀⠰⣟⣾⣳⢯⣟
+⣿⢿⣹⣿⣹⠆⠀⢿⣷⢿⣾⣹⢷⠀⠸⣿⡾⣹⢿⡾
+⣿⣟⣯⣷⣿⠀⠀⠈⢫⣟⡾⣽⢯⣷⣈⢷⣻⡽⣯⣟
+⣿⡾⣟⣷⣿⠁⠀⠀⠀⠸⡿⣽⣻⢾⡽⣆⠓⣿⣳⢯
+⣿⣻⡿⣽⣾⠁⠀⠀⠀⠀⠙⢷⢯⡿⣽⢯⣧⡘⢽⣻
+⠙⣿⣽⣿⣽⠂⠀⠀⠀⠀⠀⠈⣿⣽⣯⡟⣾⢳⠈⠉
+⠀⠀⠻⣷⢿⡀⠀⠀⠀⠀⠀⠀⠈⠷⣯⢿⡽⠏⠀⠀
+⠀⠀⠀⠈⠻⠄⠀⠀⠀⠀⠀⠀⠀⠀⠹⠏⠀⠀⠀⠀
+    ]];
         dashboard.section.buttons.val = {
             dashboard.button("q", "󰅚  Quit NVIM", ":qa<CR>"),
             dashboard.button("e", "  View dir", ":Neotree float<CR>"),
