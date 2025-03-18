@@ -26,8 +26,6 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(starship init zsh)"
 # sheldon
 eval "$(sheldon source)"
-# mise
-eval "$(mise activate zsh)"
 
 # core
 alias ls='lsd'
@@ -48,10 +46,7 @@ alias kl='kill -9'
 
 # rust
 alias cat='bat'
-alias gcat='glitchcat'
-alias sabori='genact'
 alias tock='tock -scm -C 4'
-alias yz='yazi'
 
 # git alias
 alias ga='git add'
@@ -65,30 +60,10 @@ alias gl='git log'
 alias gd='git diff'
 alias gf='git fetch'
 alias lg='lazygit'
-alias gopen='git open'
 
 # docker alias
 alias dc='docker compose'
 alias dcup='docker compose up -d --build'
-alias dcps='docker compose ps'
-alias dcl='docker compose logs'
-alias dce='docker compose exec'
-alias dcdown='docker compose down --rmi all --volumes --remove-orphans'
-alias dcp='docker compose --profile'
-alias dcf='docker compose -f'
+alias dcdel='docker compose down --rmi all --volumes --remove-orphans'
 
-# tmux
-alias stmux="tmux source $HOME/.config/tmux/tmux.conf"
-function tmuxPopup() {
-  width='80%'
-  height='80%'
-  session=$(tmux display-message -p -F "#{session_name}")
-  if [[ $session == *'popup'* ]]; then
-    tmux detach-client
-  else
-    tmux popup -d "#{pane_current_path}" -xC -yC -w $width -h $height -E "tmux attach -t popup || tmux new -s popup"
-  fi
-}
-
-# alacritty
-alias to="$HOME/.config/alacritty/bin/toggle_opacity.sh"
+export EDITOR='nvim'
