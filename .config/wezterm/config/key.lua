@@ -35,8 +35,8 @@ function key_conf.setup(config)
         { key = "=", mods = "LEADER",       action = wezterm.action.IncreaseFontSize },
         { key = "-", mods = "LEADER",       action = wezterm.action.DecreaseFontSize },
         { key = "N", mods = "LEADER|SHIFT", action = wezterm.action.SpawnWindow },
-        { key = "v", mods = "LEADER|CTRL",  action = wezterm.action { SplitVertical = { domain = "CurrentPaneDomain" } } },
-        { key = "h", mods = "LEADER|CTRL",  action = wezterm.action { SplitHorizontal = { domain = "CurrentPaneDomain" } } },
+        { key = "V", mods = "LEADER|SHIFT", action = wezterm.action { SplitHorizontal = { domain = "CurrentPaneDomain" } } },
+        { key = "H", mods = "LEADER|SHIFT", action = wezterm.action { SplitVertical = { domain = "CurrentPaneDomain" } } },
         { key = "s", mods = "LEADER|CTRL",  action = wezterm.action.QuickSelect },
         { key = "c", mods = "LEADER|CTRL",  action = wezterm.action.ActivateCopyMode },
         { key = "v", mods = "LEADER|CTRL",  action = wezterm.action.PasteFrom "Clipboard" },
@@ -83,14 +83,14 @@ function key_conf.setup(config)
             end),
         },
         -- without leader key
-        { key = "n", mods = "ALT",       action = wezterm.action.ActivateTabRelative(-1) },
-        { key = "m", mods = "ALT",       action = wezterm.action.ActivateTabRelative(1) },
-        { key = "-", mods = "ALT",       action = wezterm.action.DecreaseFontSize },
-        { key = "=", mods = "ALT",       action = wezterm.action.IncreaseFontSize },
-        { key = "H", mods = "ALT|SHIFT", action = wezterm.action { AdjustPaneSize = { "Left", 10 } } },
-        { key = "J", mods = "ALT|SHIFT", action = wezterm.action { AdjustPaneSize = { "Down", 10 } } },
-        { key = "K", mods = "ALT|SHIFT", action = wezterm.action { AdjustPaneSize = { "Up", 10 } } },
-        { key = "L", mods = "ALT|SHIFT", action = wezterm.action { AdjustPaneSize = { "Right", 10 } } },
+        { key = "n", mods = "ALT", action = wezterm.action.ActivateTabRelative(-1) },
+        { key = "m", mods = "ALT", action = wezterm.action.ActivateTabRelative(1) },
+        { key = "-", mods = "ALT", action = wezterm.action.DecreaseFontSize },
+        { key = "=", mods = "ALT", action = wezterm.action.IncreaseFontSize },
+        { key = "h", mods = "ALT", action = wezterm.action { AdjustPaneSize = { "Left", 5 } } },
+        { key = "j", mods = "ALT", action = wezterm.action { AdjustPaneSize = { "Down", 5 } } },
+        { key = "k", mods = "ALT", action = wezterm.action { AdjustPaneSize = { "Up", 5 } } },
+        { key = "l", mods = "ALT", action = wezterm.action { AdjustPaneSize = { "Right", 5 } } },
     }
 end
 
