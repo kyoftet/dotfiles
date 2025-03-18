@@ -1,6 +1,6 @@
 format = """
-[░▒▓](#a3aed2)\
-$os\
+[ ](#a3aed2)\
+$os$cmd_duration\
 [ ](fg:#a3aed2 bg:#021631)\
 $directory\
 [ ](fg:#021631 bg:#03214a)\
@@ -10,22 +10,6 @@ $git_status\
 [ ](fg:#042c62 bg:#05377b)\
 $git_metrics\
 [](fg:#05377b)\
-$fill\
-[](fg:#05377b)\
-$docker_context\
-[ ](fg:#042c62 bg:#05377b)\
-$nodejs\
-$golang\
-$python\
-$rust\
-$lua\
-[ ](fg:#03214a bg:#042c62)\
-$cmd_duration\
-[ ](fg:#021631 bg:#03214a)\
-$battery\
-[ ](fg:#a3aed2 bg:#021631)\
-$time\
-[▓▒░](fg:#a3aed2)\
 \n$character\
 """
 
@@ -35,8 +19,18 @@ style = 'fg:#394260 bg:#a3aed2'
 disabled = false
 
 [os.symbols]
-Macos = "  "
-Ubuntu = "  "
+Macos = " "
+Ubuntu = " "
+Debian = " "
+Linux = " "
+NixOS = " "
+Arch = " "
+Windows = "󰍲 "
+
+[cmd_duration]
+min_time = 1
+style = 'fg:#394260 bg:#a3aed2'
+format = "[$duration]($style)"
 
 [directory]
 truncation_length = 6
@@ -73,61 +67,6 @@ deleted_style = 'fg:#00aaaa bg:#05377b'
 format = '[+$added/-$deleted ]($deleted_style)'
 disabled = false
 
-[fill]
-symbol = '─'
-style = '#0059b3'
-
-[docker_context]
-symbol = ''
-style = 'fg:#00aaaa bg:#05377b'
-format = '[ $symbol docker]($style)'
-
-[rust]
-symbol = ''
-style = 'fg:#00aaaa bg:#042c62'
-format = '[ $symbol ($version)]($style)'
-
-[python]
-symbol = ''
-style = 'fg:#00aaaa bg:#042c62'
-format = '[ $symbol ($version)]($style)'
-
-[nodejs]
-symbol = ""
-style = 'fg:#00aaaa bg:#042c62'
-format = '[ $symbol ($version)]($style)'
-
-[golang]
-symbol = ""
-style = 'fg:#00aaaa bg:#042c62'
-format = '[ $symbol ($version)]($style)'
-
-[lua]
-symbol = ""
-style = 'fg:#00aaaa bg:#042c62'
-format = '[ $symbol ($version)]($style)'
-
-[cmd_duration]
-min_time = 1
-style = 'fg:#00aaaa bg:#03214a'
-format = "[󱦟 $duration]($style)"
-
-[[battery.display]]
-threshold = 100
-style = "fg:#00aaaa bg:#021631"
-
-[battery]
-full_symbol = "󱊣 "
-charging_symbol = "󰂄 "
-discharging_symbol = "󱧥 "
-format = '[$symbol$percentage]($style)'
-
-[time]
-disabled = false
-time_format = "%F %T"
-style = "fg:#394260 bg:#a3aed2"
-format = '[ $time ]($style)'
-
 [character]
-success_symbol = '[❯❯❯](bold #00ffff)'
-error_symbol = '[❯❯❯](bold red)'
+success_symbol = '[ ❯](bold #00ffff)'
+error_symbol = '[ ❯](bold red)'
