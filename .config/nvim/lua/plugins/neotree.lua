@@ -30,7 +30,6 @@ return {
             },
             vim.keymap.set('n', '<leader>e', '<cmd>Neotree float<cr>'),
             vim.keymap.set('n', '<leader>b', '<cmd>Neotree float buffers<cr>'),
-            vim.keymap.set('n', '<leader>neo', '<cmd>Neotree left<cr>'),
         })
     end
 }
