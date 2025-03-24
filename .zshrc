@@ -1,33 +1,31 @@
-# history
-export HISTFILE=${HOME}/.zsh/.zsh_history
+# import local .zshrc
+[ -f $HOME/.zshrc.local ] && source $HOME/.zshrc.local
+
+# env
+export EDITOR='nvim'
+export XDG_CONFIG_HOME=$HOME/.config
+export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/starship.toml
+
+# path
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
+export PATH="$HOME/.bun/bin:$PATH"
+export PATH="$PATH:/opt/homebrew/bin/"
+
+# zsh
+export HISTFILE=$HOME/.zsh_history
 export HISTSIZE=1000
 export SAVEHIST=100000
 setopt hist_ignore_dups
 setopt EXTENDED_HISTORY
 
-# import local .zshrc
-[ -f $HOME/.zshrc.local ] && source $HOME/.zshrc.local
-
-# env
-export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
-export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$HOME/go/bin:$PATH"
-
-# js/ts
-export DENO_INSTALL="$HOME/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-# homebrew
-export PATH="$PATH:/opt/homebrew/bin/"
+# eval
 eval "$(/opt/homebrew/bin/brew shellenv)"
-# starship
 eval "$(starship init zsh)"
-# sheldon
 eval "$(sheldon source)"
+eval "$(mise activate zsh)"
 
-# core
+# alias
 alias ls='lsd'
 alias ll='lsd -al'
 alias c='clear'
@@ -39,16 +37,13 @@ alias t='touch'
 alias rd='rmdir'
 alias rr='rm -rf'
 alias e='exit'
-alias sshell="source $HOME/.zshenv"
+alias sshell="source $HOME/.zshrc"
 alias dot="cd $HOME/dotfiles"
 alias checkport='lsof -i -P | grep'
 alias kl='kill -9'
-
-# rust
 alias cat='bat'
 alias tock='tock -scm -C 4'
-
-# git alias
+## git
 alias ga='git add'
 alias gc='git commit -m'
 alias gP='git push'
@@ -60,10 +55,7 @@ alias gl='git log'
 alias gd='git diff'
 alias gf='git fetch'
 alias lg='lazygit'
-
-# docker alias
+## docker
 alias dc='docker compose'
 alias dcup='docker compose up -d --build'
 alias dcdel='docker compose down --rmi all --volumes --remove-orphans'
-
-export EDITOR='nvim'
